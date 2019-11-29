@@ -27,13 +27,4 @@
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
-
-    <servlet>
-        <servlet-name>fileUploaderServlet</servlet-name>
-        <servlet-class>gmd.addins.demo.server.service.FileUploadServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>fileUploaderServlet</servlet-name>
-        <url-pattern>/fileupload</url-pattern>
-    </servlet-mapping>
 </web-app>
