@@ -17,11 +17,10 @@
  * limitations under the License.
  * #L%
  */
-package gmd.addins.demo.client.application.dropzone;
+package gmd.addins.demo.client.application.combobox;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
-import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
@@ -30,19 +29,19 @@ import gmd.addins.demo.client.application.ApplicationPresenter;
 import gmd.addins.demo.client.application.BasePresenter;
 import gmd.addins.demo.client.place.NameTokens;
 
-public class DropzonePresenter extends BasePresenter<DropzonePresenter.MyView, DropzonePresenter.MyProxy> {
+public class ComboBoxPresenter extends BasePresenter<ComboBoxPresenter.MyView, ComboBoxPresenter.MyProxy> {
 
     interface MyView extends View {
 
     }
 
     @ProxyStandard
-    @NameToken(NameTokens.DROPZONE)
-    interface MyProxy extends ProxyPlace<DropzonePresenter> {
+    @NameToken(NameTokens.COMBOBOX)
+    interface MyProxy extends ProxyPlace<ComboBoxPresenter> {
     }
 
     @Inject
-    DropzonePresenter(
+    ComboBoxPresenter(
             EventBus eventBus,
             MyView view,
             MyProxy proxy) {
@@ -53,6 +52,6 @@ public class DropzonePresenter extends BasePresenter<DropzonePresenter.MyView, D
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Mat", "", "");
+        setHeaderTitle("ComboBox", "Material ComboBox gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.", "");
     }
 }

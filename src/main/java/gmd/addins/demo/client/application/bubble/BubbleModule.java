@@ -17,14 +17,15 @@
  * limitations under the License.
  * #L%
  */
-package gmd.addins.demo.client.place;
+package gmd.addins.demo.client.application.bubble;
 
-public class NameTokens {
+import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
-    public static final String HOME = "/";
-    public static final String AUTOCOMPLETE = "autocomplete";
-    public static final String AVATAR = "avatar";
-    public static final String BUBBLE = "bubble";
-    public static final String COMBOBOX = "combobox";
-    public static final String DROPZONE = "dropzone";
+public class BubbleModule extends AbstractPresenterModule {
+
+    @Override
+    protected void configure() {
+        bindPresenter(BubblePresenter.class, BubblePresenter.MyView.class, BubbleView.class,
+                BubblePresenter.MyProxy.class);
+    }
 }

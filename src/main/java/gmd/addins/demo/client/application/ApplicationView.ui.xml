@@ -35,6 +35,7 @@
                         </m:MaterialPanel>
                     </m:MaterialNavBrand>
                     <m:MaterialNavSection ui:field="navSection" float="RIGHT" />
+                    <m:MaterialDarkModeToggle float="RIGHT"/>
                 </m:MaterialPanel>
             </m:MaterialNavBar>
 

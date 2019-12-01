@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package gmd.addins.demo.client.application.dropzone;
+package gmd.addins.demo.client.application.avatar;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
@@ -30,19 +30,19 @@ import gmd.addins.demo.client.application.ApplicationPresenter;
 import gmd.addins.demo.client.application.BasePresenter;
 import gmd.addins.demo.client.place.NameTokens;
 
-public class DropzonePresenter extends BasePresenter<DropzonePresenter.MyView, DropzonePresenter.MyProxy> {
+public class AvatarPresenter extends BasePresenter<AvatarPresenter.MyView, AvatarPresenter.MyProxy> {
 
     interface MyView extends View {
 
     }
 
     @ProxyStandard
-    @NameToken(NameTokens.DROPZONE)
-    interface MyProxy extends ProxyPlace<DropzonePresenter> {
+    @NameToken(NameTokens.AVATAR)
+    interface MyProxy extends ProxyPlace<AvatarPresenter> {
     }
 
     @Inject
-    DropzonePresenter(
+    AvatarPresenter(
             EventBus eventBus,
             MyView view,
             MyProxy proxy) {
@@ -53,6 +53,7 @@ public class DropzonePresenter extends BasePresenter<DropzonePresenter.MyView, D
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Mat", "", "");
+        setHeaderTitle("Avatar", "Generated avatar based on JDenticon that provides a unique avatar based on unique name.", "");
+        setExternalLibrary("Jdenticon 2.2.0", "https://jdenticon.com/");
     }
 }

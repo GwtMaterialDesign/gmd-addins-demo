@@ -1,0 +1,134 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+    <m:MaterialPanel>
+        <!-- Standard -->
+        <m:MaterialRow>
+            <m:MaterialColumn grid="l6 m6 s12">
+                <ma:combobox.MaterialComboBox width="100%"  ui:field="comboTimeZone1" placeholder="TimeZone" />
+            </m:MaterialColumn>
+        </m:MaterialRow>
+
+        <!-- Label and Placeholder -->
+        <m:MaterialRow>
+            <m:MaterialColumn grid="l6 m6 s12">
+                <m:MaterialTitle title="Label and Placeholder" description="On Combo Box we have two types of labeling your component. They are label and placeholder." />
+                <ma:combobox.MaterialComboBox ui:field="labelAndPlaceholder" closeOnSelect="false" multiple="true" label="This is label" placeholder="This is placeholder" />
+            </m:MaterialColumn>
+        </m:MaterialRow>
+
+        <!-- Single Selection -->
+        <m:MaterialRow>
+            <m:MaterialColumn grid="l6 m6 s12">
+                <ma:combobox.MaterialComboBox placeholder="This is a placeholder" allowClear="true">
+                    <m:html.Option text="" />
+                    <m:html.Option text="Item 1" />
+                    <m:html.Option text="Item 2" />
+                    <m:html.Option text="Item 3" />
+                </ma:combobox.MaterialComboBox>
+            </m:MaterialColumn>
+        </m:MaterialRow>
+
+        <!-- Allow Clear -->
+        <m:MaterialRow>
+            <m:MaterialColumn grid="l6 m6 s12">
+                <ma:combobox.MaterialComboBox ui:field="allowClear" placeholder="TimeZone" closeOnSelect="false" multiple="true" allowClear="true" />
+            </m:MaterialColumn>
+        </m:MaterialRow>
+
+        <!-- With OptGroup -->
+        <m:MaterialRow>
+            <m:MaterialColumn grid="l6 m6 s12">
+                <ma:combobox.MaterialComboBox ui:field="withOptGroup" placeholder="TimeZone"/>
+            </m:MaterialColumn>
+        </m:MaterialRow>
+
+        <!-- Multiple Select -->
+        <m:MaterialRow>
+            <m:MaterialColumn grid="l6 m6 s12">
+                <ma:combobox.MaterialComboBox closeOnSelect="false" multiple="true" ui:field="multipleSelect" placeholder="TimeZone"/>
+            </m:MaterialColumn>
+        </m:MaterialRow>
+
+        <!-- Disabled -->
+        <m:MaterialRow>
+            <m:MaterialColumn grid="l6 m6 s12">
+                <ma:combobox.MaterialComboBox placeholder="Time Zone" ui:field="comboTimeZone6" />
+            </m:MaterialColumn>
+        </m:MaterialRow>
+
+        <!-- Disabled Result Item -->
+        <m:MaterialRow>
+            <m:MaterialColumn grid="l6 m6 s12">
+                <ma:combobox.MaterialComboBox ui:field="disabledResult" placeholder="Time Zone">
+                    <m:html.Option text="Item 1"></m:html.Option>
+                    <m:html.Option enabled="false" text="Item 2 (disabled)"></m:html.Option>
+                    <m:html.Option text="Item 3"></m:html.Option>
+                </ma:combobox.MaterialComboBox>
+            </m:MaterialColumn>
+        </m:MaterialRow>
+
+        <!-- Multiple Select -->
+        <m:MaterialRow>
+            <m:MaterialColumn grid="l6 m6 s12">
+
+            </m:MaterialColumn>
+        </m:MaterialRow>
+
+        <!-- Limit -->
+        <m:MaterialRow>
+            <m:MaterialColumn grid="l6 m6 s12">
+                <ma:combobox.MaterialComboBox ui:field="limit" closeOnSelect="true" multiple="true" limit="2" placeholder="Time Zone"  />
+            </m:MaterialColumn>
+        </m:MaterialRow>
+
+        <!-- Multiple Select -->
+        <m:MaterialRow>
+            <m:MaterialColumn grid="l6 m6 s12">
+
+            </m:MaterialColumn>
+        </m:MaterialRow>
+
+        <!-- Tags -->
+        <m:MaterialRow>
+            <m:MaterialColumn grid="l6 m6 s12">
+                <ma:combobox.MaterialComboBox ui:field="tags" closeOnSelect="true" tags="true" placeholder="Time Zone" multiple="true"  grid="s12 m6 l6"/>
+                <ma:combobox.MaterialComboBox ui:field="comboTags" closeOnSelect="true" tags="true" placeholder="Time Zone"  grid="s12 m6 l6" />
+            </m:MaterialColumn>
+        </m:MaterialRow>
+
+        <!-- Close On Select -->
+        <m:MaterialRow>
+            <m:MaterialColumn grid="l6 m6 s12">
+                <ma:combobox.MaterialComboBox closeOnSelect="false"  multiple="true" placeholder="Time Zone" ui:field="comboCloseOnSelect" />
+            </m:MaterialColumn>
+        </m:MaterialRow>
+
+        <!-- Multiple Select -->
+        <m:MaterialRow>
+            <m:MaterialColumn grid="l6 m6 s12">
+
+            </m:MaterialColumn>
+        </m:MaterialRow>
+    </m:MaterialPanel>
+</ui:UiBinder>

@@ -17,11 +17,10 @@
  * limitations under the License.
  * #L%
  */
-package gmd.addins.demo.client.application.dropzone;
+package gmd.addins.demo.client.application.bubble;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
-import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
@@ -30,19 +29,19 @@ import gmd.addins.demo.client.application.ApplicationPresenter;
 import gmd.addins.demo.client.application.BasePresenter;
 import gmd.addins.demo.client.place.NameTokens;
 
-public class DropzonePresenter extends BasePresenter<DropzonePresenter.MyView, DropzonePresenter.MyProxy> {
+public class BubblePresenter extends BasePresenter<BubblePresenter.MyView, BubblePresenter.MyProxy> {
 
     interface MyView extends View {
 
     }
 
     @ProxyStandard
-    @NameToken(NameTokens.DROPZONE)
-    interface MyProxy extends ProxyPlace<DropzonePresenter> {
+    @NameToken(NameTokens.BUBBLE)
+    interface MyProxy extends ProxyPlace<BubblePresenter> {
     }
 
     @Inject
-    DropzonePresenter(
+    BubblePresenter(
             EventBus eventBus,
             MyView view,
             MyProxy proxy) {
@@ -53,6 +52,6 @@ public class DropzonePresenter extends BasePresenter<DropzonePresenter.MyView, D
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Mat", "", "");
+        setHeaderTitle("Bubble", "Addin component for chat module, it display a good bubble view of messages within the chat module", "");
     }
 }
