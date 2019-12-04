@@ -26,11 +26,14 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gmd.addins.demo.client.resources.AppResources;
+import gwt.material.design.addins.client.AddinsDarkThemeLoader;
 import gwt.material.design.client.MaterialDesignBase;
 import gwt.material.design.client.base.helper.ColorHelper;
 import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.pwa.PwaManager;
 import gwt.material.design.client.pwa.push.js.Notification;
+import gwt.material.design.client.theme.dark.CoreDarkThemeLoader;
+import gwt.material.design.client.theme.dark.DarkThemeManager;
 import gwt.material.design.client.ui.MaterialNavSection;
 import gwt.material.design.client.ui.MaterialPanel;
 import gwt.material.design.client.ui.MaterialSideNavDrawer;
@@ -59,6 +62,12 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     @Override
     protected void onAttach() {
         super.onAttach();
+
+        // Dark Theme Mode
+        DarkThemeManager.get()
+            .register(new CoreDarkThemeLoader())
+            .register(new AddinsDarkThemeLoader())
+            .load();
 
         // Enable PWA
         if (PwaManager.isPwaSupported()) {

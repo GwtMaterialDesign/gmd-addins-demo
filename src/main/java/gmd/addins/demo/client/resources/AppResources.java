@@ -30,4 +30,12 @@ public interface AppResources extends ClientBundle {
     @Source("css/app.css")
     TextResource appCss();
 
+    @Source("js/faker.min.js")
+    TextResource fakerJs();
+
+    @Source("css/highlight/androidstudio.css")
+    TextResource highlightCSs();
+
+    @Source("js/highlight.pack.js")
+    TextResource highlightJs();
 }

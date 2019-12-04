@@ -27,12 +27,17 @@ import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import gmd.addins.demo.client.application.ApplicationPresenter;
 import gmd.addins.demo.client.application.BasePresenter;
+import gmd.addins.demo.client.generator.DataGenerator;
+import gmd.addins.demo.client.generator.product.Product;
+import gmd.addins.demo.client.generator.product.ProductGenerator;
 import gmd.addins.demo.client.place.NameTokens;
+
+import java.util.List;
 
 public class ComboBoxPresenter extends BasePresenter<ComboBoxPresenter.MyView, ComboBoxPresenter.MyProxy> {
 
     interface MyView extends View {
-
+        void setProducts(List<Product> products);
     }
 
     @ProxyStandard
@@ -53,5 +58,12 @@ public class ComboBoxPresenter extends BasePresenter<ComboBoxPresenter.MyView, C
         super.onBind();
 
         setHeaderTitle("ComboBox", "Material ComboBox gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.", "");
+        getView().setProducts(new DataGenerator().generateProducts(30));
+    }
+
+    @Override
+    protected void onReveal() {
+        super.onReveal();
+
     }
 }

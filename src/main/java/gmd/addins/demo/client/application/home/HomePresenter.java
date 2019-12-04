@@ -25,6 +25,7 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
+import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import gmd.addins.demo.client.application.ApplicationPresenter;
 import gmd.addins.demo.client.place.NameTokens;
@@ -39,6 +40,8 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
         void setDashboard(List<Dashboard> dashboards);
     }
 
+    private PlaceManager placeManager;
+
     @ProxyStandard
     @NameToken(NameTokens.HOME)
     interface MyProxy extends ProxyPlace<HomePresenter> {
@@ -48,8 +51,11 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
     HomePresenter(
         EventBus eventBus,
         MyView view,
-        MyProxy proxy) {
+        MyProxy proxy,
+        PlaceManager placeManager) {
         super(eventBus, view, proxy, ApplicationPresenter.SLOT_MAIN);
+
+        this.placeManager = placeManager;
     }
 
     @Override
@@ -58,44 +64,39 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
 
 
         getView().setDashboard(Arrays.asList(
-            new Dashboard("Autocomplete", "Native", NameTokens.DROPZONE, Color.RED),
-            new Dashboard("Avatar", "Native", NameTokens.DROPZONE, Color.AMBER),
-            new Dashboard("Bubble", "Native", NameTokens.DROPZONE, Color.BLUE),
-            new Dashboard("Camera", "Native", NameTokens.DROPZONE, Color.GREEN),
-            new Dashboard("Carousel", "Native", NameTokens.DROPZONE, Color.PURPLE),
-            new Dashboard("Circular Progress", "Native", NameTokens.DROPZONE, Color.ORANGE),
-            new Dashboard("ComboBox", "Native", NameTokens.DROPZONE, Color.BROWN),
-            new Dashboard("CountUp", "Native", NameTokens.DROPZONE, Color.CYAN),
-            new Dashboard("CutOut", "Native", NameTokens.DROPZONE, Color.DEEP_ORANGE),
-            new Dashboard("DocViewer", "Native", NameTokens.DROPZONE, Color.INDIGO),
-            new Dashboard("Drag and Drop", "Native", NameTokens.DROPZONE, Color.GREY),
-            new Dashboard("Empty States", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),
-            new Dashboard("FileUploader", "Native", NameTokens.DROPZONE, Color.CYAN),
-            new Dashboard("Icon Morph", "Native", NameTokens.DROPZONE, Color.LIME),
-            new Dashboard("Image Cropper", "Native", NameTokens.DROPZONE, Color.BLUE),
-            new Dashboard("Input Mask", "Native", NameTokens.DROPZONE, Color.GREY),
-            new Dashboard("Live Stamp", "Native", NameTokens.DROPZONE, Color.BROWN),
-            new Dashboard("Masonry", "Native", NameTokens.DROPZONE, Color.ORANGE),
-            new Dashboard("MenuBar", "Native", NameTokens.DROPZONE, Color.DEEP_ORANGE),
-            new Dashboard("Overlay", "Native", NameTokens.DROPZONE, Color.LIME),
-            new Dashboard("Path Animator", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),
-            new Dashboard("Rating", "Native", NameTokens.DROPZONE, Color.INDIGO),
-            new Dashboard("Rich Editor", "Native", NameTokens.DROPZONE, Color.RED),
-            new Dashboard("ScrollFire", "Native", NameTokens.DROPZONE, Color.AMBER),
-            new Dashboard("Signature Pad", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),
-            new Dashboard("SubHeader", "Native", NameTokens.DROPZONE, Color.PURPLE),
-            new Dashboard("Stepper", "Native", NameTokens.DROPZONE, Color.BROWN),
-            new Dashboard("Swipeable", "Native", NameTokens.DROPZONE, Color.ORANGE),
-            new Dashboard("Time Picker", "Native", NameTokens.DROPZONE, Color.DEEP_ORANGE),
-            new Dashboard("Tree View", "Native", NameTokens.DROPZONE, Color.INDIGO),
-            new Dashboard("Waterfall", "Native", NameTokens.DROPZONE, Color.GREY),
-            new Dashboard("WebP", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),
-            new Dashboard("Window", "Native", NameTokens.DROPZONE, Color.RED)
+            //new Dashboard(placeManager,"Autocomplete", "Native", NameTokens.AUTOCOMPLETE, Color.RED),
+            new Dashboard(placeManager,"Avatar", "JDenticon 2.2.0", NameTokens.AVATAR, Color.AMBER),
+            new Dashboard(placeManager,"Bubble", "Native", NameTokens.BUBBLE, Color.BLUE),
+            //new Dashboard(placeManager,"Camera", "Native", NameTokens.DROPZONE, Color.GREEN),
+            //new Dashboard(placeManager,"Carousel", "Native", NameTokens.DROPZONE, Color.PURPLE),
+            //new Dashboard(placeManager,"Circular Progress", "Native", NameTokens.DROPZONE, Color.ORANGE),
+            new Dashboard(placeManager,"ComboBox", "Native", NameTokens.COMBOBOX, Color.BROWN)
+            //new Dashboard(placeManager,"CountUp", "Native", NameTokens.DROPZONE, Color.CYAN),
+            //new Dashboard(placeManager,"CutOut", "Native", NameTokens.DROPZONE, Color.DEEP_ORANGE),
+            //new Dashboard(placeManager,"DocViewer", "Native", NameTokens.DROPZONE, Color.INDIGO),
+            //new Dashboard(placeManager,"Drag and Drop", "Native", NameTokens.DROPZONE, Color.GREY),
+            //new Dashboard(placeManager,"Empty States", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),
+            //new Dashboard(placeManager,"FileUploader", "Native", NameTokens.DROPZONE, Color.CYAN),
+            //new Dashboard(placeManager,"Icon Morph", "Native", NameTokens.DROPZONE, Color.LIME),
+            //new Dashboard(placeManager,"Image Cropper", "Native", NameTokens.DROPZONE, Color.BLUE),
+            //new Dashboard(placeManager,"Input Mask", "Native", NameTokens.DROPZONE, Color.GREY),
+            //new Dashboard(placeManager,"Live Stamp", "Native", NameTokens.DROPZONE, Color.BROWN),
+            //new Dashboard(placeManager,"Masonry", "Native", NameTokens.DROPZONE, Color.ORANGE),
+            //new Dashboard(placeManager,"MenuBar", "Native", NameTokens.DROPZONE, Color.DEEP_ORANGE),
+            //new Dashboard(placeManager,"Overlay", "Native", NameTokens.DROPZONE, Color.LIME),
+            //new Dashboard(placeManager,"Path Animator", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),
+            //new Dashboard(placeManager,"Rating", "Native", NameTokens.DROPZONE, Color.INDIGO),
+            //new Dashboard(placeManager,"Rich Editor", "Native", NameTokens.DROPZONE, Color.RED),
+            //new Dashboard(placeManager,"ScrollFire", "Native", NameTokens.DROPZONE, Color.AMBER),
+            //new Dashboard(placeManager,"Signature Pad", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),
+            //new Dashboard(placeManager,"SubHeader", "Native", NameTokens.DROPZONE, Color.PURPLE),
+            //new Dashboard(placeManager,"Stepper", "Native", NameTokens.DROPZONE, Color.BROWN),
+            //new Dashboard(placeManager,"Swipeable", "Native", NameTokens.DROPZONE, Color.ORANGE),
+            //new Dashboard(placeManager,"Time Picker", "Native", NameTokens.DROPZONE, Color.DEEP_ORANGE),
+            //new Dashboard(placeManager,"Tree View", "Native", NameTokens.DROPZONE, Color.INDIGO),
+            //new Dashboard(placeManager,"Waterfall", "Native", NameTokens.DROPZONE, Color.GREY),
+            //new Dashboard(placeManager,"WebP", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),
+            //new Dashboard(placeManager,"Window", "Native", NameTokens.DROPZONE, Color.RED)
         ));
-    }
-
-    @Override
-    protected void onReveal() {
-        super.onReveal();
     }
 }

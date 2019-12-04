@@ -6,6 +6,12 @@ html, body {
     overflow-x: hidden;
 }
 
+nav .brand-logo,
+nav ul a,
+nav i {
+    color: black;
+}
+
 /** Nav Collapse icon **/
 nav .button-collapse i {
     color: #8d8d8d;
@@ -14,20 +20,20 @@ nav .button-collapse i {
 }
 
 /** Scrollbar **/
-*::-webkit-scrollbar {
+/**::-webkit-scrollbar {
     background-color: #fff;
     height: 4px;
     width: 12px;
-}
+}*/
 
-*::-webkit-scrollbar-track {
+/**::-webkit-scrollbar-track {
     background-color: #fff
-}
+}*/
 
-*::-webkit-scrollbar-thumb {
+/**::-webkit-scrollbar-thumb {
     background-color: #babac0;
     border-radius: 4px
-}
+}*/
 
 pre {
     font-size: 1em;
@@ -144,22 +150,31 @@ nav ul li.active {
 }
 
 
-/** TODO: Move to addins dark mode **/
-.bubble {
-    background: #424242;
-    color: #ffffff;
+@media only screen and (max-width: 600px) {
+    nav .brand-logo {
+        left: 80px !important;
+    }
 }
 
-.bubble .triangle.left {
-    border-right-color: #424242;
-}
-.bubble .triangle.right {
-    border-left-color: #424242;
-}
-.bubble .triangle.top {
-    border-bottom-color: #424242;
+.custom-search {
+    height: 50px !important;
+    line-height: 50px !important;
+    border-radius: 40px !important;
+    position: relative !important;
+    display: inline-block !important;
+    width: 100% !important;
+    right: 0px !important;
 }
 
-.bubble .triangle.bottom {
-    border-top-color: #424242;
+.light.input-field.inline-search > i {
+    margin-top: 5px;
+    font-size: 1.6em;
+}
+
+.input-field input[type=search] + label {
+    top: 8px !important;
+}
+
+.input-field label.active {
+    transform: translateY(-4%) !important;
 }

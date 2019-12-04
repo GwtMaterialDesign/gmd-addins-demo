@@ -19,13 +19,16 @@
  */
 package gmd.addins.demo.client.application.home;
 
+import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gmd.addins.demo.client.widget.Dashboard;
 import gmd.addins.demo.client.widget.DashboardCard;
 import gwt.material.design.client.ui.MaterialRow;
+import gwt.material.design.incubator.client.search.InlineSearch;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -37,6 +40,9 @@ public class HomeView extends ViewImpl implements HomePresenter.MyView {
 
     @UiField
     MaterialRow row;
+
+    @UiField
+    InlineSearch search;
 
     @Inject
     HomeView(Binder uiBinder) {
@@ -51,5 +57,15 @@ public class HomeView extends ViewImpl implements HomePresenter.MyView {
             DashboardCard card = new DashboardCard(dashboard);
             row.add(card);
         }
+    }
+
+    @UiHandler("search")
+    void search(KeyUpEvent event) {
+        row.forEach(widget -> {
+            if (widget instanceof DashboardCard) {
+                DashboardCard card = (DashboardCard) widget;
+                card.setVisible(card.getDashboard().getName().toLowerCase().contains(search.getValue().toLowerCase()));
+            }
+        });
     }
 }

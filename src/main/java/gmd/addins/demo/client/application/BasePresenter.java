@@ -6,10 +6,17 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.proxy.Proxy;
 import com.gwtplatform.mvp.client.proxy.RevealContentHandler;
+import gmd.addins.demo.client.resources.AppResources;
 import gmd.addins.demo.client.widget.HeaderTitle;
+import gwt.material.design.client.MaterialDesignBase;
 import gwt.material.design.client.base.MaterialWidget;
 
 public class BasePresenter<V extends View, Proxy_ extends Proxy<?>> extends Presenter<V, Proxy_> {
+
+    static {
+        MaterialDesignBase.injectCss(AppResources.INSTANCE.highlightCSs());
+        MaterialDesignBase.injectJs(AppResources.INSTANCE.highlightJs());
+    }
 
     protected HeaderTitle headerTitle;
 
