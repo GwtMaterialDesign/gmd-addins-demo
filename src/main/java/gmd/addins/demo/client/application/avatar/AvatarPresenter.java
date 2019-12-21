@@ -28,6 +28,7 @@ import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import gmd.addins.demo.client.application.ApplicationPresenter;
 import gmd.addins.demo.client.application.BasePresenter;
+import gmd.addins.demo.client.place.ExternalLink;
 import gmd.addins.demo.client.place.NameTokens;
 
 public class AvatarPresenter extends BasePresenter<AvatarPresenter.MyView, AvatarPresenter.MyProxy> {
@@ -54,6 +55,6 @@ public class AvatarPresenter extends BasePresenter<AvatarPresenter.MyView, Avata
         super.onBind();
 
         setHeaderTitle("Avatar", "Generated avatar based on JDenticon that provides a unique avatar based on unique name.", "");
-        setExternalLibrary("Jdenticon 2.2.0", "https://jdenticon.com/");
+        setExternalLibrary(ExternalLink.AVATAR);
     }
 }

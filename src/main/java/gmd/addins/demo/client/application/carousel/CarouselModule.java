@@ -17,19 +17,15 @@
  * limitations under the License.
  * #L%
  */
-package gmd.addins.demo.client.place;
+package gmd.addins.demo.client.application.carousel;
 
-public class NameTokens {
+import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
-    public static final String HOME = "/";
-    public static final String AUTOCOMPLETE = "autocomplete";
-    public static final String AVATAR = "avatar";
-    public static final String BUBBLE = "bubble";
-    public static final String CAROUSEL = "carousel";
-    public static final String COMBOBOX = "combobox";
-    public static final String DROPZONE = "dropzone";
-    public static final String RATING = "rating";
-    public static final String RICH_EDITOR = "richeditor";
-    public static final String STEPPER = "stepper";
-    public static final String TIME_PICKER = "timepicker";
+public class CarouselModule extends AbstractPresenterModule {
+
+    @Override
+    protected void configure() {
+        bindPresenter(CarouselPresenter.class, CarouselPresenter.MyView.class, CarouselView.class,
+                CarouselPresenter.MyProxy.class);
+    }
 }

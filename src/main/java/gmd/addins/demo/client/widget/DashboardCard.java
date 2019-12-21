@@ -29,7 +29,6 @@ import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import gwt.material.design.client.base.helper.ColorHelper;
 import gwt.material.design.client.ui.MaterialColumn;
 import gwt.material.design.client.ui.MaterialLabel;
-import gwt.material.design.client.ui.MaterialPanel;
 
 public class DashboardCard extends Composite {
 

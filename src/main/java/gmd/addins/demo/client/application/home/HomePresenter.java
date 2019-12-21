@@ -28,6 +28,7 @@ import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import gmd.addins.demo.client.application.ApplicationPresenter;
+import gmd.addins.demo.client.place.ExternalLink;
 import gmd.addins.demo.client.place.NameTokens;
 import gmd.addins.demo.client.widget.Dashboard;
 import gwt.material.design.client.constants.Color;
@@ -65,12 +66,12 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
 
         getView().setDashboard(Arrays.asList(
             //new Dashboard(placeManager,"Autocomplete", "Native", NameTokens.AUTOCOMPLETE, Color.RED),
-            new Dashboard(placeManager,"Avatar", "JDenticon 2.2.0", NameTokens.AVATAR, Color.AMBER),
+            new Dashboard(placeManager,"Avatar", ExternalLink.AVATAR.getLongName(), NameTokens.AVATAR, Color.AMBER),
             new Dashboard(placeManager,"Bubble", "Native", NameTokens.BUBBLE, Color.BLUE),
             //new Dashboard(placeManager,"Camera", "Native", NameTokens.DROPZONE, Color.GREEN),
-            //new Dashboard(placeManager,"Carousel", "Native", NameTokens.DROPZONE, Color.PURPLE),
+            new Dashboard(placeManager,"Carousel", ExternalLink.CAROUSEL.getLongName(), NameTokens.CAROUSEL, Color.PURPLE),
             //new Dashboard(placeManager,"Circular Progress", "Native", NameTokens.DROPZONE, Color.ORANGE),
-            new Dashboard(placeManager,"ComboBox", "Native", NameTokens.COMBOBOX, Color.BROWN),
+            new Dashboard(placeManager,"ComboBox", ExternalLink.COMBOBOX.getLongName(), NameTokens.COMBOBOX, Color.BROWN),
             //new Dashboard(placeManager,"CountUp", "Native", NameTokens.DROPZONE, Color.CYAN),
             //new Dashboard(placeManager,"CutOut", "Native", NameTokens.DROPZONE, Color.DEEP_ORANGE),
             //new Dashboard(placeManager,"DocViewer", "Native", NameTokens.DROPZONE, Color.INDIGO),
@@ -86,13 +87,13 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             //new Dashboard(placeManager,"Overlay", "Native", NameTokens.DROPZONE, Color.LIME),
             //new Dashboard(placeManager,"Path Animator", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),
             new Dashboard(placeManager,"Rating", "Native", NameTokens.RATING, Color.INDIGO),
-            new Dashboard(placeManager,"Rich Editor", "Native", NameTokens.RICH_EDITOR, Color.RED),
+            new Dashboard(placeManager,"Rich Editor", ExternalLink.RICH_EDITOR.getLongName(), NameTokens.RICH_EDITOR, Color.RED),
             //new Dashboard(placeManager,"ScrollFire", "Native", NameTokens.DROPZONE, Color.AMBER),
             //new Dashboard(placeManager,"Signature Pad", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),
             //new Dashboard(placeManager,"SubHeader", "Native", NameTokens.DROPZONE, Color.PURPLE),
             new Dashboard(placeManager,"Stepper", "Native", NameTokens.STEPPER, Color.BROWN),
             //new Dashboard(placeManager,"Swipeable", "Native", NameTokens.DROPZONE, Color.ORANGE),
-            new Dashboard(placeManager,"Time Picker", "Lolliclock 0.1.0", NameTokens.TIME_PICKER, Color.DEEP_ORANGE)
+            new Dashboard(placeManager,"Time Picker", ExternalLink.TIME_PICKER.getLongName(), NameTokens.TIME_PICKER, Color.DEEP_ORANGE)
             //new Dashboard(placeManager,"Tree View", "Native", NameTokens.DROPZONE, Color.INDIGO),
             //new Dashboard(placeManager,"Waterfall", "Native", NameTokens.DROPZONE, Color.GREY),
             //new Dashboard(placeManager,"WebP", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),

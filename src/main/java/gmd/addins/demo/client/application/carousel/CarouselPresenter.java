@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package gmd.addins.demo.client.application.timepicker;
+package gmd.addins.demo.client.application.carousel;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
@@ -30,19 +30,19 @@ import gmd.addins.demo.client.application.BasePresenter;
 import gmd.addins.demo.client.place.ExternalLink;
 import gmd.addins.demo.client.place.NameTokens;
 
-public class TimePickerPresenter extends BasePresenter<TimePickerPresenter.MyView, TimePickerPresenter.MyProxy> {
+public class CarouselPresenter extends BasePresenter<CarouselPresenter.MyView, CarouselPresenter.MyProxy> {
 
     interface MyView extends View {
 
     }
 
     @ProxyStandard
-    @NameToken(NameTokens.TIME_PICKER)
-    interface MyProxy extends ProxyPlace<TimePickerPresenter> {
+    @NameToken(NameTokens.CAROUSEL)
+    interface MyProxy extends ProxyPlace<CarouselPresenter> {
     }
 
     @Inject
-    TimePickerPresenter(
+    CarouselPresenter(
             EventBus eventBus,
             MyView view,
             MyProxy proxy) {
@@ -53,7 +53,7 @@ public class TimePickerPresenter extends BasePresenter<TimePickerPresenter.MyVie
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Time Pickers", "A dialog picker is used to select a single time (hours:minutes) on mobile. The selected time is indicated by the filled circle at the end of the clock hand.", "");
-        setExternalLibrary(ExternalLink.TIME_PICKER);
+        setHeaderTitle("Carousel", "Our Carousel is a robust and versatile component that can be an image slider, to an item carousel, to an onboarding experience. It is touch enabled making it especially smooth to use on mobile.", "");
+        setExternalLibrary(ExternalLink.CAROUSEL);
     }
 }

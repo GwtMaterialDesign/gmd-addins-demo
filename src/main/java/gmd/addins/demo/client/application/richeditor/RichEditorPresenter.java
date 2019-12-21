@@ -27,6 +27,7 @@ import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import gmd.addins.demo.client.application.ApplicationPresenter;
 import gmd.addins.demo.client.application.BasePresenter;
+import gmd.addins.demo.client.place.ExternalLink;
 import gmd.addins.demo.client.place.NameTokens;
 
 public class RichEditorPresenter extends BasePresenter<RichEditorPresenter.MyView, RichEditorPresenter.MyProxy> {
@@ -53,5 +54,6 @@ public class RichEditorPresenter extends BasePresenter<RichEditorPresenter.MyVie
         super.onBind();
 
         setHeaderTitle("Rich Editor", "Provides a great Rich Editor with amazing options built with Material Design Look and Feel.", "");
+        setExternalLibrary(ExternalLink.RICH_EDITOR);
     }
 }

@@ -1,0 +1,120 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+			 xmlns:m="urn:import:gwt.material.design.client.ui"
+			 xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+			 xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+	<m:MaterialPanel>
+		<widget:CodeSection sectionTitle="Usage"
+							description="By default, it uses the IconType#STAR to represent the selected rating, but other icons can be set using the #setSelectedRatingIcon(IconType) method.">
+			<m:MaterialRow>
+				<m:MaterialColumn grid="s12">
+					<ma:carousel.MaterialCarousel ui:field="carousel" textAlign="CENTER">
+						<m:MaterialPanel margin="12" paddingTop="50" addStyleNames="panel" padding="20" height="200px">
+							<m:MaterialLabel textColor="BLUE" fontSize="5em" fontWeight="LIGHTER" text="1"/>
+						</m:MaterialPanel>
+						<m:MaterialPanel margin="12" paddingTop="50" addStyleNames="panel" padding="20" height="200px">
+							<m:MaterialLabel textColor="BLUE" fontSize="5em" fontWeight="LIGHTER" text="2"/>
+						</m:MaterialPanel>
+						<m:MaterialPanel margin="12" paddingTop="50" addStyleNames="panel" padding="20" height="200px">
+							<m:MaterialLabel textColor="BLUE" fontSize="5em" fontWeight="LIGHTER" text="3"/>
+						</m:MaterialPanel>
+						<m:MaterialPanel margin="12" paddingTop="50" addStyleNames="panel" padding="20" height="200px">
+							<m:MaterialLabel textColor="BLUE" fontSize="5em" fontWeight="LIGHTER" text="4"/>
+						</m:MaterialPanel>
+						<m:MaterialPanel margin="12" paddingTop="50" addStyleNames="panel" padding="20" height="200px">
+							<m:MaterialLabel textColor="BLUE" fontSize="5em" fontWeight="LIGHTER" text="5"/>
+						</m:MaterialPanel>
+					</ma:carousel.MaterialCarousel>
+				</m:MaterialColumn>
+				<m:MaterialColumn grid="s12">
+					<m:MaterialCheckBox ui:field="infinite" text="Infinite"/>
+					<m:MaterialCheckBox ui:field="multiple" text="Multiple"/>
+					<m:MaterialCheckBox ui:field="autoplay" text="Autoplay"/>
+					<m:MaterialCheckBox ui:field="hideDots" text="Hide Dots"/>
+					<m:MaterialCheckBox ui:field="hideArrows" text="Hide Arrows"/>
+				</m:MaterialColumn>
+			</m:MaterialRow>
+		</widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Variable Width"
+                            description="Allow any child that has different width sizes.">
+            <m:MaterialRow>
+                <m:MaterialColumn grid="s12">
+                    <ma:carousel.MaterialCarousel ui:field="variableWidthCarousel" textAlign="CENTER" infinite="true" speed="300" centerMode="true" variableWidth="true" slidesToShow="3">
+                        <m:MaterialPanel width="125px" margin="4" shadow="1" paddingTop="80" addStyleNames="panel" padding="20" height="200px">
+                            <m:MaterialLabel textColor="BLUE" fontSize="1em" fontWeight="BOLD" text="125px" />
+                        </m:MaterialPanel>
+                        <m:MaterialPanel width="200px" margin="4" shadow="1" paddingTop="80" addStyleNames="panel" padding="20" height="200px">
+                            <m:MaterialLabel textColor="BLUE" fontSize="1em" fontWeight="BOLD" text="200px" />
+                        </m:MaterialPanel>
+                        <m:MaterialPanel width="175px" margin="4" shadow="1" paddingTop="80" addStyleNames="panel" padding="20" height="200px">
+                            <m:MaterialLabel textColor="BLUE" fontSize="1em" fontWeight="BOLD" text="175px" />
+                        </m:MaterialPanel>
+                        <m:MaterialPanel width="150px" margin="4" shadow="1" paddingTop="80" addStyleNames="panel" padding="20" height="200px">
+                            <m:MaterialLabel textColor="BLUE" fontSize="1em" fontWeight="BOLD" text="150px" />
+                        </m:MaterialPanel>
+                        <m:MaterialPanel width="300px" margin="4" shadow="1" paddingTop="80" addStyleNames="panel" padding="20" height="200px">
+                            <m:MaterialLabel textColor="BLUE" fontSize="1em" fontWeight="BOLD" text="300px" />
+                        </m:MaterialPanel>
+                        <m:MaterialPanel width="225px" margin="4" shadow="1" paddingTop="80" addStyleNames="panel" padding="20" height="200px">
+                            <m:MaterialLabel textColor="BLUE" fontSize="1em" fontWeight="BOLD" text="225px" />
+                        </m:MaterialPanel>
+                        <m:MaterialPanel width="150px" margin="4" shadow="1" paddingTop="80" addStyleNames="panel" padding="20" height="200px">
+                            <m:MaterialLabel textColor="BLUE" fontSize="1em" fontWeight="BOLD" text="150px" />
+                        </m:MaterialPanel>
+                        <m:MaterialPanel width="300px" margin="4" shadow="1" paddingTop="80" addStyleNames="panel" padding="20" height="200px">
+                            <m:MaterialLabel textColor="BLUE" fontSize="1em" fontWeight="BOLD" text="300px" />
+                        </m:MaterialPanel>
+                        <m:MaterialPanel width="250px" margin="4" shadow="1" paddingTop="80" addStyleNames="panel" padding="20" height="200px">
+                            <m:MaterialLabel textColor="BLUE" fontSize="1em" fontWeight="BOLD" text="250px" />
+                        </m:MaterialPanel>
+                    </ma:carousel.MaterialCarousel>
+                </m:MaterialColumn>
+            </m:MaterialRow>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Adaptive Height"
+                            description="Enables adaptive height for single slide horizontal carousels.">
+            <m:MaterialRow>
+                <m:MaterialColumn grid="s12">
+                    <ma:carousel.MaterialCarousel ui:field="adaptiveHeightCarousel" textAlign="CENTER" infinite="true" speed="300" slidesToShow="1" adaptiveHeight="true" >
+                        <m:MaterialPanel height="100px" margin="4" shadow="1" addStyleNames="panel" padding="20" paddingTop="40">
+                            <m:MaterialLabel textColor="BLUE" fontSize="1em" fontWeight="BOLD" text="125px" />
+                        </m:MaterialPanel>
+                        <m:MaterialPanel height="200px" margin="4" shadow="1" addStyleNames="panel" padding="20" paddingTop="90">
+                            <m:MaterialLabel textColor="BLUE" fontSize="1em" fontWeight="BOLD" text="200px" />
+                        </m:MaterialPanel>
+                        <m:MaterialPanel height="175px" margin="4" shadow="1" addStyleNames="panel" padding="20" paddingTop="80">
+                            <m:MaterialLabel textColor="BLUE" fontSize="1em" fontWeight="BOLD" text="175px" />
+                        </m:MaterialPanel>
+                        <m:MaterialPanel height="150px" margin="4" shadow="1" addStyleNames="panel" padding="20" paddingTop="60">
+                            <m:MaterialLabel textColor="BLUE" fontSize="1em" fontWeight="BOLD" text="150px" />
+                        </m:MaterialPanel>
+                        <m:MaterialPanel height="300px" margin="4" shadow="1" addStyleNames="panel" padding="20" paddingTop="140">
+                            <m:MaterialLabel textColor="BLUE" fontSize="1em" fontWeight="BOLD" text="300px" />
+                        </m:MaterialPanel>
+                    </ma:carousel.MaterialCarousel>
+                </m:MaterialColumn>
+            </m:MaterialRow>
+        </widget:CodeSection>
+	</m:MaterialPanel>
+</ui:UiBinder>

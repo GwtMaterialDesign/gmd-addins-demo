@@ -6,6 +6,7 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.proxy.Proxy;
 import com.gwtplatform.mvp.client.proxy.RevealContentHandler;
+import gmd.addins.demo.client.place.ExternalLink;
 import gmd.addins.demo.client.resources.AppResources;
 import gmd.addins.demo.client.widget.HeaderTitle;
 import gwt.material.design.client.MaterialDesignBase;
@@ -43,7 +44,7 @@ public class BasePresenter<V extends View, Proxy_ extends Proxy<?>> extends Pres
         headerTitle.setDetails(title, description, link);
     }
 
-    public void setExternalLibrary(String library, String link) {
-        headerTitle.setExternalLibrary(library, link);
+    public void setExternalLibrary(ExternalLink link) {
+        headerTitle.setExternalLibrary(link.getLongName(), link.getLink());
     }
 }

@@ -50,6 +50,10 @@ public class HeaderTitle extends Composite {
     @Override
     protected void onAttach() {
         super.onAttach();
+
+        if (library.getText().equals("")) {
+            library.setVisible(false);
+        }
     }
 
     public void setDetails(String title, String description, String link) {
