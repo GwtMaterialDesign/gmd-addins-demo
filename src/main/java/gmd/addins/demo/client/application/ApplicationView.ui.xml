@@ -52,9 +52,5 @@
                 <m:MaterialPanel ui:field="mainContainer"/>
             </m:MaterialRow>
         </m:MaterialContainer>
-
-        <m:MaterialFAB style="right: 10%; bottom: 5%;">
-            <m:MaterialAnchorButton href="https://github.com/GwtMaterialDesign/gwt-material-addins" target="_blank" tooltip="Github Repository" tooltipPosition="LEFT" customIconType="fab fa-github" type="FLOATING" size="LARGE" backgroundColor="WHITE" iconColor="GREY_DARKEN_4"/>
-        </m:MaterialFAB>
     </m:MaterialPanel>
 </ui:UiBinder>

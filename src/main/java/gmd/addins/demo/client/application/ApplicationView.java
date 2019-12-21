@@ -26,7 +26,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gmd.addins.demo.client.resources.AppResources;
-import gwt.material.design.addins.client.AddinsDarkThemeLoader;
+import gwt.material.design.addins.client.dark.AddinsDarkThemeLoader;
 import gwt.material.design.client.MaterialDesignBase;
 import gwt.material.design.client.base.helper.ColorHelper;
 import gwt.material.design.client.constants.Color;
@@ -67,6 +67,7 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
         DarkThemeManager.get()
             .register(new CoreDarkThemeLoader())
             .register(new AddinsDarkThemeLoader())
+            .register(new AppDarkThemeLoader())
             .load();
 
         // Enable PWA

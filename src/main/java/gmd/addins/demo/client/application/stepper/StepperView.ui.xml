@@ -1,0 +1,62 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+             xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+    <m:MaterialPanel>
+        <widget:CodeSection sectionTitle="Usage" description="You can play with the configuration on the right side for the best requirements you want.">
+            <m:MaterialRow paddingLeft="20">
+                <m:MaterialCheckBox ui:field="vertical" text="Vertical" />
+                <m:MaterialCheckBox ui:field="card" text="Card Style" />
+                <m:MaterialCheckBox ui:field="error" text="Error" />
+                <m:MaterialCheckBox ui:field="success" text="Success" />
+                <m:MaterialCheckBox ui:field="animation" text="Slide Animation" value="true"/>
+                <m:MaterialCheckBox ui:field="feedback" text="With Feedback" />
+            </m:MaterialRow>
+            <m:MaterialRow>
+                <m:MaterialColumn grid="s12">
+                    <ma:stepper.MaterialStepper ui:field="stepper" axis="HORIZONTAL" marginBottom="20" overflow="HIDDEN">
+                        <ma:stepper.MaterialStep step="1" title="Step 1" description="Description of Step 1">
+                            <m:MaterialPanel width="100%" height="400px" addStyleNames="panel"/>
+                            <m:MaterialButton ui:field="btnContinue1" text="Continue to Step 2" marginTop="12"  textColor="WHITE" waves="DEFAULT"/>
+                            <m:MaterialButton ui:field="btnPrev1" text="Cancel" marginTop="12" type="FLAT" waves="DEFAULT"/>
+                        </ma:stepper.MaterialStep>
+                        <ma:stepper.MaterialStep step="2" title="Step 2" description="Description of Step 2">
+                            <m:MaterialPanel width="100%" height="400px" addStyleNames="panel"/>
+                            <m:MaterialButton ui:field="btnContinue2" text="Continue to Step 3" marginTop="12"  textColor="WHITE" waves="DEFAULT"/>
+                            <m:MaterialButton ui:field="btnPrev2" text="Cancel" marginTop="12" type="FLAT" waves="DEFAULT"/>
+                        </ma:stepper.MaterialStep>
+                        <ma:stepper.MaterialStep step="3" title="Step 3" description="Description of Step 3">
+                            <m:MaterialPanel width="100%" height="400px" addStyleNames="panel"/>
+                            <m:MaterialButton ui:field="btnContinue3" text="Finish" marginTop="12"  textColor="WHITE" waves="DEFAULT"/>
+                            <m:MaterialButton ui:field="btnPrev3" text="Cancel" marginTop="12" type="FLAT" waves="DEFAULT"/>
+                        </ma:stepper.MaterialStep>
+                    </ma:stepper.MaterialStepper>
+                </m:MaterialColumn>
+            </m:MaterialRow>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Methods" description="Here are the methods provided for your Stepper.">
+
+        </widget:CodeSection>
+    </m:MaterialPanel>
+</ui:UiBinder>

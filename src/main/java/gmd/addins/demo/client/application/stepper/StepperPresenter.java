@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package gmd.addins.demo.client.application.combobox;
+package gmd.addins.demo.client.application.stepper;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
@@ -27,26 +27,21 @@ import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import gmd.addins.demo.client.application.ApplicationPresenter;
 import gmd.addins.demo.client.application.BasePresenter;
-import gmd.addins.demo.client.generator.DataGenerator;
-import gmd.addins.demo.client.generator.product.Product;
-import gmd.addins.demo.client.generator.product.ProductGenerator;
 import gmd.addins.demo.client.place.NameTokens;
 
-import java.util.List;
-
-public class ComboBoxPresenter extends BasePresenter<ComboBoxPresenter.MyView, ComboBoxPresenter.MyProxy> {
+public class StepperPresenter extends BasePresenter<StepperPresenter.MyView, StepperPresenter.MyProxy> {
 
     interface MyView extends View {
-        void setProducts(List<Product> products);
+
     }
 
     @ProxyStandard
-    @NameToken(NameTokens.COMBOBOX)
-    interface MyProxy extends ProxyPlace<ComboBoxPresenter> {
+    @NameToken(NameTokens.STEPPER)
+    interface MyProxy extends ProxyPlace<StepperPresenter> {
     }
 
     @Inject
-    ComboBoxPresenter(
+    StepperPresenter(
             EventBus eventBus,
             MyView view,
             MyProxy proxy) {
@@ -57,14 +52,6 @@ public class ComboBoxPresenter extends BasePresenter<ComboBoxPresenter.MyView, C
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("ComboBox", "Material ComboBox gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.", "");
-        setExternalLibrary("Select2 4.0.3", "https://select2.org/");
-        getView().setProducts(new DataGenerator().generateProducts(30));
-    }
-
-    @Override
-    protected void onReveal() {
-        super.onReveal();
-
+        setHeaderTitle("Steppers", "Steppers convey progress through numbered steps. They may also be used for navigation.", "");
     }
 }

@@ -17,28 +17,15 @@
  * limitations under the License.
  * #L%
  */
-package gmd.addins.demo.client.resources;
+package gmd.addins.demo.client.application.stepper;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.resources.client.ClientBundle;
-import com.google.gwt.resources.client.TextResource;
+import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
-public interface AppResources extends ClientBundle {
+public class StepperModule extends AbstractPresenterModule {
 
-    AppResources INSTANCE = GWT.create(AppResources.class);
-
-    @Source("css/app.css")
-    TextResource appCss();
-
-    @Source("js/faker.min.js")
-    TextResource fakerJs();
-
-    @Source("css/highlight/androidstudio.css")
-    TextResource highlightCSs();
-
-    @Source("js/highlight.pack.js")
-    TextResource highlightJs();
-
-    @Source("css/app-dark.css")
-    TextResource appDarkCss();
+    @Override
+    protected void configure() {
+        bindPresenter(StepperPresenter.class, StepperPresenter.MyView.class, StepperView.class,
+                StepperPresenter.MyProxy.class);
+    }
 }

@@ -27,4 +27,8 @@ public class NameTokens {
     public static final String BUBBLE = "bubble";
     public static final String COMBOBOX = "combobox";
     public static final String DROPZONE = "dropzone";
+    public static final String RATING = "rating";
+    public static final String RICH_EDITOR = "richeditor";
+    public static final String STEPPER = "stepper";
+    public static final String TIME_PICKER = "timepicker";
 }

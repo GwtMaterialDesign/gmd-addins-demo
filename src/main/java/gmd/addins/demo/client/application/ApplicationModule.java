@@ -25,6 +25,10 @@ import gmd.addins.demo.client.application.bubble.BubbleModule;
 import gmd.addins.demo.client.application.combobox.ComboBoxModule;
 import gmd.addins.demo.client.application.dropzone.DropzoneModule;
 import gmd.addins.demo.client.application.home.HomeModule;
+import gmd.addins.demo.client.application.rating.RatingModule;
+import gmd.addins.demo.client.application.richeditor.RichEditorModule;
+import gmd.addins.demo.client.application.stepper.StepperModule;
+import gmd.addins.demo.client.application.timepicker.TimePickerModule;
 
 public class ApplicationModule extends AbstractPresenterModule {
 
@@ -35,6 +39,10 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new BubbleModule());
         install(new ComboBoxModule());
         install(new DropzoneModule());
+        install(new RatingModule());
+        install(new RichEditorModule());
+        install(new StepperModule());
+        install(new TimePickerModule());
 
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
             ApplicationPresenter.MyProxy.class);
