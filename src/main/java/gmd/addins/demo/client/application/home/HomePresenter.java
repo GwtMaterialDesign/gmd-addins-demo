@@ -70,7 +70,7 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             new Dashboard(placeManager,"Bubble", "Native", NameTokens.BUBBLE, Color.BLUE),
             //new Dashboard(placeManager,"Camera", "Native", NameTokens.DROPZONE, Color.GREEN),
             new Dashboard(placeManager,"Carousel", ExternalLink.CAROUSEL.getLongName(), NameTokens.CAROUSEL, Color.PURPLE),
-            //new Dashboard(placeManager,"Circular Progress", "Native", NameTokens.DROPZONE, Color.ORANGE),
+            new Dashboard(placeManager,"Circular Progress", "Native", NameTokens.CIRCULAR_PROGRESS, Color.ORANGE),
             new Dashboard(placeManager,"ComboBox", ExternalLink.COMBOBOX.getLongName(), NameTokens.COMBOBOX, Color.BROWN),
             //new Dashboard(placeManager,"CountUp", "Native", NameTokens.DROPZONE, Color.CYAN),
             //new Dashboard(placeManager,"CutOut", "Native", NameTokens.DROPZONE, Color.DEEP_ORANGE),

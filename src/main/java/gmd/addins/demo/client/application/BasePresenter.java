@@ -38,6 +38,8 @@ public class BasePresenter<V extends View, Proxy_ extends Proxy<?>> extends Pres
     @Override
     protected void onReveal() {
         super.onReveal();
+
+        initPre();
     }
 
     public void setHeaderTitle(String title, String description, String link) {
@@ -47,4 +49,12 @@ public class BasePresenter<V extends View, Proxy_ extends Proxy<?>> extends Pres
     public void setExternalLibrary(ExternalLink link) {
         headerTitle.setExternalLibrary(link.getLongName(), link.getLink());
     }
+
+    public static native void initPre() /*-{
+        $wnd.jQuery(document).ready(function() {
+            $wnd.jQuery('pre').each(function(i, block) {
+                $wnd.hljs.highlightBlock(block);
+            });
+        });
+    }-*/;
 }

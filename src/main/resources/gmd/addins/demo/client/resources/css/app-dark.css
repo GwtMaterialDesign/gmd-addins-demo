@@ -1,3 +1,7 @@
 .panel {
     background: #323232!important;
 }
+
+.material-label.blue-text {
+    color: #bb86fc !important;
+}

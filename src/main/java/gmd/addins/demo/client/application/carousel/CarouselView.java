@@ -19,6 +19,7 @@
  */
 package gmd.addins.demo.client.application.carousel;
 
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -26,6 +27,8 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gwt.material.design.addins.client.carousel.MaterialCarousel;
+import gwt.material.design.client.ui.MaterialCheckBox;
+import gwt.material.design.client.ui.MaterialToast;
 
 import javax.inject.Inject;
 
@@ -35,11 +38,49 @@ public class CarouselView extends ViewImpl implements CarouselPresenter.MyView {
     }
 
     @UiField
-    MaterialCarousel carousel;
+    MaterialCarousel carousel, imageCarousel;
+
+    @UiField
+    MaterialCheckBox toastEvents;
 
     @Inject
     CarouselView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+    }
+
+    @Override
+    protected void onAttach() {
+        super.onAttach();
+
+        carousel.addAfterChangeHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("AfterChangeEvent Fired : " + event.getCurrentSlide());
+            }
+        });
+
+        carousel.addBeforeChangeHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("BeforeChangeEvent Fired : " + event.getCurrentSlide());
+            }
+        });
+
+        carousel.addInitHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("InitEvent Fired");
+            }
+        });
+
+        carousel.addDestroyHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("Destroy Fired");
+            }
+        });
+
+        carousel.addSwipeHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("SwipeEvent Fired : " + event.getDirection());
+            }
+        });
     }
 
     @UiHandler("infinite")
@@ -72,5 +113,41 @@ public class CarouselView extends ViewImpl implements CarouselPresenter.MyView {
     void hideArrows(ValueChangeEvent<Boolean> event) {
         carousel.setShowArrows(!event.getValue());
         carousel.reload();
+    }
+
+    @UiHandler("fade")
+    void fade(ValueChangeEvent<Boolean> event) {
+        imageCarousel.setFade(event.getValue());
+        imageCarousel.reload();
+    }
+
+    @UiHandler("currentIndex")
+    void currentIndex(ClickEvent event) {
+        MaterialToast.fireToast(imageCarousel.getCurrentSlideIndex() + "");
+    }
+
+    @UiHandler("next")
+    void next(ClickEvent event) {
+        imageCarousel.next();
+    }
+
+    @UiHandler("previous")
+    void previous(ClickEvent event) {
+        imageCarousel.previous();
+    }
+
+    @UiHandler("secondSlide")
+    void secondSlide(ClickEvent event) {
+        imageCarousel.goToSlide(1);
+    }
+
+    @UiHandler("pause")
+    void pause(ClickEvent event) {
+        imageCarousel.pause();
+    }
+
+    @UiHandler("play")
+    void play(ClickEvent event) {
+        imageCarousel.play();
     }
 }

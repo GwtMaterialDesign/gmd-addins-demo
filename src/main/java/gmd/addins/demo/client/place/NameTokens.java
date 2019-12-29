@@ -26,6 +26,7 @@ public class NameTokens {
     public static final String AVATAR = "avatar";
     public static final String BUBBLE = "bubble";
     public static final String CAROUSEL = "carousel";
+    public static final String CIRCULAR_PROGRESS = "circularprogress";
     public static final String COMBOBOX = "combobox";
     public static final String DROPZONE = "dropzone";
     public static final String RATING = "rating";

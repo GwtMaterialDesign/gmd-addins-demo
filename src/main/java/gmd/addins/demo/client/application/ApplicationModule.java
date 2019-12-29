@@ -23,6 +23,7 @@ import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import gmd.addins.demo.client.application.avatar.AvatarModule;
 import gmd.addins.demo.client.application.bubble.BubbleModule;
 import gmd.addins.demo.client.application.carousel.CarouselModule;
+import gmd.addins.demo.client.application.circularprogress.CircularProgressModule;
 import gmd.addins.demo.client.application.combobox.ComboBoxModule;
 import gmd.addins.demo.client.application.dropzone.DropzoneModule;
 import gmd.addins.demo.client.application.home.HomeModule;
@@ -39,6 +40,7 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new AvatarModule());
         install(new BubbleModule());
         install(new CarouselModule());
+        install(new CircularProgressModule());
         install(new ComboBoxModule());
         install(new DropzoneModule());
         install(new RatingModule());

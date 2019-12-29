@@ -18,6 +18,7 @@
   #L%
   -->
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+			 xmlns:g="urn:import:com.google.gwt.user.client.ui"
 			 xmlns:m="urn:import:gwt.material.design.client.ui"
 			 xmlns:widget="urn:import:gmd.addins.demo.client.widget"
 			 xmlns:ma="urn:import:gwt.material.design.addins.client">
@@ -51,6 +52,7 @@
 					<m:MaterialCheckBox ui:field="autoplay" text="Autoplay"/>
 					<m:MaterialCheckBox ui:field="hideDots" text="Hide Dots"/>
 					<m:MaterialCheckBox ui:field="hideArrows" text="Hide Arrows"/>
+					<m:MaterialCheckBox ui:field="toastEvents" text="Toast Events"/>
 				</m:MaterialColumn>
 			</m:MaterialRow>
 		</widget:CodeSection>
@@ -116,5 +118,61 @@
                 </m:MaterialColumn>
             </m:MaterialRow>
         </widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Responsive Options"
+							description="You can set specific options on any screen sizes.">
+			<g:HTMLPanel>
+				<pre class="java">
+					carouselResponsive.setSlidesToShow(5);
+					carouselResponsive.setSlidesToScroll(5);
+
+					// Tablet Settings
+					JsCarouselOptions tabletSettings = new JsCarouselOptions();
+					tabletSettings.slidesToShow = 2;
+					tabletSettings.slidesToScroll = 2;
+					carouselResponsive.setTabletSettings(tabletSettings);
+
+					// Mobile Settings
+					JsCarouselOptions mobileSettings = new JsCarouselOptions();
+					mobileSettings.slidesToShow = 1;
+					mobileSettings.slidesToScroll = 1;
+					carouselResponsive.setMobileSettings(mobileSettings);
+				</pre>
+			</g:HTMLPanel>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Image Type"
+							description="This Carousel type is good for image slider.">
+			<m:MaterialRow marginLeft="20">
+				<m:MaterialCheckBox ui:field="fade" text="Fade" />
+			</m:MaterialRow>
+			<ma:carousel.MaterialCarousel ui:field="imageCarousel" type="IMAGE" width="100%" textAlign="CENTER" infinite="true">
+				<m:MaterialImage url="https://i.imgur.com/8XlWy0H.png" />
+				<m:MaterialImage url="https://i.imgur.com/dQdwYhS.png" />
+				<m:MaterialImage url="https://i.imgur.com/TTAG5CS.png" />
+			</ma:carousel.MaterialCarousel>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Methods"
+							description="We provided bunch of methods that help you customize the carousel.">
+			<m:MaterialRow marginLeft="8">
+				<m:MaterialButton ui:field="currentIndex" text="Current Slide Index" marginRight="12"/>
+				<m:MaterialButton ui:field="next" text="Next" marginRight="12"/>
+				<m:MaterialButton ui:field="previous" text="Previous" marginRight="12"/>
+				<m:MaterialButton ui:field="secondSlide" text="Go to second slide" marginRight="12"/>
+				<m:MaterialButton ui:field="pause" text="Pause" marginRight="12"/>
+				<m:MaterialButton ui:field="play" text="Play" />
+			</m:MaterialRow>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="OnBoard"
+							description="Work in progress">
+
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="With Tabs"
+							description="Work in progress">
+
+		</widget:CodeSection>
 	</m:MaterialPanel>
 </ui:UiBinder>
