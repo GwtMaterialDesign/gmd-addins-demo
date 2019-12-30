@@ -161,11 +161,59 @@
             </m:MaterialRow>
         </widget:CodeSection>
 
-        <!-- Multiple Select -->
-        <m:MaterialRow>
-            <m:MaterialColumn grid="l6 m6 s12">
+        <!-- ValueChange Event -->
+        <widget:CodeSection sectionTitle="Value Change Event" description="This event will be fired when changing values on combobox">
 
-            </m:MaterialColumn>
-        </m:MaterialRow>
+        </widget:CodeSection>
+
+        <!-- Selection Event -->
+        <widget:CodeSection sectionTitle="Selection Event" description="This event will be fired when Selecting values on combobox">
+
+        </widget:CodeSection>
+
+        <!-- Remove Item Event -->
+        <widget:CodeSection sectionTitle="Remove Item Event" description="This event will be fired when removing item/value on multiple combobox">
+
+        </widget:CodeSection>
+
+        <!-- Open / Close Event for Simple Event -->
+        <widget:CodeSection sectionTitle="Open / Close Event for Simple Event" description="This event will be fired when opening / closing the combobox">
+
+        </widget:CodeSection>
+
+        <!-- Get Selected Value / Values -->
+        <widget:CodeSection sectionTitle="Get Selected Value / Values" description="We provided a way to get values from simple and multiple combobox.">
+
+        </widget:CodeSection>
+
+        <!-- Set Value / Values -->
+        <widget:CodeSection sectionTitle="Set Value / Values" description="setValue() will be applied on Simple while setValues() can be applied on Multiple combobox">
+
+        </widget:CodeSection>
+
+        <!-- Programmatic Access -->
+        <widget:CodeSection sectionTitle="Programmatic Access" description="MaterialCombobox supports methods that allow programmatic control of the component.">
+
+        </widget:CodeSection>
+
+        <!-- Initialization update -->
+        <widget:CodeSection sectionTitle="Initialization update" description="You might need to reinitialize your combobox if you want to update the combobox list items">
+
+        </widget:CodeSection>
+
+        <!-- Dialog Update -->
+        <widget:CodeSection sectionTitle="Dialog Integration" description="You can easily put your combobox inside dialog easily">
+
+        </widget:CodeSection>
+
+        <!-- Scroll To Top -->
+        <widget:CodeSection sectionTitle="Scroll To Top" description="You can set easily the position of ComboBox dropdown results scroll position to top.">
+
+        </widget:CodeSection>
+
+        <!-- Provide your Custom Message Text -->
+        <widget:CodeSection sectionTitle="Provide your Custom Message Text" description="This is good for Language support so that you can easily control the text object in your combobox.">
+
+        </widget:CodeSection>
     </m:MaterialPanel>
 </ui:UiBinder>

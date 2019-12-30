@@ -25,8 +25,9 @@
     <m:MaterialPanel>
         <widget:CodeSection sectionTitle="Usage" description="You can easily set the value and design the fille color of the circular progress">
             <m:MaterialRow>
-                <m:MaterialColumn grid="s12 m4">
+                <m:MaterialColumn grid="s12 m2">
                     <m:MaterialCheckBox ui:field="fillColors" text="Fill Colors" />
+                    <m:MaterialCheckBox ui:field="size" text="Size" />
                     <m:MaterialCheckBox ui:field="thickness" text="Thickness" />
                     <m:MaterialCheckBox ui:field="reverse" text="Reverse" />
                     <m:MaterialCheckBox ui:field="updateValue" text="Update Value" />

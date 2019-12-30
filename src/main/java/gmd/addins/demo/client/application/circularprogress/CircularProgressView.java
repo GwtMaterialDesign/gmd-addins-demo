@@ -27,6 +27,8 @@ import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gwt.material.design.addins.client.circularprogress.MaterialCircularProgress;
 import gwt.material.design.client.constants.Color;
+import gwt.material.design.client.ui.MaterialCheckBox;
+import gwt.material.design.client.ui.MaterialToast;
 
 import javax.inject.Inject;
 
@@ -36,11 +38,35 @@ public class CircularProgressView extends ViewImpl implements CircularProgressPr
     }
 
     @UiField
+    MaterialCheckBox toastEvent;
+
+    @UiField
     MaterialCircularProgress progress;
 
     @Inject
     CircularProgressView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+    }
+
+    @Override
+    protected void onAttach() {
+        super.onAttach();
+
+        progress.addStartHandler(event -> {
+            if (toastEvent.getValue()) {
+                MaterialToast.fireToast("Start Event Fired");
+            }
+        });
+
+        progress.addProgressHandler(event -> {
+            progress.setText(Math.round((event.getValue() * 100)) + "%");
+        });
+
+        progress.addCompleteHandler(event -> {
+            if (toastEvent.getValue()) {
+                MaterialToast.fireToast("Complete Event Fired");
+            }
+        });
     }
 
     @UiHandler("fillColors")
@@ -55,13 +81,15 @@ public class CircularProgressView extends ViewImpl implements CircularProgressPr
         progress.reload();
     }
 
+    @UiHandler("size")
+    void size(ValueChangeEvent<Boolean> event) {
+        progress.setSize(event.getValue() ? 200 : 100);
+        progress.reload();
+    }
+
     @UiHandler("thickness")
     void thickness(ValueChangeEvent<Boolean> event) {
-        if (event.getValue()) {
-            progress.setThickness(20);
-        } else {
-            progress.setThickness(8);
-        }
+        progress.setThickness(event.getValue() ? 20 : 0);
         progress.reload();
     }
 
@@ -73,10 +101,6 @@ public class CircularProgressView extends ViewImpl implements CircularProgressPr
 
     @UiHandler("updateValue")
     void updateValue(ValueChangeEvent<Boolean> event) {
-        if (event.getValue()) {
-            progress.setValue(75.0);
-        } else {
-            progress.setValue(30.0);
-        }
+        progress.setValue(event.getValue() ? 1 : 0.3);
     }
 }
