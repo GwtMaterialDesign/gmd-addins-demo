@@ -1,0 +1,51 @@
+
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+             xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+    <m:MaterialPanel>
+        <widget:CodeSection sectionTitle="Configurations" description="Below are the available configs for your count up widget.">
+            <ma:countup.MaterialCountUp value="0.00" ui:field="countUp" startValue="50.01" endValue="99.99" decimals="2" fontSize="5em" fontWeight="LIGHTER"/>
+            <m:MaterialRow>
+                <m:MaterialDoubleBox ui:field="txtStart" label="Start Value" value="50.01" grid="s3" fieldType="OUTLINED"/>
+                <m:MaterialDoubleBox ui:field="txtEnd" label="End Value" value="99.99" grid="s3" fieldType="OUTLINED"/>
+                <m:MaterialIntegerBox ui:field="txtDecimals" label="Decimals" value="2" grid="s3" fieldType="OUTLINED"/>
+                <m:MaterialDoubleBox ui:field="txtDuration" label="Duration" value="2.5" grid="s3"  fieldType="OUTLINED"/>
+            </m:MaterialRow>
+            <m:MaterialRow>
+                <m:MaterialTextBox ui:field="txtSeparator" label="Separator" value="," grid="s3" fieldType="OUTLINED"/>
+                <m:MaterialTextBox ui:field="txtDecimal" label="Decimal" value="." grid="s3" fieldType="OUTLINED"/>
+                <m:MaterialTextBox ui:field="txtPrefix" label="Prefix" value="$" grid="s3" fieldType="OUTLINED"/>
+                <m:MaterialTextBox ui:field="txtSuffix" label="Suffix" value=" " grid="s3" fieldType="OUTLINED"/>
+            </m:MaterialRow>
+            <m:MaterialRow>
+                <m:MaterialCheckBox ui:field="cbCallback" type="FILLED" text="Toast on complete" />
+            </m:MaterialRow>
+            <m:MaterialRow>
+                <m:MaterialButton ui:field="btnStart" text="Start Counting" marginRight="20" />
+                <m:MaterialButton ui:field="btnPauseResume" text="Pause / Resume" marginRight="20" />
+                <m:MaterialButton ui:field="btnReset" text="Reset" marginRight="20" />
+            </m:MaterialRow>
+        </widget:CodeSection>
+    </m:MaterialPanel>
+</ui:UiBinder>
