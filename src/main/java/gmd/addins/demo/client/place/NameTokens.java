@@ -30,7 +30,11 @@ public class NameTokens {
     public static final String COMBOBOX = "combobox";
     public static final String COUNT_UP = "countup";
     public static final String CUT_OUT = "cutout";
+    public static final String DOC_VIEWER = "docviewer";
     public static final String DROPZONE = "dropzone";
+    public static final String EMPTY_STATE = "emptystate";
+    public static final String ICON_MORPH = "iconmorph";
+    public static final String LIVE_STAMP = "livestamp";
     public static final String RATING = "rating";
     public static final String RICH_EDITOR = "richeditor";
     public static final String STEPPER = "stepper";

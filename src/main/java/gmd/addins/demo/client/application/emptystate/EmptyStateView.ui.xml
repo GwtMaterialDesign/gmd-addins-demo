@@ -1,0 +1,38 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+             xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+    <m:MaterialPanel>
+        <widget:CodeSection sectionTitle="Introduction" description="A list that doesn’t contain any items, or a search that doesn’t display any results, are examples of empty states. Although these states aren’t typical, they should be designed to prevent user confusion.">
+            <ma:emptystate.MaterialEmptyState height="60vh" iconType="POLYMER" title="No Inbox" description="You dont have new message" backgroundColor="GREY_LIGHTEN_3"/>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Icons, Title and Description" description="You can easily update each icon, title and description of the emptystate.">
+            <ma:emptystate.MaterialEmptyState height="60vh" iconType="MOVIE" iconColor="RED_DARKEN_2" title="Get Started" description="Find a great movie in the Play Store, then relax and enjoy with the Play Movies and TV app." textColor="WHITE" backgroundColor="RED_DARKEN_2"/>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Loading Empty State" description="You can turn also your empty state to loading state.">
+            <ma:emptystate.MaterialEmptyState ui:field="loadingStatePanel" height="60vh" iconType="LOCAL_AIRPORT" iconColor="PURPLE" title="Loading your trips" description="Please wait while loading your trips" textColor="GREY" backgroundColor="GREY_LIGHTEN_3"/>
+        </widget:CodeSection>
+    </m:MaterialPanel>
+</ui:UiBinder>

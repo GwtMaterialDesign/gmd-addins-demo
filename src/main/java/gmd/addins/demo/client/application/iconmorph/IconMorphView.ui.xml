@@ -1,0 +1,59 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+             xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+    <m:MaterialPanel>
+        <widget:CodeSection sectionTitle="Usage">
+            <ma:iconmorph.MaterialIconMorph iconSize="MEDIUM">
+                <m:MaterialIcon iconType="MENU"/>
+                <m:MaterialIcon iconType="ARROW_BACK"/>
+            </ma:iconmorph.MaterialIconMorph>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Sizes" description="Like Material Icons you can easily adjust the sizes of icons by adding iconSize='SIZE' into your MaterialIconMorph component">
+            <!-- Tiny -->
+            <ma:iconmorph.MaterialIconMorph iconSize="TINY">
+                <m:MaterialIcon iconType="POLYMER"/>
+                <m:MaterialIcon iconType="DONE"/>
+            </ma:iconmorph.MaterialIconMorph>
+
+            <!-- Small -->
+            <ma:iconmorph.MaterialIconMorph iconSize="SMALL">
+                <m:MaterialIcon iconType="POLYMER"/>
+                <m:MaterialIcon iconType="DONE"/>
+            </ma:iconmorph.MaterialIconMorph>
+
+            <!-- Medium -->
+            <ma:iconmorph.MaterialIconMorph iconSize="MEDIUM">
+                <m:MaterialIcon iconType="POLYMER"/>
+                <m:MaterialIcon iconType="DONE"/>
+            </ma:iconmorph.MaterialIconMorph>
+
+            <!-- Large -->
+            <ma:iconmorph.MaterialIconMorph iconSize="LARGE">
+                <m:MaterialIcon iconType="POLYMER"/>
+                <m:MaterialIcon iconType="DONE"/>
+            </ma:iconmorph.MaterialIconMorph>
+        </widget:CodeSection>
+    </m:MaterialPanel>
+</ui:UiBinder>

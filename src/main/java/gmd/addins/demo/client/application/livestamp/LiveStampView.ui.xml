@@ -1,0 +1,47 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+             xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+    <m:MaterialPanel>
+        <widget:CodeSection sectionTitle="Default" description="Wait half a minute - the livestamp will update automatically">
+            <m:MaterialRow>
+                <m:MaterialLink textColor="GREY" iconType="ACCESS_TIME" text="You discovered MaterialLiveStamp " float="LEFT"/>
+                <ma:livestamp.MaterialLiveStamp float="LEFT" fontWeight="BOLD" marginLeft="8"/>
+            </m:MaterialRow>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Long time Ago" description="The livestamp also supports past periods, especially birthdays, date of establishment etc.">
+            <m:MaterialRow>
+                <m:MaterialLink textColor="GREY" iconType="ACCESS_TIME" text="GMD was first released " float="LEFT"/>
+                <ma:livestamp.MaterialLiveStamp ui:field="liveStampPast" float="LEFT" fontWeight="BOLD" marginLeft="8"/>
+            </m:MaterialRow>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Future" description="You can even use timestamps in the future! This works well for fortune-tellers, time travelers, and meteorologists.">
+            <m:MaterialRow>
+                <m:MaterialLink textColor="GREY" iconType="ACCESS_TIME" text="GMD will be 10 years old " float="LEFT"/>
+                <ma:livestamp.MaterialLiveStamp ui:field="liveStampFuture" float="LEFT" fontWeight="BOLD" marginLeft="8"/>
+            </m:MaterialRow>
+        </widget:CodeSection>
+    </m:MaterialPanel>
+</ui:UiBinder>

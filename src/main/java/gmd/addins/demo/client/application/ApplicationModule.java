@@ -27,8 +27,12 @@ import gmd.addins.demo.client.application.circularprogress.CircularProgressModul
 import gmd.addins.demo.client.application.combobox.ComboBoxModule;
 import gmd.addins.demo.client.application.countup.CountUpModule;
 import gmd.addins.demo.client.application.cutout.CutoutModule;
+import gmd.addins.demo.client.application.docviewer.DocViewerModule;
 import gmd.addins.demo.client.application.dropzone.DropzoneModule;
+import gmd.addins.demo.client.application.emptystate.EmptyStateModule;
 import gmd.addins.demo.client.application.home.HomeModule;
+import gmd.addins.demo.client.application.iconmorph.IconMorphModule;
+import gmd.addins.demo.client.application.livestamp.LiveStampModule;
 import gmd.addins.demo.client.application.rating.RatingModule;
 import gmd.addins.demo.client.application.richeditor.RichEditorModule;
 import gmd.addins.demo.client.application.stepper.StepperModule;
@@ -46,7 +50,11 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new ComboBoxModule());
         install(new CountUpModule());
         install(new CutoutModule());
+        install(new DocViewerModule());
         install(new DropzoneModule());
+        install(new EmptyStateModule());
+        install(new IconMorphModule());
+        install(new LiveStampModule());
         install(new RatingModule());
         install(new RichEditorModule());
         install(new StepperModule());
