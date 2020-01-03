@@ -73,7 +73,7 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             new Dashboard(placeManager,"Circular Progress", ExternalLink.CIRCULAR_PROGRESS.getLongName(), NameTokens.CIRCULAR_PROGRESS, Color.ORANGE),
             new Dashboard(placeManager,"ComboBox", ExternalLink.COMBOBOX.getLongName(), NameTokens.COMBOBOX, Color.BROWN),
             new Dashboard(placeManager,"CountUp", ExternalLink.COUNT_UP.getLongName(), NameTokens.COUNT_UP, Color.CYAN),
-            //new Dashboard(placeManager,"CutOut", "Native", NameTokens.DROPZONE, Color.DEEP_ORANGE),
+            new Dashboard(placeManager,"CutOut", "Native", NameTokens.CUT_OUT, Color.DEEP_ORANGE),
             //new Dashboard(placeManager,"DocViewer", "Native", NameTokens.DROPZONE, Color.INDIGO),
             //new Dashboard(placeManager,"Drag and Drop", "Native", NameTokens.DROPZONE, Color.GREY),
             //new Dashboard(placeManager,"Empty States", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),

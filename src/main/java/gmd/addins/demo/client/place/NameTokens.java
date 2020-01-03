@@ -29,6 +29,7 @@ public class NameTokens {
     public static final String CIRCULAR_PROGRESS = "circularprogress";
     public static final String COMBOBOX = "combobox";
     public static final String COUNT_UP = "countup";
+    public static final String CUT_OUT = "cutout";
     public static final String DROPZONE = "dropzone";
     public static final String RATING = "rating";
     public static final String RICH_EDITOR = "richeditor";

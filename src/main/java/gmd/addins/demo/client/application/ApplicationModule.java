@@ -26,6 +26,7 @@ import gmd.addins.demo.client.application.carousel.CarouselModule;
 import gmd.addins.demo.client.application.circularprogress.CircularProgressModule;
 import gmd.addins.demo.client.application.combobox.ComboBoxModule;
 import gmd.addins.demo.client.application.countup.CountUpModule;
+import gmd.addins.demo.client.application.cutout.CutoutModule;
 import gmd.addins.demo.client.application.dropzone.DropzoneModule;
 import gmd.addins.demo.client.application.home.HomeModule;
 import gmd.addins.demo.client.application.rating.RatingModule;
@@ -44,6 +45,7 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new CircularProgressModule());
         install(new ComboBoxModule());
         install(new CountUpModule());
+        install(new CutoutModule());
         install(new DropzoneModule());
         install(new RatingModule());
         install(new RichEditorModule());

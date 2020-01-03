@@ -1,0 +1,38 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+             xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+    <m:MaterialPanel>
+        <widget:CodeSection sectionTitle="Material Cut Out" description="Click the icon below to show a material cutout.">
+            <m:MaterialRow paddingLeft="20">
+                <m:MaterialIcon iconType="POLYMER" ui:field="btnCutOut"/>
+
+                <!-- Material CutOut -->
+                <ma:cutout.MaterialCutOut ui:field="cutout" circle="true" opacity="0.8" textAlign="CENTER" paddingTop="120">
+                    <m:MaterialTitle title="New Feature" description="Description of your new Feature" textColor="WHITE"/>
+                    <m:MaterialButton text="Close" ui:field="btnCutOutClose" textColor="BLUE" backgroundColor="WHITE"/>
+                </ma:cutout.MaterialCutOut>
+            </m:MaterialRow>
+        </widget:CodeSection>
+    </m:MaterialPanel>
+</ui:UiBinder>
