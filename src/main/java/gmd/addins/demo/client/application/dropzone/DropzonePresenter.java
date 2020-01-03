@@ -53,6 +53,6 @@ public class DropzonePresenter extends BasePresenter<DropzonePresenter.MyView, D
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Mat", "", "");
+        setHeaderTitle("File Uploader", "Custom file uploader with Dnd support with the help of dropzone.js. It has multiple feature just like the GWT File Uploader core widget.", "");
     }
 }

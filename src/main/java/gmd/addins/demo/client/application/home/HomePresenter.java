@@ -77,7 +77,7 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             new Dashboard(placeManager,"DocViewer", "Native", NameTokens.DOC_VIEWER, Color.INDIGO),
             //new Dashboard(placeManager,"Drag and Drop", "Native", NameTokens.DROPZONE, Color.GREY),
             new Dashboard(placeManager,"Empty States", "Native", NameTokens.EMPTY_STATE, Color.LIGHT_BLUE),
-            //new Dashboard(placeManager,"FileUploader", "Native", NameTokens.DROPZONE, Color.CYAN),
+            new Dashboard(placeManager,"FileUploader", "Native", NameTokens.DROPZONE, Color.CYAN),
             new Dashboard(placeManager,"Icon Morph", "Native", NameTokens.ICON_MORPH, Color.LIME),
             //new Dashboard(placeManager,"Image Cropper", "Native", NameTokens.DROPZONE, Color.BLUE),
             //new Dashboard(placeManager,"Input Mask", "Native", NameTokens.DROPZONE, Color.GREY),

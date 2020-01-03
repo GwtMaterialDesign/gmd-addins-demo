@@ -19,14 +19,49 @@
   -->
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
              xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <m:MaterialPanel>
-        <m:MaterialLabel text="File Uploader" fontSize="2.4em"/>
-        <m:MaterialLabel text="Custom file uploader with Dnd support with the help of dropzone.js. It has multiple feature just like the GWT File Uploader core widget."/>
-        <m:MaterialChip marginTop="20" letter="D" letterBackgroundColor="PURPLE" backgroundColor="PURPLE_LIGHTEN_5" letterColor="WHITE" text="Dropzone 5.5.0" />
-        <ma:fileuploader.MaterialFileUploader ui:field="uploader" url="fileupload" maxFileSize="20" shadow="1">
-            <ma:fileuploader.MaterialUploadLabel title="Drag Files to Upload" description="Some description here" />
-        </ma:fileuploader.MaterialFileUploader>
+        <widget:CodeSection sectionTitle="Note" description="The File Upload Addin component is just a Client UI, you can pass the Form url by adding url='/fileupload'. The server side must be developed by users, why? because some uses different Server Configs e.g GAE, Servlet or Commons API.">
+            <m:MaterialCheckBox ui:field="enable" text="Enable" value="true" marginBottom="20"/>
+            <ma:fileuploader.MaterialFileUploader ui:field="uploader" url="fileupload" maxFileSize="20" shadow="1">
+                <ma:fileuploader.MaterialUploadLabel title="Drag Files to Upload" description="Some description here" />
+            </ma:fileuploader.MaterialFileUploader>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Properties">
+            <g:HTMLPanel>
+                <blockquote>
+                    <p><b>url - </b><span style="opacity: 0.7">Has to be specified on elements other than form (or when the form doesn't have an action attribute).</span></p>
+                    <p><b>method - </b><span style="opacity: 0.7">Does not change width of dropdown to that of the activator</span></p>
+                    <p><b>maxFilesize - </b><span style="opacity: 0.7">in MB, if it exceeded it will fire the maxfilesreached event.</span></p>
+                    <p><b>acceptedFiles - </b><span style="opacity: 0.7">The default implementation of accept checks the file's mime type or extension against this list. This is a comma separated list of mime types or file extensions. Eg.: image/*,application/pdf,.psd.</span></p>
+                </blockquote>
+            </g:HTMLPanel>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Events">
+            <g:HTMLPanel>
+                <blockquote>
+                    <p><b>Drop</b><span style="opacity: 0.7"> - The user dropped something onto the dropzone.</span></p>
+                    <p><b>Drag Start</b><span style="opacity: 0.7"> - The user started to drag anywhere.</span></p>
+                    <p><b>Drag End</b><span style="opacity: 0.7"> - Dragging has ended.</span></p>
+                    <p><b>Drag Enter</b><span style="opacity: 0.7"> - The user dragged a file onto the Dropzone.</span></p>
+                    <p><b>Drag Over</b><span style="opacity: 0.7"> - The user is dragging a file over the Dropzone.</span></p>
+                    <p><b>Drag Leave</b><span style="opacity: 0.7"> - The user dragged a file out of the Dropzone.</span></p>
+                    <p><b>Added File &lt;UploadFile></b><span style="opacity: 0.7"> - When a file is added to the list.</span></p>
+                    <p><b>Removed File &lt;UploadFile></b><span style="opacity: 0.7"> - Called whenever a file is removed from the list. You can listen to this and delete the file from your server if you want to.</span></p>
+                    <p><b>Error &lt;UploadFile></b><span style="opacity: 0.7"> - An error occured. Receives the errorMessage as second parameter and if the error was due to the XMLHttpRequest the xhr object as third.</span></p>
+                    <p><b>Sending &lt;UploadFile></b><span style="opacity: 0.7"> - Called just before each file is sent..</span></p>
+                    <p><b>Success &lt;UploadFile></b><span style="opacity: 0.7"> - The file has been uploaded successfully. Gets the server response as second argument. (This event was called finished previously).</span></p>
+                    <p><b>Complete &lt;UploadFile></b><span style="opacity: 0.7"> - Called when the upload was either successful or erroneous.</span></p>
+                    <p><b>Cancel &lt;UploadFile></b><span style="opacity: 0.7"> - Called when a file upload gets canceled.</span></p>
+                    <p><b>Max File Reach &lt;UploadFile></b><span style="opacity: 0.7"> - Called when the number of files accepted reaches the maxFiles limit.</span></p>
+                    <p><b>Max File Exceeded &lt;UploadFile></b><span style="opacity: 0.7"> - Called for each file that has been rejected because the number of files exceeds the maxFiles limit..</span></p>
+                </blockquote>
+            </g:HTMLPanel>
+        </widget:CodeSection>
     </m:MaterialPanel>
 </ui:UiBinder>
