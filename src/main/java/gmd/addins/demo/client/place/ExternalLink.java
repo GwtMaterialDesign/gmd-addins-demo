@@ -9,6 +9,7 @@ public enum ExternalLink {
     COUNT_UP("CountUpJs", "1.9.0", "https://github.com/inorganik/countUp.js"),
     DROPZONE("DropzoneJs", "4.3.0", "https://github.com/enyo/dropzone"),
     IMAGE_CROPPER("Croppie", "2.5.0", "https://github.com/Foliotek/Croppie"),
+    INPUTMASK("JQuery Mask Plugin", "1.14.10", "https://igorescobar.github.io/jQuery-Mask-Plugin/"),
     LIVESTAMP("Livestampjs", "1.1.2", "https://github.com/mattbradley/livestampjs"),
     RICH_EDITOR("MaterialNote", "1.2.1", "https://github.com/Cerealkillerway/materialNote"),
     SPLIT_PANEL("TouchSplitterJQuery", "0.5.1", "https://github.com/colelawrence/Touch-Splitter-jQuery"),
