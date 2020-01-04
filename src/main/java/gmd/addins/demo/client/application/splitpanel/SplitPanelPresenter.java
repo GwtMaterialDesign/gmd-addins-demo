@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package gmd.addins.demo.client.application.livestamp;
+package gmd.addins.demo.client.application.splitpanel;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
@@ -30,19 +30,19 @@ import gmd.addins.demo.client.application.BasePresenter;
 import gmd.addins.demo.client.place.ExternalLink;
 import gmd.addins.demo.client.place.NameTokens;
 
-public class LiveStampPresenter extends BasePresenter<LiveStampPresenter.MyView, LiveStampPresenter.MyProxy> {
+public class SplitPanelPresenter extends BasePresenter<SplitPanelPresenter.MyView, SplitPanelPresenter.MyProxy> {
 
     interface MyView extends View {
 
     }
 
     @ProxyStandard
-    @NameToken(NameTokens.LIVE_STAMP)
-    interface MyProxy extends ProxyPlace<LiveStampPresenter> {
+    @NameToken(NameTokens.SPLIT_PANEL)
+    interface MyProxy extends ProxyPlace<SplitPanelPresenter> {
     }
 
     @Inject
-    LiveStampPresenter(
+    SplitPanelPresenter(
         EventBus eventBus,
         MyView view,
         MyProxy proxy) {
@@ -53,7 +53,7 @@ public class LiveStampPresenter extends BasePresenter<LiveStampPresenter.MyView,
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Live Stamp", "The livestamp will update automatically as time goes by", "");
-        setExternalLibrary(ExternalLink.LIVESTAMP);
+        setHeaderTitle("Split Panel", "A high performance content splitter compatible with touch events", "");
+        setExternalLibrary(ExternalLink.SPLIT_PANEL);
     }
 }

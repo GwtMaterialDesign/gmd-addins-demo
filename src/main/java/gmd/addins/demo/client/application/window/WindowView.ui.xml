@@ -1,0 +1,101 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+    <m:MaterialPanel>
+        <widget:CodeSection sectionTitle="Configurations" description="Below are the properties of configs for the MaterialWindow component">
+            <m:MaterialRow paddingLeft="20">
+                <m:MaterialCheckBox ui:field="maximize" text="Maximize" />
+                <m:MaterialCheckBox ui:field="overlay" text="With Overlay" />
+                <m:MaterialCheckBox ui:field="toolbarColor" text="ToolBar Color" />
+                <m:MaterialCheckBox ui:field="backgroundColor" text="Background Color" />
+            </m:MaterialRow>
+            <m:MaterialButton ui:field="btnOpenWindow" text="Open Window" textColor="WHITE" />
+            <ma:window.MaterialWindow ui:field="window" width="50%" title="Documents">
+                <m:MaterialPanel padding="32" textAlign="CENTER" height="300px">
+                    <m:MaterialIcon iconType="HEADSET" iconColor="ORANGE" padding="24" iconSize="LARGE" circle="true" shadow="1"/>
+                    <m:MaterialLabel text="I Love Music" marginTop="20" fontSize="2em" fontWeight="BOLD"/>
+                    <m:MaterialLabel text="Helps me escape from the reality I live in." fontSize="1.2em" />
+                </m:MaterialPanel>
+            </ma:window.MaterialWindow>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Open / Close" description="Just like dialogs, window dialog has programmatically functions for opening and closing the window">
+            <g:HTMLPanel>
+                <blockquote>
+                    <p><b>window.open();</b><span>Will Open the Window Dialog</span></p>
+                    <p><b>window.close();</b><span>Will Close the Window Dialog</span></p>
+                </blockquote>
+            </g:HTMLPanel>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Events" description="We built events for Window component : Open / Close Events">
+            <g:HTMLPanel>
+                <blockquote>
+                    <p><b>OpenEvent</b><span>Fired when the window dialog is opened</span></p>
+                    <p><b>CloseEvent</b><span>Fired when the window dialog is closed</span></p>
+                </blockquote>
+            </g:HTMLPanel>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Window with Tabs" description="You can add tabs and actions into your window dialog.">
+            <m:MaterialButton ui:field="btnWindowTab" text="Open Window with Tab" textColor="WHITE"/>
+            <ma:window.MaterialWindow ui:field="windowTab" title="Window with Tabs" backgroundColor="GREY_LIGHTEN_4" toolbarColor="BLUE_DARKEN_2">
+                <m:MaterialRow backgroundColor="BLUE" ui:field="headerPanel" marginBottom="0" margin="0" padding="20" layoutPosition="RELATIVE" depth="1">
+                    <m:MaterialLabel text="Demo" textColor="WHITE" fontSize="1.5em" fontWeight="BOLD" grid="l6 m6 s3"/>
+                    <m:MaterialColumn grid="l6 m6 s9">
+                        <m:MaterialIcon iconType="SEARCH" iconColor="WHITE" float="RIGHT"/>
+                        <m:MaterialIcon iconType="COLOR_LENS" iconColor="WHITE" float="RIGHT"/>
+                        <m:MaterialIcon iconType="SETTINGS" iconColor="WHITE" float="RIGHT"/>
+                        <m:MaterialIcon iconType="MORE_VERT" iconColor="WHITE" float="RIGHT"/>
+                    </m:MaterialColumn>
+                </m:MaterialRow>
+                <m:MaterialRow ui:field="tabsPanel" shadow="1" marginBottom="0" backgroundColor="BLUE">
+                    <m:MaterialColumn grid="l6 m12 s12">
+                        <m:MaterialTab ui:field="tabs" indicatorColor="WHITE" width="50%" backgroundColor="BLUE">
+                            <m:MaterialTabItem waves="LIGHT"><m:MaterialLink text="Music" href="#music" textColor="WHITE"/></m:MaterialTabItem>
+                            <m:MaterialTabItem waves="LIGHT"><m:MaterialLink text="Sports" href="#sports" textColor="WHITE"/></m:MaterialTabItem>
+                            <m:MaterialTabItem waves="LIGHT"><m:MaterialLink text="Art" href="#art" textColor="WHITE"/></m:MaterialTabItem>
+                        </m:MaterialTab>
+                    </m:MaterialColumn>
+                </m:MaterialRow>
+                <m:MaterialPanel m:id="music"  padding="32"  height="300px" textAlign="CENTER" overflow="AUTO">
+                    <m:MaterialIcon iconType="HEADSET" iconColor="ORANGE" padding="24" iconSize="LARGE" circle="true" shadow="1"/>
+                    <m:MaterialLabel text="I Love Music" marginTop="20" fontSize="2em" fontWeight="BOLD"/>
+                    <m:MaterialLabel text="Helps me escape from the reality I live in." fontSize="1.2em" />
+                </m:MaterialPanel>
+                <m:MaterialPanel m:id="sports"  padding="32"  height="300px" textAlign="CENTER" overflow="AUTO">
+                    <m:MaterialIcon iconType="DIRECTIONS_BIKE" iconColor="PURPLE" padding="24" iconSize="LARGE" circle="true" shadow="1"/>
+                    <m:MaterialLabel text="I Love Sports" marginTop="20" fontSize="2em" fontWeight="BOLD"/>
+                    <m:MaterialLabel text="It's a slow process, but quitting won't speed up." fontSize="1.2em" />
+                </m:MaterialPanel>
+                <m:MaterialPanel m:id="art"  padding="32"  height="300px" textAlign="CENTER" overflow="AUTO">
+                    <m:MaterialIcon iconType="PALETTE" iconColor="RED" padding="24" iconSize="LARGE" circle="true" shadow="1"/>
+                    <m:MaterialLabel text="I Love Art" marginTop="20" fontSize="2em" fontWeight="BOLD"/>
+                    <m:MaterialLabel text="Creativity is allowing yourself to make mistakes. Art is knowing which ones to keep." fontSize="1.2em" />
+                </m:MaterialPanel>
+            </ma:window.MaterialWindow>
+        </widget:CodeSection>
+    </m:MaterialPanel>
+</ui:UiBinder>

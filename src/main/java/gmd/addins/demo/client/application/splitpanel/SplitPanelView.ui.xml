@@ -1,0 +1,55 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+             xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+    <m:MaterialPanel>
+        <widget:CodeSection sectionTitle="Introduction" description="Using MaterialSplitPanel you must require to wrap two columns inside for the splitting feature.">
+            <m:MaterialRow>
+                <m:MaterialCheckBox ui:field="thickness" text="Thickness" />
+                <m:MaterialCheckBox ui:field="vertical" text="Vertical" />
+                <m:MaterialCheckBox ui:field="position" text="Update Bar Position" />
+                <m:MaterialCheckBox ui:field="style" text="Splitter Color" />
+            </m:MaterialRow>
+            <ma:splitpanel.MaterialSplitPanel ui:field="splitPanel" height="500px">
+                <m:MaterialPanel grid="l6 m6 s6" padding="0">
+                    <m:MaterialTitle textAlign="CENTER" title="Left Zone" description="Content must be added here"/>
+                </m:MaterialPanel>
+                <m:MaterialPanel grid="l6 m6 s6" padding="0">
+                    <m:MaterialTitle textAlign="CENTER" title="Right Zone" description="Content must be added here"/>
+                </m:MaterialPanel>
+            </ma:splitpanel.MaterialSplitPanel>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Dock" description="Splitter Dock is the white line inside the splitter bar. When clicking into it, the splitter will collapse depends on Docking position (LEFT By Default for Horizontal Axis and TOP by Default for Vertical Axis)">
+
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Min / Max" description="You can set the minimum / maximum splitter area on each child component">
+
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Advance Splitting" description="You can split any divs easily just like the core gwt split layout panel but with more control">
+
+        </widget:CodeSection>
+    </m:MaterialPanel>
+</ui:UiBinder>

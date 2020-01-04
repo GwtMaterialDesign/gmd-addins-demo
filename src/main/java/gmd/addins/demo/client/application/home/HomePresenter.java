@@ -77,11 +77,11 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             new Dashboard(placeManager,"DocViewer", "Native", NameTokens.DOC_VIEWER, Color.INDIGO),
             //new Dashboard(placeManager,"Drag and Drop", "Native", NameTokens.DROPZONE, Color.GREY),
             new Dashboard(placeManager,"Empty States", "Native", NameTokens.EMPTY_STATE, Color.LIGHT_BLUE),
-            new Dashboard(placeManager,"FileUploader", "Native", NameTokens.DROPZONE, Color.CYAN),
+            new Dashboard(placeManager,"FileUploader", ExternalLink.DROPZONE.getLongName(), NameTokens.DROPZONE, Color.CYAN),
             new Dashboard(placeManager,"Icon Morph", "Native", NameTokens.ICON_MORPH, Color.LIME),
-            //new Dashboard(placeManager,"Image Cropper", "Native", NameTokens.DROPZONE, Color.BLUE),
+            new Dashboard(placeManager,"Image Cropper", ExternalLink.IMAGE_CROPPER.getLongName(), NameTokens.IMAGE_CROPPER, Color.BLUE),
             //new Dashboard(placeManager,"Input Mask", "Native", NameTokens.DROPZONE, Color.GREY),
-            new Dashboard(placeManager,"Live Stamp", "Native", NameTokens.LIVE_STAMP, Color.BROWN),
+            new Dashboard(placeManager,"Live Stamp", ExternalLink.LIVESTAMP.getLongName(), NameTokens.LIVE_STAMP, Color.BROWN),
             //new Dashboard(placeManager,"Masonry", "Native", NameTokens.DROPZONE, Color.ORANGE),
             //new Dashboard(placeManager,"MenuBar", "Native", NameTokens.DROPZONE, Color.DEEP_ORANGE),
             //new Dashboard(placeManager,"Overlay", "Native", NameTokens.DROPZONE, Color.LIME),
@@ -90,14 +90,15 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             new Dashboard(placeManager,"Rich Editor", ExternalLink.RICH_EDITOR.getLongName(), NameTokens.RICH_EDITOR, Color.RED),
             //new Dashboard(placeManager,"ScrollFire", "Native", NameTokens.DROPZONE, Color.AMBER),
             //new Dashboard(placeManager,"Signature Pad", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),
+            new Dashboard(placeManager,"Split Panel", ExternalLink.SPLIT_PANEL.getLongName(), NameTokens.SPLIT_PANEL, Color.PINK),
             //new Dashboard(placeManager,"SubHeader", "Native", NameTokens.DROPZONE, Color.PURPLE),
             new Dashboard(placeManager,"Stepper", "Native", NameTokens.STEPPER, Color.BROWN),
             //new Dashboard(placeManager,"Swipeable", "Native", NameTokens.DROPZONE, Color.ORANGE),
-            new Dashboard(placeManager,"Time Picker", ExternalLink.TIME_PICKER.getLongName(), NameTokens.TIME_PICKER, Color.DEEP_ORANGE)
+            new Dashboard(placeManager,"Time Picker", ExternalLink.TIME_PICKER.getLongName(), NameTokens.TIME_PICKER, Color.DEEP_ORANGE),
             //new Dashboard(placeManager,"Tree View", "Native", NameTokens.DROPZONE, Color.INDIGO),
             //new Dashboard(placeManager,"Waterfall", "Native", NameTokens.DROPZONE, Color.GREY),
             //new Dashboard(placeManager,"WebP", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),
-            //new Dashboard(placeManager,"Window", "Native", NameTokens.DROPZONE, Color.RED)
+            new Dashboard(placeManager,"Window", "Native", NameTokens.WINDOW, Color.RED)
         ));
     }
 }

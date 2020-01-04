@@ -34,9 +34,12 @@ public class NameTokens {
     public static final String DROPZONE = "dropzone";
     public static final String EMPTY_STATE = "emptystate";
     public static final String ICON_MORPH = "iconmorph";
+    public static final String IMAGE_CROPPER = "imagecropper";
     public static final String LIVE_STAMP = "livestamp";
     public static final String RATING = "rating";
     public static final String RICH_EDITOR = "richeditor";
+    public static final String SPLIT_PANEL = "splitpanel";
     public static final String STEPPER = "stepper";
     public static final String TIME_PICKER = "timepicker";
+    public static final String WINDOW = "window";
 }

@@ -7,7 +7,11 @@ public enum ExternalLink {
     CIRCULAR_PROGRESS("Jquery Circular Progress", "1.2.2", "https://github.com/kottenator/jquery-circle-progress"),
     COMBOBOX("Select2Js", "4.0.3", "https://select2.org/"),
     COUNT_UP("CountUpJs", "1.9.0", "https://github.com/inorganik/countUp.js"),
+    DROPZONE("DropzoneJs", "4.3.0", "https://github.com/enyo/dropzone"),
+    IMAGE_CROPPER("Croppie", "2.5.0", "https://github.com/Foliotek/Croppie"),
+    LIVESTAMP("Livestampjs", "1.1.2", "https://github.com/mattbradley/livestampjs"),
     RICH_EDITOR("MaterialNote", "1.2.1", "https://github.com/Cerealkillerway/materialNote"),
+    SPLIT_PANEL("TouchSplitterJQuery", "0.5.1", "https://github.com/colelawrence/Touch-Splitter-jQuery"),
     TIME_PICKER("Lolliclock", "0.1.0", "https://github.com/mattkrick/lolliclock");
 
     String name;

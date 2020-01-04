@@ -28,6 +28,7 @@ import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import gmd.addins.demo.client.application.ApplicationPresenter;
 import gmd.addins.demo.client.application.BasePresenter;
+import gmd.addins.demo.client.place.ExternalLink;
 import gmd.addins.demo.client.place.NameTokens;
 
 public class DropzonePresenter extends BasePresenter<DropzonePresenter.MyView, DropzonePresenter.MyProxy> {
@@ -54,5 +55,6 @@ public class DropzonePresenter extends BasePresenter<DropzonePresenter.MyView, D
         super.onBind();
 
         setHeaderTitle("File Uploader", "Custom file uploader with Dnd support with the help of dropzone.js. It has multiple feature just like the GWT File Uploader core widget.", "");
+        setExternalLibrary(ExternalLink.DROPZONE);
     }
 }

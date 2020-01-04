@@ -32,11 +32,14 @@ import gmd.addins.demo.client.application.dropzone.DropzoneModule;
 import gmd.addins.demo.client.application.emptystate.EmptyStateModule;
 import gmd.addins.demo.client.application.home.HomeModule;
 import gmd.addins.demo.client.application.iconmorph.IconMorphModule;
+import gmd.addins.demo.client.application.imagecropper.ImageCropperModule;
 import gmd.addins.demo.client.application.livestamp.LiveStampModule;
 import gmd.addins.demo.client.application.rating.RatingModule;
 import gmd.addins.demo.client.application.richeditor.RichEditorModule;
+import gmd.addins.demo.client.application.splitpanel.SplitPanelModule;
 import gmd.addins.demo.client.application.stepper.StepperModule;
 import gmd.addins.demo.client.application.timepicker.TimePickerModule;
+import gmd.addins.demo.client.application.window.WindowModule;
 
 public class ApplicationModule extends AbstractPresenterModule {
 
@@ -54,11 +57,14 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new DropzoneModule());
         install(new EmptyStateModule());
         install(new IconMorphModule());
+        install(new ImageCropperModule());
         install(new LiveStampModule());
         install(new RatingModule());
         install(new RichEditorModule());
+        install(new SplitPanelModule());
         install(new StepperModule());
         install(new TimePickerModule());
+        install(new WindowModule());
 
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
             ApplicationPresenter.MyProxy.class);
