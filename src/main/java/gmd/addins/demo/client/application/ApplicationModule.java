@@ -40,6 +40,7 @@ import gmd.addins.demo.client.application.rating.RatingModule;
 import gmd.addins.demo.client.application.richeditor.RichEditorModule;
 import gmd.addins.demo.client.application.splitpanel.SplitPanelModule;
 import gmd.addins.demo.client.application.stepper.StepperModule;
+import gmd.addins.demo.client.application.subheader.SubheaderModule;
 import gmd.addins.demo.client.application.timepicker.TimePickerModule;
 import gmd.addins.demo.client.application.window.WindowModule;
 
@@ -67,6 +68,7 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new RichEditorModule());
         install(new SplitPanelModule());
         install(new StepperModule());
+        install(new SubheaderModule());
         install(new TimePickerModule());
         install(new WindowModule());
 

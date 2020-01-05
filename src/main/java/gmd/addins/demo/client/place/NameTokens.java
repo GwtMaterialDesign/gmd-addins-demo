@@ -41,6 +41,7 @@ public class NameTokens {
     public static final String RATING = "rating";
     public static final String RICH_EDITOR = "richeditor";
     public static final String SPLIT_PANEL = "splitpanel";
+    public static final String SUBHEADER = "subheader";
     public static final String STEPPER = "stepper";
     public static final String TIME_PICKER = "timepicker";
     public static final String WINDOW = "window";
