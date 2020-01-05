@@ -26,6 +26,7 @@ public class NameTokens {
     public static final String AVATAR = "avatar";
     public static final String BUBBLE = "bubble";
     public static final String CAROUSEL = "carousel";
+    public static final String CAMERA = "camera";
     public static final String CIRCULAR_PROGRESS = "circularprogress";
     public static final String COMBOBOX = "combobox";
     public static final String COUNT_UP = "countup";
@@ -40,6 +41,7 @@ public class NameTokens {
     public static final String MENU_BAR = "menubar";
     public static final String RATING = "rating";
     public static final String RICH_EDITOR = "richeditor";
+    public static final String SIGNATURE_PAD = "signaturepad";
     public static final String SPLIT_PANEL = "splitpanel";
     public static final String SUBHEADER = "subheader";
     public static final String STEPPER = "stepper";

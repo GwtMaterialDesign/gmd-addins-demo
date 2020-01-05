@@ -1,0 +1,79 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+             xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+    <m:MaterialPanel>
+        <widget:CodeSection sectionTitle="Introduction" description="Using MaterialSplitPanel you must require to wrap two columns inside for the splitting feature.">
+            <!-- SIGNATURE PAD -->
+            <ma:signature.MaterialSignaturePad ui:field="signaturePad" dotSize="12" grid="s9" height="300px" penColor="black" border="1px solid #e9e9e9" />
+            <!-- EVENTS -->
+            <m:MaterialColumn ui:field="eventCol" grid="s3" backgroundColor="GREY_LIGHTEN_3" height="300px" overflow="AUTO" />
+            <!-- OPTIONS -->
+            <m:MaterialRow>
+                <!-- Colors -->
+                <m:MaterialRow padding="20">
+                    <m:MaterialColumn grid="s12 m3 l3">
+                        <m:MaterialLabel ui:field="colorSelected" text="Pen Color : BLUE" fontSize="0.8em" />
+                        <m:MaterialRow ui:field="colorRow">
+                            <m:MaterialColumn grid="s2" height="40px" waves="DEFAULT" backgroundColor="BLACK" />
+                            <m:MaterialColumn grid="s2" height="40px" waves="DEFAULT" backgroundColor="RED" />
+                            <m:MaterialColumn grid="s2" height="40px" waves="DEFAULT" backgroundColor="BLUE" />
+                            <m:MaterialColumn grid="s2" height="40px" waves="DEFAULT" backgroundColor="PURPLE" />
+                            <m:MaterialColumn grid="s2" height="40px" waves="DEFAULT" backgroundColor="GREEN" />
+                            <m:MaterialColumn grid="s2" height="40px" waves="DEFAULT" backgroundColor="AMBER" />
+                        </m:MaterialRow>
+                    </m:MaterialColumn>
+                </m:MaterialRow>
+
+               <m:MaterialRow>
+                   <m:MaterialColumn grid="s12 m4 l4">
+                       <ma:combobox.MaterialComboBox ui:field="comboDotSize" label="Dot Size" hideSearch="true" grid="s4"/>
+                       <ma:combobox.MaterialComboBox ui:field="comboMinWidth" label="Line Min Width" hideSearch="true" grid="s4"/>
+                       <ma:combobox.MaterialComboBox ui:field="comboMaxWidth" label="Line Max Width" hideSearch="true" grid="s4"/>
+                   </m:MaterialColumn>
+
+                   <m:MaterialColumn grid="s12 m4 l4">
+                       <ma:combobox.MaterialComboBox ui:field="comboThrottle" label="Throttle" hideSearch="true" grid="s4"/>
+                       <ma:combobox.MaterialComboBox ui:field="comboVelocity" label="Velocity (ms)" hideSearch="true" grid="s4"/>
+                   </m:MaterialColumn>
+
+                   <m:MaterialColumn grid="s12 m4 l4">
+                       <m:MaterialLabel text="Actions" fontSize="0.8em" textColor="GREY"/>
+                       <m:MaterialButton ui:field="clear" text="Clear" waves="DEFAULT" />
+                       <m:MaterialButton ui:field="png" text="Get Image Data" waves="DEFAULT" marginLeft="12" />
+                   </m:MaterialColumn>
+               </m:MaterialRow>
+            </m:MaterialRow>
+
+            <m:MaterialDialog ui:field="dataDialog" dismissible="true">
+                <m:MaterialDialogContent>
+                    <m:MaterialTitle title="Image Data" description="Below are the generated image for the Signature Pad." />
+                    <m:MaterialImage ui:field="imageData" width="100%" minWidth="200px" backgroundColor="GREY_LIGHTEN_3" />
+                </m:MaterialDialogContent>
+                <m:MaterialDialogFooter>
+                    <m:MaterialButton ui:field="closeDialog" type="FLAT" text="Close" />
+                </m:MaterialDialogFooter>
+            </m:MaterialDialog>
+        </widget:CodeSection>
+    </m:MaterialPanel>
+</ui:UiBinder>

@@ -1,0 +1,53 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+             xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+    <m:MaterialPanel>
+        <widget:CodeSection sectionTitle="Note" description="This widget only works on pages served by a secure protocol (HTTPS). For the browser compatibility, access http://caniuse.com/#feat=stream.">
+            <ma:camera.MaterialCameraCapture />
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Browser Check" description="Work in Progress">
+
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Capturing" description="Work in Progress">
+
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Methods" description="You can call / set other method API on Camera Capture widget.">
+            <g:HTMLPanel>
+                <blockquote>
+                    <p><b>captureToDataURL() - </b><span>  - Captures the current frame of the video to an image data URL. Returns The Data URL of the captured image, which can be used as "src" on an "img" element or sent to the server</span></p>
+                    <p><b>captureToDataURL(String mimeType) - </b><span>  - The same with captureToDataURL() but you can set the param mimeType The type of the output image, such as "image/png" or "image/jpeg"</span></p>
+                    <p><b>play() - </b><span>  - Starts the video stream from the camera. This is called when the component is loaded.At this point the user is requested by the browser to allow the application to use the camera.</span></p>
+                    <p><b>restart() - </b><span>  - Restarts the video stream from the camera. The user is requested again by the browser to allow the application to use the camera.</span></p>
+                    <p><b>setPauseOnUnload(boolean pauseOnUnload) - </b><span>  - Sets if the camera capture should pause when the widget is unloaded.</span></p>
+                    <p><b>isPauseOnUnload() - </b><span>  - Returns if the camera capture should pause when the widget is unloaded.</span></p>
+                    <p><b>isSupported() - </b><span>  - Sets if the browser supports the Streams API. This should be called before creating any MaterialCameraCapture widgets to avoid errors on the browser.</span></p>
+                </blockquote>
+            </g:HTMLPanel>
+        </widget:CodeSection>
+    </m:MaterialPanel>
+</ui:UiBinder>
