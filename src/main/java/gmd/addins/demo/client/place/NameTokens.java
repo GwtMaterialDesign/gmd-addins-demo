@@ -37,6 +37,7 @@ public class NameTokens {
     public static final String INPUTMASK = "inputmask";
     public static final String IMAGE_CROPPER = "imagecropper";
     public static final String LIVE_STAMP = "livestamp";
+    public static final String MENU_BAR = "menubar";
     public static final String RATING = "rating";
     public static final String RICH_EDITOR = "richeditor";
     public static final String SPLIT_PANEL = "splitpanel";

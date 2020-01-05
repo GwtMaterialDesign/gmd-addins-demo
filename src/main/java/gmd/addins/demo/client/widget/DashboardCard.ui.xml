@@ -28,7 +28,7 @@
 		</m:MaterialPanel>
 		<m:MaterialPanel grid="s8 m12">
 			<m:MaterialLabel ui:field="name" fontSize="1.2em"/>
-			<m:MaterialLabel ui:field="description" />
+			<m:MaterialLabel ui:field="description" visible="false"/>
 		</m:MaterialPanel>
 	</m:MaterialColumn>
 </ui:UiBinder> 
