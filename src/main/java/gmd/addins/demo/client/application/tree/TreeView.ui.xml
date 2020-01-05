@@ -1,0 +1,78 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+    <m:MaterialPanel>
+        <widget:CodeSection sectionTitle="Introduction" description="Tree View component requires MaterialTree and MaterialTreeItem to build the component.">
+            <m:MaterialRow>
+                <m:MaterialColumn shadow="1" padding="0" grid="m6 s12" height="500px" overflow="AUTO">
+                    <m:MaterialPanel ui:field="titlePanel" backgroundColor="BLUE" padding="8" height="40px">
+                        <m:MaterialLabel text="FOLDERS" textColor="WHITE" fontWeight="BOLD" float="LEFT"/>
+                        <m:MaterialIcon ui:field="btnDeselectItem" tooltip="Deselect selected item" iconType="CLEAR" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT"/>
+                        <m:MaterialIcon ui:field="btnCollapse" tooltip="Collapse" iconType="VERTICAL_ALIGN_CENTER" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT"/>
+                        <m:MaterialIcon ui:field="btnExpand" tooltip="Expand" iconType="ZOOM_OUT_MAP" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT"/>
+                        <m:MaterialIcon ui:field="btnDelete" visible="false" tooltip="Delete" iconType="DELETE" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT"/>
+                        <m:MaterialIcon ui:field="btnAdd" visible="false" tooltip="Add" iconType="ADD" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT" />
+                    </m:MaterialPanel>
+                    <ma:tree.MaterialTree ui:field="docTree">
+                        <ma:tree.MaterialTreeItem iconType="FOLDER" text="Documents">
+                            <ma:tree.MaterialTreeItem iconType="IMAGE" text="Images">
+                                <ma:tree.MaterialTreeItem url="https://gwtmaterialdesign.github.io/gwt-material-demo/images/flash.webp" fallbackExtension="png" text="flash.jpg" />
+                                <ma:tree.MaterialTreeItem url="https://gwtmaterialdesign.github.io/gwt-material-demo/images/superman.webp" fallbackExtension="png" text="superman.jpg" />
+                                <ma:tree.MaterialTreeItem url="https://gwtmaterialdesign.github.io/gwt-material-demo/images/batman.webp" fallbackExtension="png" text="batman.jpg" />
+                            </ma:tree.MaterialTreeItem>
+                            <ma:tree.MaterialTreeItem iconType="VIDEO_LIBRARY" text="Videos">
+                                <ma:tree.MaterialTreeItem iconType="MUSIC_VIDEO" text="Animations">
+                                    <ma:tree.MaterialTreeItem iconType="VIDEOCAM" iconColor="RED" text="video_1.png"/>
+                                    <ma:tree.MaterialTreeItem iconType="VIDEOCAM" iconColor="RED" text="video_2.png"/>
+                                    <ma:tree.MaterialTreeItem iconType="VIDEOCAM" iconColor="RED" text="video_3.png"/>
+                                </ma:tree.MaterialTreeItem>
+                                <ma:tree.MaterialTreeItem iconType="MUSIC_VIDEO" text="Tutorials" />
+                                <ma:tree.MaterialTreeItem iconType="MUSIC_VIDEO" text="Funny" />
+                            </ma:tree.MaterialTreeItem>
+                        </ma:tree.MaterialTreeItem>
+                        <ma:tree.MaterialTreeItem iconType="FOLDER_SHARED" text="ShaRED Document" />
+                        <ma:tree.MaterialTreeItem iconType="FOLDER" text="Trash" />
+                    </ma:tree.MaterialTree>
+                </m:MaterialColumn>
+            </m:MaterialRow>
+
+            <ma:overlay.MaterialOverlay ui:field="addOverlay" width="400px" padding="20" height="150px" visibility="HIDDEN" opacity="0" shadow="2" backgroundColor="WHITE">
+                <m:MaterialTextBox ui:field="txtName" placeholder="Folder Name"/>
+                <m:MaterialRow>
+                    <m:MaterialButton ui:field="btnFinish" text="Add" type="FLAT" float="RIGHT"/>
+                    <m:MaterialButton ui:field="btnCancel" text="Cancel" type="FLAT" float="RIGHT"/>
+                </m:MaterialRow>
+            </ma:overlay.MaterialOverlay>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Collapse / Expand Handlers" description="Work on progress">
+
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Add/Remove/Insert methods" description="Work on progress">
+
+        </widget:CodeSection>
+    </m:MaterialPanel>
+</ui:UiBinder>

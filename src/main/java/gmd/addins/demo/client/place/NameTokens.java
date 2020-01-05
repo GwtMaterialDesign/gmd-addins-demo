@@ -46,5 +46,6 @@ public class NameTokens {
     public static final String SUBHEADER = "subheader";
     public static final String STEPPER = "stepper";
     public static final String TIME_PICKER = "timepicker";
+    public static final String TREE = "tree";
     public static final String WINDOW = "window";
 }
