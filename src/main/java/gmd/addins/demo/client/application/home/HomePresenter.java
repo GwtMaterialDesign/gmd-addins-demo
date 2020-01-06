@@ -66,7 +66,7 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
 
 
         getView().setDashboard(Arrays.asList(
-            new Dashboard(placeManager,"Autocomplete", "Native", NameTokens.AUTOCOMPLETE, Color.RED),
+            new Dashboard(placeManager, "Autocomplete", "Native", NameTokens.AUTOCOMPLETE, Color.RED),
             new Dashboard(placeManager, "Avatar", ExternalLink.AVATAR.getLongName(), NameTokens.AVATAR, Color.AMBER),
             new Dashboard(placeManager, "Bubble", "Native", NameTokens.BUBBLE, Color.BLUE),
             new Dashboard(placeManager, "Camera", "Native", NameTokens.CAMERA, Color.GREEN),
@@ -86,18 +86,17 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             //new Dashboard(placeManager,"Masonry", "Native", NameTokens.DROPZONE, Color.ORANGE),
             new Dashboard(placeManager, "MenuBar", "Native", NameTokens.MENU_BAR, Color.DEEP_ORANGE),
             //new Dashboard(placeManager,"Overlay", "Native", NameTokens.DROPZONE, Color.LIME),
-            //new Dashboard(placeManager,"Path Animator", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),
+            new Dashboard(placeManager, "Path Animator", ExternalLink.PATH_ANIMATOR.getLongName(), NameTokens.PATH_ANIMATOR, Color.LIGHT_BLUE),
             new Dashboard(placeManager, "Rating", "Native", NameTokens.RATING, Color.INDIGO),
             new Dashboard(placeManager, "Rich Editor", ExternalLink.RICH_EDITOR.getLongName(), NameTokens.RICH_EDITOR, Color.RED),
             new Dashboard(placeManager, "Signature Pad", ExternalLink.SIGNATURE_PAD.getLongName(), NameTokens.SIGNATURE_PAD, Color.LIGHT_BLUE),
             new Dashboard(placeManager, "Split Panel", ExternalLink.SPLIT_PANEL.getLongName(), NameTokens.SPLIT_PANEL, Color.PINK),
             new Dashboard(placeManager, "SubHeader", "Native", NameTokens.SUBHEADER, Color.PURPLE),
             new Dashboard(placeManager, "Stepper", "Native", NameTokens.STEPPER, Color.BROWN),
-            new Dashboard(placeManager,"Swipeable", "Native", NameTokens.SWIPEABLE, Color.ORANGE),
+            new Dashboard(placeManager, "Swipeable", "Native", NameTokens.SWIPEABLE, Color.ORANGE),
             new Dashboard(placeManager, "Time Picker", ExternalLink.TIME_PICKER.getLongName(), NameTokens.TIME_PICKER, Color.DEEP_ORANGE),
-            new Dashboard(placeManager,"Tree View", "Native", NameTokens.TREE, Color.INDIGO),
-            //new Dashboard(placeManager,"Waterfall", "Native", NameTokens.DROPZONE, Color.GREY),
-            new Dashboard(placeManager,"WebP", "Native", NameTokens.WEBP, Color.LIGHT_BLUE),
+            new Dashboard(placeManager, "Tree View", "Native", NameTokens.TREE, Color.INDIGO),
+            new Dashboard(placeManager, "WebP", "Native", NameTokens.WEBP, Color.LIGHT_BLUE),
             new Dashboard(placeManager, "Window", "Native", NameTokens.WINDOW, Color.RED)
         ));
     }
