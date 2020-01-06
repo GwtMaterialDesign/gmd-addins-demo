@@ -85,7 +85,7 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             new Dashboard(placeManager, "Live Stamp", ExternalLink.LIVESTAMP.getLongName(), NameTokens.LIVE_STAMP, Color.BROWN),
             //new Dashboard(placeManager,"Masonry", "Native", NameTokens.DROPZONE, Color.ORANGE),
             new Dashboard(placeManager, "MenuBar", "Native", NameTokens.MENU_BAR, Color.DEEP_ORANGE),
-            //new Dashboard(placeManager,"Overlay", "Native", NameTokens.DROPZONE, Color.LIME),
+            new Dashboard(placeManager,"Overlay", "Native", NameTokens.OVERLAY, Color.LIME),
             new Dashboard(placeManager, "Path Animator", ExternalLink.PATH_ANIMATOR.getLongName(), NameTokens.PATH_ANIMATOR, Color.LIGHT_BLUE),
             new Dashboard(placeManager, "Rating", "Native", NameTokens.RATING, Color.INDIGO),
             new Dashboard(placeManager, "Rich Editor", ExternalLink.RICH_EDITOR.getLongName(), NameTokens.RICH_EDITOR, Color.RED),

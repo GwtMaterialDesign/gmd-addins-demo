@@ -40,6 +40,7 @@ public class NameTokens {
     public static final String IMAGE_CROPPER = "imagecropper";
     public static final String LIVE_STAMP = "livestamp";
     public static final String MENU_BAR = "menubar";
+    public static final String OVERLAY = "overlay";
     public static final String PATH_ANIMATOR = "pathanimator";
     public static final String RATING = "rating";
     public static final String RICH_EDITOR = "richeditor";

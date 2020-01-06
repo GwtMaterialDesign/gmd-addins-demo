@@ -1,0 +1,75 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+			 xmlns:m="urn:import:gwt.material.design.client.ui"
+			 xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+			 xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+    <m:MaterialPanel>
+        <widget:CodeSection sectionTitle="Basic" description="Requires a source component when opening the overlay to transform it to overlay panel.">
+            <ma:overlay.MaterialOverlay ui:field="overlay" textAlign="CENTER" textColor="WHITE">
+                <m:MaterialLabel textAlign="CENTER" text="This is an overlay" marginTop="120" fontWeight="LIGHTER" fontSize="2em" />
+                <m:MaterialLabel textAlign="CENTER" text="Some content goes here" marginBottom="40" />
+                <m:MaterialButton ui:field="btnCloseOverlay" text="Close Overlay" />
+            </ma:overlay.MaterialOverlay>
+            <m:MaterialButton ui:field="btnOpenOverlay" text="Open Overlay" />
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Events" description="We have provided open and close events">
+            <ma:overlay.MaterialOverlay ui:field="overlayEvents" backgroundColor="BLUE" textAlign="CENTER" textColor="WHITE">
+                <m:MaterialLabel textAlign="CENTER" text="This is an overlay" marginTop="120" fontWeight="LIGHTER" fontSize="2em" />
+                <m:MaterialLabel textAlign="CENTER" text="Some content goes here" marginBottom="40" />
+                <m:MaterialButton ui:field="btnCloseOverlayEvents" text="Close Overlay" />
+            </ma:overlay.MaterialOverlay>
+            <m:MaterialButton ui:field="btnOpenOverlayEvents" text="Open Overlay" />
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Nested Overlays" description="You can provide multiple child overlay in order to create a dialog-like structure.">
+            <!-- Parent 1 -->
+            <ma:overlay.MaterialOverlay ui:field="overlayParent" overflow="AUTO" backgroundColor="BLUE" textAlign="CENTER" textColor="WHITE" depth="999">
+                <m:MaterialLabel textAlign="CENTER" text="This is an overlay" marginTop="120" fontWeight="LIGHTER" fontSize="2em" />
+                <m:MaterialLabel textAlign="CENTER" text="Some content goes here" marginBottom="40" />
+                <m:MaterialButton ui:field="btnOpenChild" text="Open Overlay" />
+                <m:MaterialButton ui:field="btnCloseParent" text="Close Overlay" />
+            </ma:overlay.MaterialOverlay>
+            <m:MaterialButton ui:field="btnOpenParent" text="Open Overlay" />
+
+            <!-- Child 1 -->
+            <ma:overlay.MaterialOverlay ui:field="overlayChild" overflow="AUTO" backgroundColor="INDIGO" relativeToWindow="true" textAlign="CENTER" depth="999" textColor="WHITE">
+                <m:MaterialLabel textAlign="CENTER" text="This is a child overlay" marginTop="120" fontWeight="LIGHTER" fontSize="2em" />
+                <m:MaterialLabel textAlign="CENTER" text="Some content goes here" marginBottom="40" />
+                <m:MaterialButton ui:field="btnOpenChild2" backgroundColor="INDIGO_ACCENT_1" text="Open Child" />
+                <m:MaterialButton ui:field="btnCloseChild" backgroundColor="INDIGO_ACCENT_1" text="Close Overlay" />
+
+                <!-- Child 2 -->
+                <ma:overlay.MaterialOverlay ui:field="overlayChild2" overflow="AUTO" relativeToWindow="true" backgroundColor="PINK" textAlign="CENTER" depth="999" textColor="WHITE">
+                    <m:MaterialLabel textAlign="CENTER" text="This is a Second child overlay" marginTop="120" fontWeight="LIGHTER" fontSize="2em" />
+                    <m:MaterialLabel textAlign="CENTER" text="Some content goes here" marginBottom="40" />
+                    <m:MaterialButton ui:field="btnCloseChild2" backgroundColor="PINK_ACCENT_1" text="Close Overlay" />
+                </ma:overlay.MaterialOverlay>
+            </ma:overlay.MaterialOverlay>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Overlay Tabs" description="We have added another addin widget MaterialOverlayTab to group you overlays for minimize state.">
+            <m:MaterialButton ui:field="btnOverlayTab" iconType="APPS" text="Overlay Tabs"/>
+            <m:MaterialPanel ui:field="panel" />
+        </widget:CodeSection>
+    </m:MaterialPanel>
+</ui:UiBinder>
