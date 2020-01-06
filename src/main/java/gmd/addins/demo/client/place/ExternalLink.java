@@ -7,6 +7,7 @@ public enum ExternalLink {
     CIRCULAR_PROGRESS("Jquery Circular Progress", "1.2.2", "https://github.com/kottenator/jquery-circle-progress"),
     COMBOBOX("Select2Js", "4.0.3", "https://select2.org/"),
     COUNT_UP("CountUpJs", "1.9.0", "https://github.com/inorganik/countUp.js"),
+    DRAG_AND_DROP("InteractJs", "1.2.6", "https://github.com/taye/interact.js"),
     DROPZONE("DropzoneJs", "4.3.0", "https://github.com/enyo/dropzone"),
     IMAGE_CROPPER("Croppie", "2.5.0", "https://github.com/Foliotek/Croppie"),
     INPUTMASK("JQuery Mask Plugin", "1.14.10", "https://igorescobar.github.io/jQuery-Mask-Plugin/"),

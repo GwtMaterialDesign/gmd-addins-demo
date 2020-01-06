@@ -76,7 +76,7 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             new Dashboard(placeManager, "CountUp", ExternalLink.COUNT_UP.getLongName(), NameTokens.COUNT_UP, Color.CYAN),
             new Dashboard(placeManager, "CutOut", "Native", NameTokens.CUT_OUT, Color.DEEP_ORANGE),
             new Dashboard(placeManager, "DocViewer", "Native", NameTokens.DOC_VIEWER, Color.INDIGO),
-            //new Dashboard(placeManager,"Drag and Drop", "Native", NameTokens.DROPZONE, Color.GREY),
+            new Dashboard(placeManager,"Drag and Drop", ExternalLink.DRAG_AND_DROP.getLongName(), NameTokens.DRAG_AND_DROP, Color.GREY),
             new Dashboard(placeManager, "Empty States", "Native", NameTokens.EMPTY_STATE, Color.LIGHT_BLUE),
             new Dashboard(placeManager, "FileUploader", ExternalLink.DROPZONE.getLongName(), NameTokens.DROPZONE, Color.CYAN),
             new Dashboard(placeManager, "Icon Morph", "Native", NameTokens.ICON_MORPH, Color.LIME),

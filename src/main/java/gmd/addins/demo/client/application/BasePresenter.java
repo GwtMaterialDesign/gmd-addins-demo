@@ -12,6 +12,7 @@ import gmd.addins.demo.client.widget.HeaderTitle;
 import gwt.material.design.client.MaterialDesignBase;
 import gwt.material.design.client.base.MaterialWidget;
 import gwt.material.design.client.base.helper.ScrollHelper;
+import gwt.material.design.client.ui.MaterialToast;
 
 public class BasePresenter<V extends View, Proxy_ extends Proxy<?>> extends Presenter<V, Proxy_> {
 
@@ -42,6 +43,9 @@ public class BasePresenter<V extends View, Proxy_ extends Proxy<?>> extends Pres
 
         initPre();
         new ScrollHelper().scrollTo(0);
+        String url = "https://github.com/GwtMaterialDesign/gmd-addins-demo/tree/master/src/main/java/" + getClass().getName().replace(".", "/");
+        url = url.substring(0, url.lastIndexOf("/"));
+        headerTitle.setSource(url);
     }
 
     public void setHeaderTitle(String title, String description, String link) {

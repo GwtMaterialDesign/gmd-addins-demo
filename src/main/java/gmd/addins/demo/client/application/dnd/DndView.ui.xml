@@ -1,0 +1,131 @@
+
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+             xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+    <m:MaterialPanel>
+        <widget:CodeSection sectionTitle="Configurations" description="Below are the available configs for your dnd component.">
+            <m:MaterialPanel padding="10">
+                <m:MaterialPanel ui:field="panel" margin="10" textAlign="CENTER" paddingTop="50"  waves="DEFAULT" width="150px" height="150px" shadow="1">
+                    <m:MaterialIcon iconType="TOUCH_APP" iconSize="SMALL" />
+                    <m:MaterialLabel text="Default" fontSize="1.5em"/>
+                </m:MaterialPanel>
+
+                <m:MaterialPanel ui:field="woInertialPanel" margin="10" paddingTop="40" textAlign="CENTER"  waves="DEFAULT" width="150px" height="150px" shadow="1">
+                    <m:MaterialIcon iconType="TOUCH_APP" iconSize="SMALL" />
+                    <m:MaterialLabel text="With Inertia" fontSize="1.5em"/>
+                </m:MaterialPanel>
+
+                <m:MaterialPanel ui:field="endOnlyPanel" margin="10" paddingTop="40" textAlign="CENTER"  waves="DEFAULT" width="150px" height="150px" shadow="1">
+                    <m:MaterialIcon iconType="TOUCH_APP" iconSize="SMALL" />
+                    <m:MaterialLabel text="End Only" fontSize="1.5em"/>
+                </m:MaterialPanel>
+
+                <m:MaterialPanel ui:field="selfRestrict" margin="10" paddingTop="40" textAlign="CENTER"  waves="DEFAULT" width="150px" height="150px" shadow="1">
+                    <m:MaterialIcon iconType="TOUCH_APP" iconSize="SMALL" />
+                    <m:MaterialLabel text="Self Restrict" fontSize="1.5em"/>
+                </m:MaterialPanel>
+
+                <m:MaterialPanel ui:field="restrictPanel" margin="10" paddingTop="40" textAlign="CENTER"  waves="DEFAULT" width="150px" height="150px" shadow="1">
+                    <m:MaterialIcon iconType="TOUCH_APP" iconSize="SMALL" />
+                    <m:MaterialLabel text="Rect Restrict" fontSize="1.5em"/>
+                </m:MaterialPanel>
+            </m:MaterialPanel>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="With Inertia" description="Inertia allows drag and resize actions to coninue after the user releases the pointer at a fast enough speed. The required launch speed, end speed and resistance can optionally be configured with the settings below">
+
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="End Only" description="The endOnly option is used to restrict the widget around the corners of it's parent">
+
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Restriction" description="The restriction value specifies the area that the action will be confined to.">
+
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Specific Properties" description="For the left and right properties, 0 means the left edge of the element and 1 means the right edge. For top and bottom, 0 means the top edge of the element and 1 means the bottom.">
+
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Events">
+            <m:MaterialPanel padding="10">
+                <m:MaterialPanel ui:field="eventPanel" margin="10" paddingTop="40" textAlign="CENTER"  waves="DEFAULT" width="150px" height="150px" shadow="1">
+                    <m:MaterialIcon iconType="TOUCH_APP" iconSize="SMALL" />
+                    <m:MaterialLabel ui:field="lblStarted" text="Drag Started" visible="false"/>
+                    <m:MaterialLabel ui:field="lblMoved" text="Drag Moved" visible="false"/>
+                    <m:MaterialLabel ui:field="lblEnded" text="Drag Ended" visible="false"/>
+                </m:MaterialPanel>
+            </m:MaterialPanel>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="IgnoreFrom" description="You can ignore any widget inside the dnd target easily.">
+            <m:MaterialRow>
+                <m:MaterialPanel ui:field="dndIgnoreFrom" grid="l4 m6 s12" shadow="1" padding="0">
+                    <m:MaterialPanel padding="20">
+                        <m:MaterialLink text="This is draggable" iconType="TOUCH_APP" />
+                    </m:MaterialPanel>
+                    <m:MaterialPanel ui:field="ignoredPanel" addStyleNames="valign-wrapper" paddingLeft="80" width="100%" height="200px">
+                        <m:MaterialLink iconType="HIGHLIGHT_OFF" iconColor="RED" textColor="GREY" fontSize="1.2em" text="This area is ignored from dragging" />
+                    </m:MaterialPanel>
+                </m:MaterialPanel>
+            </m:MaterialRow>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Axis" description="The axis in which the first movement must be in for the drag sequence to start. After the movement in that axis, the the action can move in both the HORIZONTAL and VERTICAL axes.">
+            <m:MaterialPanel padding="10">
+                <m:MaterialPanel ui:field="xAxisPanel" margin="10" paddingTop="40" textAlign="CENTER"  waves="DEFAULT" width="150px" height="150px" shadow="1">
+                    <m:MaterialIcon iconType="TOUCH_APP" iconSize="SMALL" />
+                    <m:MaterialLabel text="X Axis" fontSize="1.5em"/>
+                </m:MaterialPanel>
+                <m:MaterialPanel ui:field="yAxisPanel" margin="10" paddingTop="40" textAlign="CENTER"  waves="DEFAULT" width="150px" height="150px" shadow="1">
+                    <m:MaterialIcon iconType="TOUCH_APP" iconSize="SMALL" />
+                    <m:MaterialLabel text="Y Axis" fontSize="1.5em"/>
+                </m:MaterialPanel>
+            </m:MaterialPanel>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Dropzone">
+            <m:MaterialRow ui:field="dropzoneContainer" padding="10">
+                <m:MaterialColumn grid="s6">
+                    <m:MaterialPanel addStyleNames="test" ui:field="item1"  shadow="1" grid="s12" padding="8" margin="4">
+                        <m:MaterialLink text="Option 1" />
+                    </m:MaterialPanel>
+                    <m:MaterialPanel addStyleNames="test" ui:field="item2"  shadow="1" grid="s12" padding="8" margin="4">
+                        <m:MaterialLink text="Option 2" />
+                    </m:MaterialPanel>
+                    <m:MaterialPanel addStyleNames="test" ui:field="item3"  shadow="1" grid="s12" padding="8" margin="4">
+                        <m:MaterialLink text="Option 3" />
+                    </m:MaterialPanel>
+                    <m:MaterialPanel addStyleNames="test" ui:field="item4"  shadow="1" grid="s12" padding="8" margin="4">
+                        <m:MaterialLink text="Option 4" />
+                    </m:MaterialPanel>
+                </m:MaterialColumn>
+                <m:MaterialColumn ui:field="placeContainer" grid="s6" addStyleNames="grey lighten-3" padding="20">
+                    <m:MaterialLabel text="Drop here" />
+                </m:MaterialColumn>
+            </m:MaterialRow>
+        </widget:CodeSection>
+    </m:MaterialPanel>
+</ui:UiBinder>

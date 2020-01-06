@@ -29,6 +29,7 @@ import gmd.addins.demo.client.application.circularprogress.CircularProgressModul
 import gmd.addins.demo.client.application.combobox.ComboBoxModule;
 import gmd.addins.demo.client.application.countup.CountUpModule;
 import gmd.addins.demo.client.application.cutout.CutoutModule;
+import gmd.addins.demo.client.application.dnd.DndModule;
 import gmd.addins.demo.client.application.docviewer.DocViewerModule;
 import gmd.addins.demo.client.application.dropzone.DropzoneModule;
 import gmd.addins.demo.client.application.emptystate.EmptyStateModule;
@@ -65,6 +66,7 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new ComboBoxModule());
         install(new CountUpModule());
         install(new CutoutModule());
+        install(new DndModule());
         install(new DocViewerModule());
         install(new DropzoneModule());
         install(new EmptyStateModule());

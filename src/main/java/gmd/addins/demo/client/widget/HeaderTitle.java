@@ -62,6 +62,11 @@ public class HeaderTitle extends Composite {
         this.sourceCode.setHref(link);
     }
 
+    public void setSource(String link) {
+        this.sourceCode.setHref(link);
+        this.sourceCode.setTarget("_blank");
+    }
+
     public void setExternalLibrary(String library, String link) {
         this.library.setText(library);
         this.library.setTarget("_blank");

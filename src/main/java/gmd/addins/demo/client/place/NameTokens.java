@@ -32,6 +32,7 @@ public class NameTokens {
     public static final String COUNT_UP = "countup";
     public static final String CUT_OUT = "cutout";
     public static final String DOC_VIEWER = "docviewer";
+    public static final String DRAG_AND_DROP = "dnd";
     public static final String DROPZONE = "dropzone";
     public static final String EMPTY_STATE = "emptystate";
     public static final String ICON_MORPH = "iconmorph";
