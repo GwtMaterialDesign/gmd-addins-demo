@@ -38,6 +38,7 @@ import gmd.addins.demo.client.application.iconmorph.IconMorphModule;
 import gmd.addins.demo.client.application.imagecropper.ImageCropperModule;
 import gmd.addins.demo.client.application.inputmask.InputMaskModule;
 import gmd.addins.demo.client.application.livestamp.LiveStampModule;
+import gmd.addins.demo.client.application.masonry.MasonryModule;
 import gmd.addins.demo.client.application.menubar.MenubarModule;
 import gmd.addins.demo.client.application.overlay.OverlayModule;
 import gmd.addins.demo.client.application.pathanimator.PathAnimatorModule;
@@ -76,6 +77,7 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new ImageCropperModule());
         install(new InputMaskModule());
         install(new LiveStampModule());
+        install(new MasonryModule());
         install(new MenubarModule());
         install(new PathAnimatorModule());
         install(new RatingModule());

@@ -12,6 +12,7 @@ public enum ExternalLink {
     IMAGE_CROPPER("Croppie", "2.5.0", "https://github.com/Foliotek/Croppie"),
     INPUTMASK("JQuery Mask Plugin", "1.14.10", "https://igorescobar.github.io/jQuery-Mask-Plugin/"),
     LIVESTAMP("Livestampjs", "1.1.2", "https://github.com/mattbradley/livestampjs"),
+    MASONRY("Masonry", "4.0.0", "https://github.com/desandro/masonry"),
     PATH_ANIMATOR("CTAJs", "0.3.2", "https://github.com/chinchang/cta.js"),
     RICH_EDITOR("MaterialNote", "1.2.1", "https://github.com/Cerealkillerway/materialNote"),
     SIGNATURE_PAD("SignaturePad", "2.3.0", "https://github.com/szimek/signature_pad"),
