@@ -92,7 +92,7 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             new Dashboard(placeManager, "Split Panel", ExternalLink.SPLIT_PANEL.getLongName(), NameTokens.SPLIT_PANEL, Color.PINK),
             new Dashboard(placeManager, "SubHeader", "Native", NameTokens.SUBHEADER, Color.PURPLE),
             new Dashboard(placeManager, "Stepper", "Native", NameTokens.STEPPER, Color.BROWN),
-            //new Dashboard(placeManager,"Swipeable", "Native", NameTokens.DROPZONE, Color.ORANGE),
+            new Dashboard(placeManager,"Swipeable", "Native", NameTokens.SWIPEABLE, Color.ORANGE),
             new Dashboard(placeManager, "Time Picker", ExternalLink.TIME_PICKER.getLongName(), NameTokens.TIME_PICKER, Color.DEEP_ORANGE),
             new Dashboard(placeManager,"Tree View", "Native", NameTokens.TREE, Color.INDIGO),
             //new Dashboard(placeManager,"Waterfall", "Native", NameTokens.DROPZONE, Color.GREY),

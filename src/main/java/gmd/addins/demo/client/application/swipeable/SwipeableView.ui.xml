@@ -1,0 +1,70 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+			 xmlns:m="urn:import:gwt.material.design.client.ui"
+			 xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+			 xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+	<m:MaterialPanel>
+		<widget:CodeSection grid="s12" sectionTitle="Note"
+							description="This component will work only on touch screen devices but you can set any action button to be an alternative for swiping on desktop devices." marginBottom="80">
+			<ma:swipeable.MaterialSwipeablePanel shadow="1" padding="12">
+				<!-- MaterialLabel -->
+				<m:MaterialLabel text="You can swipe native components. This is a plain label" backgroundColor="YELLOW" padding="12" />
+				<!-- MaterialCard -->
+				<m:MaterialCard ui:field="card1">
+					<m:MaterialCardContent>
+						<m:MaterialLabel text="This is another Card Component that is swipeable." />
+					</m:MaterialCardContent>
+				</m:MaterialCard>
+				<!-- MaterialCard -->
+				<m:MaterialCard ui:field="card2" backgroundColor="BLUE" textColor="WHITE">
+					<m:MaterialCardContent>
+						<m:MaterialLabel text="This is another Card Component that is swipeable." />
+					</m:MaterialCardContent>
+				</m:MaterialCard>
+			</ma:swipeable.MaterialSwipeablePanel>
+		</widget:CodeSection>
+
+		<widget:CodeSection grid="s12" sectionTitle="Swipe Right / Left"
+							description="We added a functionality to set the swipe events." marginBottom="80">
+			<ma:swipeable.MaterialSwipeablePanel ui:field="swipeablePanel" shadow="1" padding="12">
+				<!-- Item 1 -->
+				<m:MaterialLabel margin="8" padding="12" text="Swipeable Item 1" shadow="1"/>
+				<!-- Item 2 -->
+				<m:MaterialLabel margin="8" padding="12" text="Swipeable Item 2" shadow="1"/>
+				<!-- Item 3 -->
+				<m:MaterialLabel margin="8" padding="12" text="Swipeable Item 3" shadow="1"/>
+			</ma:swipeable.MaterialSwipeablePanel>
+		</widget:CodeSection>
+
+		<widget:CodeSection grid="s12" sectionTitle="Ignore Items"
+							description="You can easily ignore swipeable elements by calling the container's method ignore(widget1, widget2, ...)" marginBottom="80">
+			<ma:swipeable.MaterialSwipeablePanel ui:field="swipeableDisablePanel" shadow="1" padding="12">
+				<!-- Item 1 -->
+				<m:MaterialLabel margin="8" padding="12" text="Swipeable Item 1" shadow="1"/>
+				<!-- Item 2 -->
+				<m:MaterialLabel margin="8" ui:field="item2" padding="12" text="Swipeable Item 2 (Disabled)" shadow="1"/>
+				<!-- Item 3 -->
+				<m:MaterialLabel margin="8" ui:field="item3" padding="12" text="Swipeable Item 3 (Disabled)" shadow="1"/>
+			</ma:swipeable.MaterialSwipeablePanel>
+		</widget:CodeSection>
+	</m:MaterialPanel>
+</ui:UiBinder>
