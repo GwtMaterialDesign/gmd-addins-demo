@@ -20,6 +20,7 @@
 package gmd.addins.demo.client.application;
 
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
+import gmd.addins.demo.client.application.autocomplete.AutocompleteModule;
 import gmd.addins.demo.client.application.avatar.AvatarModule;
 import gmd.addins.demo.client.application.bubble.BubbleModule;
 import gmd.addins.demo.client.application.camera.CameraModule;
@@ -53,6 +54,7 @@ public class ApplicationModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
         install(new HomeModule());
+        install(new AutocompleteModule());
         install(new AvatarModule());
         install(new BubbleModule());
         install(new CameraModule());
