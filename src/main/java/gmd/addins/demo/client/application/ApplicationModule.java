@@ -47,6 +47,7 @@ import gmd.addins.demo.client.application.subheader.SubheaderModule;
 import gmd.addins.demo.client.application.swipeable.SwipeableModule;
 import gmd.addins.demo.client.application.timepicker.TimePickerModule;
 import gmd.addins.demo.client.application.tree.TreeModule;
+import gmd.addins.demo.client.application.webp.WebpModule;
 import gmd.addins.demo.client.application.window.WindowModule;
 
 public class ApplicationModule extends AbstractPresenterModule {
@@ -80,6 +81,7 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new SwipeableModule());
         install(new TimePickerModule());
         install(new TreeModule());
+        install(new WebpModule());
         install(new WindowModule());
 
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,

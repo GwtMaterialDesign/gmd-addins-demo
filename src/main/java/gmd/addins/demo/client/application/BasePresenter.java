@@ -11,6 +11,7 @@ import gmd.addins.demo.client.resources.AppResources;
 import gmd.addins.demo.client.widget.HeaderTitle;
 import gwt.material.design.client.MaterialDesignBase;
 import gwt.material.design.client.base.MaterialWidget;
+import gwt.material.design.client.base.helper.ScrollHelper;
 
 public class BasePresenter<V extends View, Proxy_ extends Proxy<?>> extends Presenter<V, Proxy_> {
 
@@ -40,6 +41,7 @@ public class BasePresenter<V extends View, Proxy_ extends Proxy<?>> extends Pres
         super.onReveal();
 
         initPre();
+        new ScrollHelper().scrollTo(0);
     }
 
     public void setHeaderTitle(String title, String description, String link) {

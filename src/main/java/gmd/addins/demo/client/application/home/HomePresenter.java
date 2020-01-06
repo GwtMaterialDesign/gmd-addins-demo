@@ -31,6 +31,7 @@ import gmd.addins.demo.client.application.ApplicationPresenter;
 import gmd.addins.demo.client.place.ExternalLink;
 import gmd.addins.demo.client.place.NameTokens;
 import gmd.addins.demo.client.widget.Dashboard;
+import gwt.material.design.client.base.helper.ScrollHelper;
 import gwt.material.design.client.constants.Color;
 
 import java.util.Arrays;
@@ -96,8 +97,15 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             new Dashboard(placeManager, "Time Picker", ExternalLink.TIME_PICKER.getLongName(), NameTokens.TIME_PICKER, Color.DEEP_ORANGE),
             new Dashboard(placeManager,"Tree View", "Native", NameTokens.TREE, Color.INDIGO),
             //new Dashboard(placeManager,"Waterfall", "Native", NameTokens.DROPZONE, Color.GREY),
-            //new Dashboard(placeManager,"WebP", "Native", NameTokens.DROPZONE, Color.LIGHT_BLUE),
+            new Dashboard(placeManager,"WebP", "Native", NameTokens.WEBP, Color.LIGHT_BLUE),
             new Dashboard(placeManager, "Window", "Native", NameTokens.WINDOW, Color.RED)
         ));
+    }
+
+    @Override
+    protected void onReveal() {
+        super.onReveal();
+
+        new ScrollHelper().scrollTo(0);
     }
 }
