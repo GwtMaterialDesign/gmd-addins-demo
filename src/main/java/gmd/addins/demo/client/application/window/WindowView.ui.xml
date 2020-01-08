@@ -24,6 +24,11 @@
              xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <m:MaterialPanel>
+        <g:HTMLPanel>
+            <pre class="xml" style="height: 40px;overflow: hidden">
+    &lt;ma:window.MaterialWindow />
+            </pre>
+        </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Configurations" description="Below are the properties of configs for the MaterialWindow component">
             <m:MaterialRow paddingLeft="20">
                 <m:MaterialCheckBox ui:field="maximize" text="Maximize" />

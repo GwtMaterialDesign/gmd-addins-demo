@@ -18,11 +18,17 @@
   #L%
   -->
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
              xmlns:m="urn:import:gwt.material.design.client.ui"
              xmlns:widget="urn:import:gmd.addins.demo.client.widget"
              xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <m:MaterialPanel>
+        <g:HTMLPanel>
+            <pre class="xml" style="height: 40px;overflow: hidden">
+    &lt;ma:circularprogress.MaterialCircularProgress />
+            </pre>
+        </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Usage" description="You can easily set the value and design the fille color of the circular progress">
             <m:MaterialRow>
                 <m:MaterialColumn grid="s12 m2">

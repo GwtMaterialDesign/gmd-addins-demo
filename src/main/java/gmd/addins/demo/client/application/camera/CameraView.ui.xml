@@ -24,6 +24,11 @@
              xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <m:MaterialPanel>
+        <g:HTMLPanel>
+            <pre class="xml" style="height: 40px;overflow: hidden">
+    &lt;ma:camera.MaterialCameraCapture />
+            </pre>
+        </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Note" description="This widget only works on pages served by a secure protocol (HTTPS). For the browser compatibility, access http://caniuse.com/#feat=stream.">
             <ma:camera.MaterialCameraCapture />
         </widget:CodeSection>

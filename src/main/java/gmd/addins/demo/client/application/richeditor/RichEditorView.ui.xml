@@ -18,11 +18,17 @@
   #L%
   -->
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
              xmlns:m="urn:import:gwt.material.design.client.ui"
              xmlns:widget="urn:import:gmd.addins.demo.client.widget"
              xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <m:MaterialPanel>
+        <g:HTMLPanel>
+            <pre class="xml" style="height: 40px;overflow: hidden">
+    &lt;ma:richeditor.MaterialRichEditor />
+            </pre>
+        </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Configuration" description="You can play with the configuration on the right side for the best requirements you want.">
             <m:MaterialRow>
                 <m:MaterialColumn grid="s12">
@@ -30,6 +36,7 @@
                     <m:MaterialCheckBox ui:field="airmode" text="Air Mode" />
                     <m:MaterialCheckBox ui:field="toggleHeight" text="Toggle Height" />
                     <m:MaterialCheckBox ui:field="controlOptions" text="Control Options" />
+                    <m:MaterialCheckBox ui:field="toastEvents" text="Toast Events" />
                 </m:MaterialColumn>
             </m:MaterialRow>
             <m:MaterialRow>

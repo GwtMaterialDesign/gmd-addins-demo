@@ -32,6 +32,7 @@ import com.gwtplatform.mvp.client.ViewImpl;
 import gwt.material.design.addins.client.richeditor.MaterialRichEditor;
 import gwt.material.design.addins.client.richeditor.base.constants.ToolbarButton;
 import gwt.material.design.client.events.PasteEvent;
+import gwt.material.design.client.ui.MaterialCheckBox;
 import gwt.material.design.client.ui.MaterialToast;
 
 import javax.inject.Inject;
@@ -43,6 +44,9 @@ public class RichEditorView extends ViewImpl implements RichEditorPresenter.MyVi
 
     @UiField
     MaterialRichEditor richEditor;
+
+    @UiField
+    MaterialCheckBox toastEvents;
 
     @Inject
     RichEditorView(Binder uiBinder) {
@@ -124,31 +128,43 @@ public class RichEditorView extends ViewImpl implements RichEditorPresenter.MyVi
 
     @UiHandler("richEditor")
     void onValueChange(ValueChangeEvent<String> e) {
-        MaterialToast.fireToast("Value Change Event Fired : " + richEditor.getHTML());
+        if (toastEvents.getValue()) {
+            MaterialToast.fireToast("Value Change Event Fired : " + richEditor.getHTML());
+        }
     }
 
     @UiHandler("richEditor")
     void onFocus(FocusEvent e) {
-        MaterialToast.fireToast("Focus Event Fired : " + richEditor.getHTML());
+        if (toastEvents.getValue()) {
+            MaterialToast.fireToast("Focus Event Fired : " + richEditor.getHTML());
+        }
     }
 
     @UiHandler("richEditor")
     void onBlur(BlurEvent event) {
-        MaterialToast.fireToast("Blur Event Fired : " + richEditor.getHTML());
+        if (toastEvents.getValue()) {
+            MaterialToast.fireToast("Blur Event Fired : " + richEditor.getHTML());
+        }
     }
 
     @UiHandler("richEditor")
     void onKeyUp(KeyUpEvent e) {
-        MaterialToast.fireToast("Key Up Fired : " + richEditor.getHTML());
+        if (toastEvents.getValue()) {
+            MaterialToast.fireToast("Key Up Fired : " + richEditor.getHTML());
+        }
     }
 
     @UiHandler("richEditor")
     void onKeyDown(KeyDownEvent e) {
-        MaterialToast.fireToast("Key Down Fired : " + richEditor.getHTML());
+        if (toastEvents.getValue()) {
+            MaterialToast.fireToast("Key Down Fired : " + richEditor.getHTML());
+        }
     }
 
     @UiHandler("richEditor")
     void onPaste(PasteEvent e) {
-        MaterialToast.fireToast("Paste Fired : " + richEditor.getHTML());
+        if (toastEvents.getValue()) {
+            MaterialToast.fireToast("Paste Fired : " + richEditor.getHTML());
+        }
     }
 }

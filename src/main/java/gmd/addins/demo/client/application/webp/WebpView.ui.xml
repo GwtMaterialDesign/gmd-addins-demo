@@ -24,6 +24,11 @@
              xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <m:MaterialPanel>
+        <g:HTMLPanel>
+            <pre class="xml" style="height: 40px;overflow: hidden">
+    &lt;ma:webp.MaterialWebpImage />
+            </pre>
+        </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Basic and Fallback Support" description="With the latest trend on Image types, webp brings a performance optimization into your web app. We provided a fallback support for other browsers. Try to test to other browsers for viewing and noticing the fallback.">
             <ma:webp.MaterialWebpImage url="https://gwtmaterialdesign.github.io/gwt-material-demo/webp.webp" fallbackUrl="https://gwtmaterialdesign.github.io/gwt-material-demo/png.png" />
         </widget:CodeSection>

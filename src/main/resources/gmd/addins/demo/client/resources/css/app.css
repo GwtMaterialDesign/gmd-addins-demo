@@ -43,7 +43,6 @@ pre {
     font-size: 1em;
     background: #f0f5fe;
     padding: 20px;
-    white-space: pre-line;
 }
 
 /** Theme Icon **/
@@ -181,4 +180,8 @@ nav ul li.active {
 
 .input-field input[type='search'] label.active {
     transform: translateY(-4%) !important;
+}
+
+pre.hljs {
+    background-color: #f5f5f5
 }

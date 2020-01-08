@@ -47,7 +47,7 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
 
     @UiField
     MaterialComboBox<Product> products, labelAndPlaceholder, allowClear, withOptGroup, multipleSelect, disabled, limit,
-        tags, comboTags, comboCloseOnSelect;
+        tags, comboTags, comboCloseOnSelect, valueChange, valueChangeMultiple, selection, selectionMultiple;
 
     @UiField
     MaterialCheckBox disable;
@@ -55,11 +55,26 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
     @Inject
     ComboBoxView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+
+        valueChange.addValueChangeHandler(event -> MaterialToast.fireToast(event.getValue().get(0).getProductName()));
+        valueChangeMultiple.addValueChangeHandler(event -> {
+            for (Product product : event.getValue()) {
+                MaterialToast.fireToast(product.getProductName());
+            }
+        });
+
+        selection.addSelectionHandler(event -> MaterialToast.fireToast(event.getSelectedValues().get(0).getProductName()));
+        selectionMultiple.addSelectionHandler(event -> {
+            for (Product product : event.getSelectedValues()) {
+                MaterialToast.fireToast(product.getProductName());
+            }
+        });
     }
 
     @Override
     public void setProducts(List<Product> products) {
-        addProducts(products, this.products, multipleSelect, disabled, tags, comboTags, comboCloseOnSelect);
+        addProducts(products, this.products, multipleSelect, disabled, tags, comboTags, comboCloseOnSelect, valueChange, valueChangeMultiple,
+            selection, selectionMultiple);
         addProductMaterials(products, labelAndPlaceholder, allowClear);
         addProductsGroup(products, withOptGroup, limit);
     }

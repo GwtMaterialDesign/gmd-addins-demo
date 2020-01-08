@@ -24,6 +24,11 @@
 			 xmlns:ma="urn:import:gwt.material.design.addins.client">
 
 	<m:MaterialPanel>
+		<g:HTMLPanel>
+			<pre class="xml" style="height: 40px;overflow: hidden">
+	&lt;ma:carousel.MaterialCarousel />
+			</pre>
+		</g:HTMLPanel>
 		<widget:CodeSection sectionTitle="Usage"
 							description="By default, it uses the IconType#STAR to represent the selected rating, but other icons can be set using the #setSelectedRatingIcon(IconType) method.">
 			<m:MaterialRow>
@@ -123,20 +128,20 @@
 							description="You can set specific options on any screen sizes.">
 			<g:HTMLPanel>
 				<pre class="java">
-					carouselResponsive.setSlidesToShow(5);
-					carouselResponsive.setSlidesToScroll(5);
+	carouselResponsive.setSlidesToShow(5);
+	carouselResponsive.setSlidesToScroll(5);
 
-					// Tablet Settings
-					JsCarouselOptions tabletSettings = new JsCarouselOptions();
-					tabletSettings.slidesToShow = 2;
-					tabletSettings.slidesToScroll = 2;
-					carouselResponsive.setTabletSettings(tabletSettings);
+	// Tablet Settings
+	JsCarouselOptions tabletSettings = new JsCarouselOptions();
+	tabletSettings.slidesToShow = 2;
+	tabletSettings.slidesToScroll = 2;
+	carouselResponsive.setTabletSettings(tabletSettings);
 
-					// Mobile Settings
-					JsCarouselOptions mobileSettings = new JsCarouselOptions();
-					mobileSettings.slidesToShow = 1;
-					mobileSettings.slidesToScroll = 1;
-					carouselResponsive.setMobileSettings(mobileSettings);
+	// Mobile Settings
+	JsCarouselOptions mobileSettings = new JsCarouselOptions();
+	mobileSettings.slidesToShow = 1;
+	mobileSettings.slidesToScroll = 1;
+	carouselResponsive.setMobileSettings(mobileSettings);
 				</pre>
 			</g:HTMLPanel>
 		</widget:CodeSection>

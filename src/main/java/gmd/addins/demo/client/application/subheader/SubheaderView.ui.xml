@@ -18,11 +18,17 @@
   #L%
   -->
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+			 xmlns:g="urn:import:com.google.gwt.user.client.ui"
 			 xmlns:m="urn:import:gwt.material.design.client.ui"
 			 xmlns:widget="urn:import:gmd.addins.demo.client.widget"
 			 xmlns:ma="urn:import:gwt.material.design.addins.client">
 
 	<m:MaterialPanel>
+		<g:HTMLPanel>
+			<pre class="xml" style="height: 40px;overflow: hidden">
+	&lt;ma:subheader.MaterialSubHeaderContainer />
+			</pre>
+		</g:HTMLPanel>
 		<widget:CodeSection grid="s12" sectionTitle="Pinned Type"
 							description="This type of container will pinned your subheader items fixed at top when scrolling." marginBottom="80">
 			<ma:subheader.MaterialSubHeaderContainer shadow="1" height="300px" grid="l6 m6 s12" type="PINNED">

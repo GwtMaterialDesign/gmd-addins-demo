@@ -24,6 +24,11 @@
              xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <m:MaterialPanel>
+        <g:HTMLPanel>
+            <pre class="xml" style="height: 40px;overflow: hidden">
+    &lt;ma:autocomplete.MaterialAutoComplete />
+            </pre>
+        </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Introduction" description="Use GWT Autocomplete to search for matches from local or remote data sources. We used MultiWordSuggestOracle to populate the list to be added on the autocomplete values">
             <m:MaterialRow>
                 <m:MaterialColumn grid="s12 m12 l6">
@@ -46,7 +51,16 @@
         </widget:CodeSection>
 
         <widget:CodeSection sectionTitle="Events" description="You can easily add Value Change Event and Selection Event on autocomplete component.">
-
+            <g:HTMLPanel>
+                <pre class="java">
+    acList.addSelectionHandler(event -> MaterialToast.fireToast(event.getSelectedItem().getDisplayString() + " Selected"));
+    acList.addValueChangeHandler(event -> {
+        for (SuggestOracle.Suggestion user : event.getValue()) {
+            MaterialToast.fireToast("Value : " + user.getDisplayString());
+        }
+    });
+                </pre>
+            </g:HTMLPanel>
         </widget:CodeSection>
 
         <widget:CodeSection sectionTitle="Autocomplete : setValue(value, fireEvents)">
@@ -94,14 +108,14 @@
         </widget:CodeSection>
 
         <widget:CodeSection sectionTitle="Inside Dialog" description="You can build your overlay inside the dialog">
-            <m:MaterialButton ui:field="btnOpenDialog" text="Open Dialog" textColor="WHITE" waves="DEFAULT"/>
+            <m:MaterialButton ui:field="btnOpenDialog" text="Open Dialog" waves="DEFAULT"/>
             <m:MaterialDialog ui:field="dialog">
                 <m:MaterialDialogContent>
                     <m:MaterialTitle title="Select contacts" description="Some description here..."/>
                     <ma:autocomplete.MaterialAutoComplete ui:field="acDialog" placeholder="Contacts" grid="s12"/>
                 </m:MaterialDialogContent>
                 <m:MaterialDialogFooter textAlign="RIGHT">
-                    <m:MaterialButton ui:field="btnClose" text="Close" type="FLAT" textColor="BLACK" waves="DEFAULT"/>
+                    <m:MaterialButton ui:field="btnClose" text="Close" type="FLAT" waves="DEFAULT"/>
                 </m:MaterialDialogFooter>
             </m:MaterialDialog>
         </widget:CodeSection>

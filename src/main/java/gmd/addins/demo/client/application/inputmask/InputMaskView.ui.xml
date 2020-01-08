@@ -24,6 +24,11 @@
              xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <m:MaterialPanel>
+        <g:HTMLPanel>
+            <pre class="xml" style="height: 40px;overflow: hidden">
+    &lt;ma:inputmask.MaterialInputMask />
+            </pre>
+        </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Basic Examples" >
             <m:MaterialRow>
                 <ma:inputmask.MaterialInputMask label="Phone Number" placeholder="eg: 000-00-0000000" mask="000-00-0000000" grid="s12 m4 l4"/>

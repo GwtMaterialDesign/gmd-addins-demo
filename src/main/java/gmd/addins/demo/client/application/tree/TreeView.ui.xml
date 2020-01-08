@@ -24,6 +24,11 @@
              xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <m:MaterialPanel>
+        <g:HTMLPanel>
+            <pre class="xml" style="height: 40px;overflow: hidden">
+    &lt;ma:tree.MaterialTreeItem />
+            </pre>
+        </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Introduction" description="Tree View component requires MaterialTree and MaterialTreeItem to build the component.">
             <m:MaterialRow>
                 <m:MaterialColumn shadow="1" padding="0" grid="m6 s12" height="500px" overflow="AUTO">

@@ -55,12 +55,7 @@ public class AutocompleteView extends ViewImpl implements AutocompletePresenter.
         oracle.addContacts(getAllUsers());
         acList.setSuggestions(oracle);
         acValue.setSuggestions(oracle);
-        acList.addSelectionHandler(new SelectionHandler<SuggestOracle.Suggestion>() {
-            @Override
-            public void onSelection(SelectionEvent<SuggestOracle.Suggestion> event) {
-                MaterialToast.fireToast(event.getSelectedItem().getDisplayString() + " Selected");
-            }
-        });
+        acList.addSelectionHandler(event -> MaterialToast.fireToast(event.getSelectedItem().getDisplayString() + " Selected"));
         acList.addValueChangeHandler(event -> {
             for (SuggestOracle.Suggestion user : event.getValue()) {
                 MaterialToast.fireToast("Value : " + user.getDisplayString());

@@ -18,11 +18,17 @@
   #L%
   -->
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
 			 xmlns:m="urn:import:gwt.material.design.client.ui"
 			 xmlns:widget="urn:import:gmd.addins.demo.client.widget"
 			 xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <m:MaterialPanel>
+        <g:HTMLPanel>
+            <pre class="xml" style="height: 40px;overflow: hidden">
+    &lt;ma:overlay.MaterialOverlay />
+            </pre>
+        </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Basic" description="Requires a source component when opening the overlay to transform it to overlay panel.">
             <ma:overlay.MaterialOverlay ui:field="overlay" textAlign="CENTER" textColor="WHITE">
                 <m:MaterialLabel textAlign="CENTER" text="This is an overlay" marginTop="120" fontWeight="LIGHTER" fontSize="2em" />

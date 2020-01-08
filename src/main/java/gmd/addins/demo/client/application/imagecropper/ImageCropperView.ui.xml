@@ -24,6 +24,11 @@
              xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <m:MaterialPanel>
+        <g:HTMLPanel>
+            <pre class="xml" style="height: 40px;overflow: hidden">
+    &lt;ma:cropper.MaterialImageCropper />
+            </pre>
+        </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Note" description="The File Upload Addin component is just a Client UI, you can pass the Form url by adding url='/fileupload'. The server side must be developed by users, why? because some uses different Server Configs e.g GAE, Servlet or Commons API.">
             <m:MaterialRow grid="s12 m6 l6" offset="m3 l3"  >
                 <ma:cropper.MaterialImageCropper url="https://i.imgur.com/CiPPh6h.jpg" ui:field="cropper" />

@@ -19,11 +19,17 @@
   #L%
   -->
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
              xmlns:m="urn:import:gwt.material.design.client.ui"
              xmlns:widget="urn:import:gmd.addins.demo.client.widget"
              xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <m:MaterialPanel>
+        <g:HTMLPanel>
+            <pre class="xml" style="height: 40px;overflow: hidden">
+    &lt;ma:countup.MaterialCountUp />
+            </pre>
+        </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Configurations" description="Below are the available configs for your count up widget.">
             <ma:countup.MaterialCountUp value="0.00" ui:field="countUp" startValue="50.01" endValue="99.99" decimals="2" fontSize="5em" fontWeight="LIGHTER"/>
             <m:MaterialRow>

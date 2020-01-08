@@ -24,7 +24,11 @@
              xmlns:widget="urn:import:gmd.addins.demo.client.widget">
 
     <m:MaterialPanel>
-
+        <g:HTMLPanel>
+            <pre class="xml" style="height: 40px;overflow: hidden">
+    &lt;ma:combobox.MaterialComboBox />
+            </pre>
+        </g:HTMLPanel>
         <!-- Standard -->
         <widget:CodeSection sectionTitle="Basic">
             <m:MaterialRow>
@@ -163,12 +167,22 @@
 
         <!-- ValueChange Event -->
         <widget:CodeSection sectionTitle="Value Change Event" description="This event will be fired when changing values on combobox">
-
+            <m:MaterialRow>
+                <m:MaterialColumn grid="l6 m6 s12">
+                    <ma:combobox.MaterialComboBox placeholder="Time Zone" ui:field="valueChange" />
+                    <ma:combobox.MaterialComboBox placeholder="Time Zone" closeOnSelect="false" multiple="true" ui:field="valueChangeMultiple" />
+                </m:MaterialColumn>
+            </m:MaterialRow>
         </widget:CodeSection>
 
         <!-- Selection Event -->
         <widget:CodeSection sectionTitle="Selection Event" description="This event will be fired when Selecting values on combobox">
-
+            <m:MaterialRow>
+                <m:MaterialColumn grid="l6 m6 s12">
+                    <ma:combobox.MaterialComboBox placeholder="Time Zone" ui:field="selection" />
+                    <ma:combobox.MaterialComboBox placeholder="Time Zone" closeOnSelect="false" multiple="true" ui:field="selectionMultiple" />
+                </m:MaterialColumn>
+            </m:MaterialRow>
         </widget:CodeSection>
 
         <!-- Remove Item Event -->

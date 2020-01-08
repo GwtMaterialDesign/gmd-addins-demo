@@ -19,11 +19,17 @@
   #L%
   -->
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
              xmlns:m="urn:import:gwt.material.design.client.ui"
              xmlns:widget="urn:import:gmd.addins.demo.client.widget"
              xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <m:MaterialPanel>
+        <g:HTMLPanel>
+            <pre class="java" style="height: 40px;">
+    MaterialDnd.draggable(panel);
+            </pre>
+        </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Configurations" description="Below are the available configs for your dnd component.">
             <m:MaterialPanel padding="10">
                 <m:MaterialPanel ui:field="panel" margin="10" textAlign="CENTER" paddingTop="50"  waves="DEFAULT" width="150px" height="150px" shadow="1">
