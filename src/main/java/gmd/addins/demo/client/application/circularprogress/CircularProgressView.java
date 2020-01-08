@@ -89,7 +89,7 @@ public class CircularProgressView extends ViewImpl implements CircularProgressPr
 
     @UiHandler("thickness")
     void thickness(ValueChangeEvent<Boolean> event) {
-        progress.setThickness(event.getValue() ? 20 : 0);
+        progress.setThickness(event.getValue() ? 20 : 8);
         progress.reload();
     }
 
@@ -101,6 +101,6 @@ public class CircularProgressView extends ViewImpl implements CircularProgressPr
 
     @UiHandler("updateValue")
     void updateValue(ValueChangeEvent<Boolean> event) {
-        progress.setValue(event.getValue() ? 1 : 0.3);
+        progress.setValue(event.getValue() ? 1 : 0.3, true);
     }
 }

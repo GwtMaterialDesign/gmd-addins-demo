@@ -30,7 +30,7 @@
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Introduction" description="A list that doesn’t contain any items, or a search that doesn’t display any results, are examples of empty states. Although these states aren’t typical, they should be designed to prevent user confusion.">
-            <ma:emptystate.MaterialEmptyState height="60vh" iconType="POLYMER" title="No Inbox" description="You dont have new message" backgroundColor="GREY_LIGHTEN_3"/>
+            <ma:emptystate.MaterialEmptyState height="60vh" iconType="POLYMER" title="No Inbox" description="You dont have new message"/>
         </widget:CodeSection>
 
         <widget:CodeSection sectionTitle="Icons, Title and Description" description="You can easily update each icon, title and description of the emptystate.">

@@ -52,7 +52,7 @@ public class DndView extends ViewImpl implements DndPresenter.MyView {
     MaterialRow dropzoneContainer;
 
     @UiField
-    MaterialColumn placeContainer;
+    MaterialColumn placeContainer, colContainer;
 
     @UiField
     MaterialLabel lblStarted, lblMoved, lblEnded;
@@ -79,7 +79,7 @@ public class DndView extends ViewImpl implements DndPresenter.MyView {
         restriction2.setBottom(0.75);
         MaterialDnd.draggable(restrictPanel, JsDragOptions.create(restriction2));
 
-        MaterialDnd dndIgnore =  MaterialDnd.draggable(dndIgnoreFrom);
+        MaterialDnd dndIgnore = MaterialDnd.draggable(dndIgnoreFrom);
         dndIgnore.ignoreFrom(ignoredPanel);
 
         MaterialDnd.draggable(xAxisPanel, JsDragOptions.create(Axis.HORIZONTAL));
@@ -97,12 +97,11 @@ public class DndView extends ViewImpl implements DndPresenter.MyView {
         });
 
         dropzoneContainer.addDragEnterHandler(dragEnterEvent -> {
-            placeContainer.setBackgroundColor(Color.BLUE);
+            placeContainer.setBackgroundColor(DarkThemeManager.get().isDarkMode() ? Color.GREY_DARKEN_3 : Color.GREY_LIGHTEN_2);
             MaterialToast.fireToast("Drag Enter");
         });
 
         dropzoneContainer.addDragLeaveHandler(event1 -> {
-            placeContainer.setBackgroundColor(Color.GREY_LIGHTEN_2);
             MaterialToast.fireToast("Drag Leave");
         });
 
@@ -146,5 +145,12 @@ public class DndView extends ViewImpl implements DndPresenter.MyView {
         endOnlyPanel.setBackgroundColor(dark ? Color.BLACK : Color.WHITE);
         selfRestrict.setBackgroundColor(dark ? Color.BLACK : Color.WHITE);
         restrictPanel.setBackgroundColor(dark ? Color.BLACK : Color.WHITE);
+        placeContainer.setBackgroundColor(dark ? Color.GREY_DARKEN_4 : Color.GREY_LIGHTEN_5);
+
+        for (Widget widget : colContainer) {
+            if (widget instanceof MaterialPanel) {
+                ((MaterialPanel) widget).setBackgroundColor(dark ? Color.GREY_DARKEN_3 : Color.GREY_LIGHTEN_4);
+            }
+        }
     }
 }
