@@ -41,7 +41,7 @@ import gwt.material.design.client.ui.MaterialPanel;
 import gwt.material.design.client.ui.MaterialSideNavDrawer;
 import gwt.material.design.client.ui.MaterialToast;
 
-public class ApplicationView extends ViewWithUiHandlers<DarkThemeHandlers> implements ApplicationPresenter.MyView {
+public class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
 
     interface Binder extends UiBinder<Widget, ApplicationView> {
     }
@@ -59,37 +59,5 @@ public class ApplicationView extends ViewWithUiHandlers<DarkThemeHandlers> imple
     ApplicationView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
         bindSlot(ApplicationPresenter.SLOT_MAIN, mainContainer);
-    }
-
-    @Override
-    protected void onAttach() {
-        super.onAttach();
-
-        // Dark Theme Mode
-        DarkThemeManager.get()
-            .register(new CoreDarkThemeLoader())
-            .register(new AddinsDarkThemeLoader())
-            .register(new AppDarkThemeLoader())
-            .load();
-
-        // Enable PWA
-        if (PwaManager.isPwaSupported()) {
-            PwaManager.getInstance()
-                    .setServiceWorker("service-worker.js")
-                    .setThemeColor(ColorHelper.setupComputedBackgroundColor(Color.BLUE_DARKEN_3))
-                    .setWebManifest("manifest.url")
-                    .load();
-
-            // Will request a notification
-            Notification.requestPermission(status -> MaterialToast.fireToast("Permission Status: " + status));
-        }
-
-        // Inject Resources
-        MaterialDesignBase.injectCss(AppResources.INSTANCE.appCss());
-
-        // Remove Splashscreen once js files are loaded
-        Document.get().getElementById("splashscreen").removeFromParent();
-
-        getUiHandlers().setDarkTheme(true);
     }
 }

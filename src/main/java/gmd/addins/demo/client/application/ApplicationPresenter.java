@@ -19,22 +19,29 @@
  */
 package gmd.addins.demo.client.application;
 
+import com.google.gwt.dom.client.Document;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
-import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.presenter.slots.NestedSlot;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.Proxy;
-import gmd.addins.demo.client.events.DarkThemeChangeEvent;
-import gmd.addins.demo.client.events.DarkThemeHandlers;
+import gmd.addins.demo.client.resources.AppResources;
+import gwt.material.design.addins.client.dark.AddinsDarkThemeLoader;
+import gwt.material.design.client.MaterialDesignBase;
+import gwt.material.design.client.base.helper.ColorHelper;
+import gwt.material.design.client.constants.Color;
+import gwt.material.design.client.pwa.PwaManager;
+import gwt.material.design.client.pwa.push.js.Notification;
+import gwt.material.design.client.theme.dark.CoreDarkThemeLoader;
+import gwt.material.design.client.theme.dark.DarkThemeManager;
+import gwt.material.design.client.ui.MaterialToast;
 
-public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
-    implements DarkThemeHandlers {
+public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> {
 
-    interface MyView extends View, HasUiHandlers<DarkThemeHandlers> {
+    interface MyView extends View {
     }
 
     private PlaceManager placeManager;
@@ -53,22 +60,40 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;
-
-        getView().setUiHandlers(this);
     }
 
     @Override
     protected void onBind() {
         super.onBind();
+
+        // Dark Theme Mode
+        DarkThemeManager.get()
+            .register(new CoreDarkThemeLoader())
+            .register(new AddinsDarkThemeLoader())
+            .register(new AppDarkThemeLoader())
+            .load();
+
+        // Enable PWA
+        if (PwaManager.isPwaSupported()) {
+            PwaManager.getInstance()
+                .setServiceWorker("service-worker.js")
+                .setThemeColor(ColorHelper.setupComputedBackgroundColor(Color.BLUE_DARKEN_3))
+                .setWebManifest("manifest.url")
+                .load();
+
+            // Will request a notification
+            Notification.requestPermission(status -> MaterialToast.fireToast("Permission Status: " + status));
+        }
+
+        // Inject Resources
+        MaterialDesignBase.injectCss(AppResources.INSTANCE.appCss());
+
+        // Remove Splashscreen once js files are loaded
+        Document.get().getElementById("splashscreen").removeFromParent();
     }
 
     @Override
     protected void onReveal() {
         super.onReveal();
-    }
-
-    @Override
-    public void setDarkTheme(boolean dark) {
-        DarkThemeChangeEvent.fire(this, dark);
     }
 }
