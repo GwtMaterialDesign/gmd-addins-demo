@@ -58,6 +58,7 @@ public class NameTokens {
 
     /** Beta **/
     public static final String ADDRESS_LOOKUP = "addresslookup";
+    public static final String CHECK_MARK = "checkmark";
     public static final String DATE_RANGE = "daterangepicker";
     public static final String GROUP_TOGGLE = "grouptoggle";
     public static final String PLACEHOLDER = "placeholder";
