@@ -106,8 +106,9 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             new Dashboard(placeManager, "Group Toggle", "Incubator", NameTokens.GROUP_TOGGLE, Color.RED, true),
             new Dashboard(placeManager, "Place Holder", "Incubator", NameTokens.PLACEHOLDER, Color.RED, true),
             new Dashboard(placeManager, "Line Bar", "Incubator", NameTokens.PROGRESS_LINE_BAR, Color.RED, true),
+            new Dashboard(placeManager, "Search", "Incubator", NameTokens.SEARCH, Color.RED, true),
             new Dashboard(placeManager, "Tag", "Incubator", NameTokens.TAG, Color.RED, true),
-            new Dashboard(placeManager, "Search", "Incubator", NameTokens.SEARCH, Color.RED, true)
+            new Dashboard(placeManager, "Timer", "Incubator", NameTokens.TIMER, Color.RED, true)
         ));
     }
 
