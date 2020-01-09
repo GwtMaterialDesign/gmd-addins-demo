@@ -1,0 +1,51 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+			 xmlns:g="urn:import:com.google.gwt.user.client.ui"
+			 xmlns:m="urn:import:gwt.material.design.client.ui"
+			 xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+			 xmlns:in="urn:import:gwt.material.design.incubator.client">
+
+    <m:MaterialPanel>
+        <g:HTMLPanel>
+            <pre class="xml" style="height: 40px;overflow: hidden">
+    &lt;in:progress.ProgressLineBar ui:field="progressLineBar" />
+            </pre>
+        </g:HTMLPanel>
+        <widget:CodeSection sectionTitle="Default Behaviour" >
+			<m:MaterialNavBar backgroundColor="WHITE">
+				<m:MaterialNavBrand text="App Title" hideOn="HIDE_ON_SMALL_DOWN" paddingLeft="16" />
+				<m:MaterialNavSection hideOn="NONE">
+					<in:search.InlineSearch ui:field="search" theme="LIGHT" width="50%" placeholder="Search" display="INLINE"/>
+				</m:MaterialNavSection>
+			</m:MaterialNavBar>
+        </widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Expandable Behaviour" >
+			<m:MaterialNavBar backgroundColor="WHITE">
+				<m:MaterialNavBrand text="App Title" hideOn="HIDE_ON_SMALL_DOWN" paddingLeft="16" />
+				<m:MaterialNavSection float="RIGHT" hideOn="NONE">
+					<m:MaterialLink iconType="SEARCH" ui:field="openSearch"/>
+					<in:search.ExpandableInlineSearch ui:field="expandableInline" theme="LIGHT" width="50%" placeholder="Search" display="INLINE"/>
+				</m:MaterialNavSection>
+			</m:MaterialNavBar>
+		</widget:CodeSection>
+    </m:MaterialPanel>
+</ui:UiBinder>

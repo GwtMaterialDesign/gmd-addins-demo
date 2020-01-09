@@ -27,6 +27,7 @@ import gmd.addins.demo.client.application.beta.checkmark.CheckMarkModule;
 import gmd.addins.demo.client.application.beta.daterange.DateRangeModule;
 import gmd.addins.demo.client.application.beta.placeholder.PlaceholderModule;
 import gmd.addins.demo.client.application.beta.progress.ProgressLineBarModule;
+import gmd.addins.demo.client.application.beta.search.SearchModule;
 import gmd.addins.demo.client.application.beta.tag.TagModule;
 import gmd.addins.demo.client.application.beta.toggle.GroupToggleModule;
 import gmd.addins.demo.client.application.bubble.BubbleModule;
@@ -106,6 +107,7 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new GroupToggleModule());
         install(new PlaceholderModule());
         install(new ProgressLineBarModule());
+        install(new SearchModule());
         install(new TagModule());
 
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,

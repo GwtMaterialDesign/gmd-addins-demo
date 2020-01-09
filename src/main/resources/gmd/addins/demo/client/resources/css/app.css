@@ -169,16 +169,16 @@ nav ul li.active {
     right: 0px !important;
 }
 
-.light.input-field.inline-search > i {
+.custom-search.light.input-field.inline-search > i {
     margin-top: 5px;
     font-size: 1.6em;
 }
 
-.input-field input[type=search] + label {
+.custom-search.input-field input[type=search] + label {
     top: 8px !important;
 }
 
-.input-field input[type='search'] label.active {
+.custom-search.input-field input[type='search'] label.active {
     transform: translateY(-4%) !important;
 }
 
