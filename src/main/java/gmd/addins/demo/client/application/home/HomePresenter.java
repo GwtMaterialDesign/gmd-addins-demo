@@ -100,6 +100,7 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             new Dashboard(placeManager, "Window", "Native", NameTokens.WINDOW, Color.RED),
 
             // Beta
+            new Dashboard(placeManager, "Group Toggle", "Incubator", NameTokens.GROUP_TOGGLE, Color.RED, true),
             new Dashboard(placeManager, "Progress Line Bar", "Incubator", NameTokens.PROGRESS_LINE_BAR, Color.RED, true)
         ));
     }
