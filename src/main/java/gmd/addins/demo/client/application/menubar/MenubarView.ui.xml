@@ -49,15 +49,7 @@
                             <!-- File Drop Down -->
                             <m:MaterialDropDown ui:field="dpFile" activator="dp-file" belowOrigin="true">
                                 <m:MaterialLink text="Share..." separator="true" textColor="BLACK"/>
-                                <m:MaterialLink ui:field="btnNew" text="New" textColor="BLACK" activates="dp-new" iconType="PLAY_ARROW" iconPosition="RIGHT" iconSize="TINY">
-                                    <!-- Sub menu for NEW -->
-                                    <m:MaterialDropDown ui:field="dpNew" activator="dp-new" hover="true" belowOrigin="true">
-                                        <m:MaterialLink text="Document" textColor="BLACK"/>
-                                        <m:MaterialLink text="Presentation" textColor="BLACK" />
-                                        <m:MaterialLink text="Form" textColor="BLACK" />
-                                        <m:MaterialLink text="Drawing" textColor="BLACK" />
-                                    </m:MaterialDropDown>
-                                </m:MaterialLink>
+                                <m:MaterialLink ui:field="btnNew" text="New" textColor="BLACK" activates="dp-new" iconType="PLAY_ARROW" iconPosition="RIGHT" iconSize="TINY" />
                                 <m:MaterialLink text="Open..." textColor="BLACK" />
                                 <m:MaterialLink text="Rename" enabled="false" separator="true" textColor="BLACK" />
                                 <m:MaterialLink text="Print" textColor="BLACK" >
@@ -90,14 +82,7 @@
                             <!-- View Drop Down -->
                             <m:MaterialDropDown ui:field="dpView" activator="dp-view" belowOrigin="true">
                                 <m:MaterialCheckBox text="Print Layout" />
-                                <m:MaterialLink text="Mode" activates="dp-mode" paddingLeft="50" iconType="PLAY_ARROW" iconPosition="RIGHT" iconSize="TINY">
-                                    <!-- Mode Dropdown -->
-                                    <m:MaterialDropDown ui:field="dpMode" activator="dp-mode" hover="true" belowOrigin="true">
-                                        <m:MaterialCheckBox text="Presentation" />
-                                        <m:MaterialCheckBox text="Edit" />
-                                        <m:MaterialCheckBox text="Modifiable" />
-                                    </m:MaterialDropDown>
-                                </m:MaterialLink>
+                                <m:MaterialLink text="Mode" activates="dp-mode" paddingLeft="50" iconType="PLAY_ARROW" iconPosition="RIGHT" iconSize="TINY" />
                                 <m:MaterialCheckBox text="Show ruler" />
                                 <m:MaterialCheckBox text="Show equation toolbar" />
                                 <m:MaterialCheckBox text="Show spelling suggestions" />
@@ -130,6 +115,21 @@
                         </ma:menubar.MaterialMenuBar>
                     </m:MaterialColumn>
                 </m:MaterialRow>
+
+                <!-- Mode Dropdown -->
+                <m:MaterialDropDown ui:field="dpMode" activator="dp-mode" hover="true" belowOrigin="true">
+                    <m:MaterialCheckBox text="Presentation" />
+                    <m:MaterialCheckBox text="Edit" />
+                    <m:MaterialCheckBox text="Modifiable" />
+                </m:MaterialDropDown>
+
+                <!-- Sub menu for NEW -->
+                <m:MaterialDropDown ui:field="dpNew" activator="dp-new" hover="true" belowOrigin="true">
+                    <m:MaterialLink text="Document" textColor="BLACK"/>
+                    <m:MaterialLink text="Presentation" textColor="BLACK" />
+                    <m:MaterialLink text="Form" textColor="BLACK" />
+                    <m:MaterialLink text="Drawing" textColor="BLACK" />
+                </m:MaterialDropDown>
 
                 <!-- Content -->
                 <m:MaterialRow padding="20">

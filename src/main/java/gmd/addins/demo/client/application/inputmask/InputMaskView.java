@@ -87,7 +87,7 @@ public class InputMaskView extends ViewImpl implements InputMaskPresenter.MyView
 
     @UiHandler("maskDate")
     void maskDate(ValueChangeEvent<Date> event) {
-        MaterialToast.fireToast(maskDate.getValue().toString());
+        MaterialToast.fireToast(maskDate.getValue() != null ? maskDate.getValue().toString() : null);
     }
 
     @UiHandler("btnGetCleanValue")
