@@ -101,6 +101,7 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
 
             // Beta
             new Dashboard(placeManager, "Address Lookup", "Incubator", NameTokens.ADDRESS_LOOKUP, Color.RED, true),
+            new Dashboard(placeManager, "Date Range", "Incubator", NameTokens.DATE_RANGE, Color.RED, true),
             new Dashboard(placeManager, "Group Toggle", "Incubator", NameTokens.GROUP_TOGGLE, Color.RED, true),
             new Dashboard(placeManager, "Place Holder", "Incubator", NameTokens.PLACEHOLDER, Color.RED, true),
             new Dashboard(placeManager, "Line Bar", "Incubator", NameTokens.PROGRESS_LINE_BAR, Color.RED, true),

@@ -23,6 +23,7 @@ import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import gmd.addins.demo.client.application.autocomplete.AutocompleteModule;
 import gmd.addins.demo.client.application.avatar.AvatarModule;
 import gmd.addins.demo.client.application.beta.address.AddressLookupModule;
+import gmd.addins.demo.client.application.beta.daterange.DateRangeModule;
 import gmd.addins.demo.client.application.beta.placeholder.PlaceholderModule;
 import gmd.addins.demo.client.application.beta.progress.ProgressLineBarModule;
 import gmd.addins.demo.client.application.beta.tag.TagModule;
@@ -99,6 +100,7 @@ public class ApplicationModule extends AbstractPresenterModule {
 
         /** Beta **/
         install(new AddressLookupModule());
+        install(new DateRangeModule());
         install(new GroupToggleModule());
         install(new PlaceholderModule());
         install(new ProgressLineBarModule());
