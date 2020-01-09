@@ -57,6 +57,7 @@ public class NameTokens {
     public static final String WINDOW = "window";
 
     /** Beta **/
+    public static final String ADDRESS_LOOKUP = "addresslookup";
     public static final String GROUP_TOGGLE = "grouptoggle";
     public static final String PLACEHOLDER = "placeholder";
     public static final String PROGRESS_LINE_BAR = "progresslinebar";
