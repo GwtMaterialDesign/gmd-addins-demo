@@ -10,6 +10,7 @@ public class Dashboard {
     private String link;
     private Color color;
     private PlaceManager placeManager;
+    private boolean beta;
 
     public Dashboard(PlaceManager placeManager, String name, String description, String link, Color color) {
         this.name = name;
@@ -17,6 +18,15 @@ public class Dashboard {
         this.link = link;
         this.color = color;
         this.placeManager = placeManager;
+    }
+
+    public Dashboard(PlaceManager placeManager, String name, String description, String link, Color color, boolean beta) {
+        this.name = name;
+        this.description = description;
+        this.link = link;
+        this.color = color;
+        this.placeManager = placeManager;
+        this.beta = beta;
     }
 
     public String getName() {
@@ -57,5 +67,13 @@ public class Dashboard {
 
     public void setPlaceManager(PlaceManager placeManager) {
         this.placeManager = placeManager;
+    }
+
+    public boolean isBeta() {
+        return beta;
+    }
+
+    public void setBeta(boolean beta) {
+        this.beta = beta;
     }
 }

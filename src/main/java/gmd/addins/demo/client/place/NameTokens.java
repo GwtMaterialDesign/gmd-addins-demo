@@ -54,4 +54,7 @@ public class NameTokens {
     public static final String TREE = "tree";
     public static final String WEBP = "webp";
     public static final String WINDOW = "window";
+
+    /** Beta **/
+    public static final String PROGRESS_LINE_BAR = "progresslinebar";
 }

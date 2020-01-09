@@ -27,6 +27,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import gwt.material.design.client.base.helper.ColorHelper;
+import gwt.material.design.client.ui.MaterialBadge;
 import gwt.material.design.client.ui.MaterialColumn;
 import gwt.material.design.client.ui.MaterialLabel;
 
@@ -68,6 +69,10 @@ public class DashboardCard extends Composite {
 
             dashboard.getPlaceManager().revealPlace(placeRequest);
         });
+
+        if (dashboard.isBeta()) {
+            name.add(new MaterialBadge("Beta"));
+        }
     }
 
     public Dashboard getDashboard() {

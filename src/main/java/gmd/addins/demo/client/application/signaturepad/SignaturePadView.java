@@ -110,6 +110,7 @@ public class SignaturePadView extends ViewImpl implements SignaturePadPresenter.
         signaturePad.setPenColor(dark ? ColorHelper.setupComputedBackgroundColor(Color.WHITE) : ColorHelper.setupComputedBackgroundColor(Color.BLACK));
         eventCol.setBackgroundColor(dark ? Color.GREY_DARKEN_3 : Color.GREY_LIGHTEN_3);
         signaturePad.reload();
+        imageData.setBackgroundColor(dark ? Color.GREY_DARKEN_4 : Color.GREY_LIGHTEN_3);
     }
 
     @UiHandler("png")

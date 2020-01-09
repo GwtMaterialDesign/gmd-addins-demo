@@ -97,7 +97,10 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             new Dashboard(placeManager, "Time Picker", ExternalLink.TIME_PICKER.getLongName(), NameTokens.TIME_PICKER, Color.DEEP_ORANGE),
             new Dashboard(placeManager, "Tree View", "Native", NameTokens.TREE, Color.INDIGO),
             new Dashboard(placeManager, "WebP", "Native", NameTokens.WEBP, Color.LIGHT_BLUE),
-            new Dashboard(placeManager, "Window", "Native", NameTokens.WINDOW, Color.RED)
+            new Dashboard(placeManager, "Window", "Native", NameTokens.WINDOW, Color.RED),
+
+            // Beta
+            new Dashboard(placeManager, "Progress Line Bar", "Incubator", NameTokens.PROGRESS_LINE_BAR, Color.RED, true)
         ));
     }
 

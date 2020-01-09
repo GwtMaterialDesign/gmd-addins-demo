@@ -38,6 +38,7 @@ import gwt.material.design.client.pwa.push.js.Notification;
 import gwt.material.design.client.theme.dark.CoreDarkThemeLoader;
 import gwt.material.design.client.theme.dark.DarkThemeManager;
 import gwt.material.design.client.ui.MaterialToast;
+import gwt.material.design.incubator.client.dark.IncubatorDarkThemeLoader;
 
 public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> {
 
@@ -70,6 +71,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
         DarkThemeManager.get()
             .register(new CoreDarkThemeLoader())
             .register(new AddinsDarkThemeLoader())
+            .register(new IncubatorDarkThemeLoader())
             .register(new AppDarkThemeLoader())
             .load();
 

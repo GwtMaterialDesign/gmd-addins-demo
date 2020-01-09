@@ -34,11 +34,11 @@
                 <m:MaterialColumn shadow="1" padding="0" grid="m6 s12" height="500px" overflow="AUTO">
                     <m:MaterialPanel ui:field="titlePanel" backgroundColor="BLUE" padding="8" height="40px">
                         <m:MaterialLabel text="FOLDERS" textColor="WHITE" fontWeight="BOLD" float="LEFT"/>
-                        <m:MaterialIcon ui:field="btnDeselectItem" tooltip="Deselect selected item" iconType="CLEAR" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT"/>
-                        <m:MaterialIcon ui:field="btnCollapse" tooltip="Collapse" iconType="VERTICAL_ALIGN_CENTER" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT"/>
-                        <m:MaterialIcon ui:field="btnExpand" tooltip="Expand" iconType="ZOOM_OUT_MAP" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT"/>
-                        <m:MaterialIcon ui:field="btnDelete" visible="false" tooltip="Delete" iconType="DELETE" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT"/>
-                        <m:MaterialIcon ui:field="btnAdd" visible="false" tooltip="Add" iconType="ADD" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT" />
+                        <m:MaterialIcon ui:field="btnDeselectItem" tooltip="Deselect selected item" paddingTop="0" iconType="CLEAR" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT"/>
+                        <m:MaterialIcon ui:field="btnCollapse" tooltip="Collapse" paddingTop="0" iconType="VERTICAL_ALIGN_CENTER" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT"/>
+                        <m:MaterialIcon ui:field="btnExpand" tooltip="Expand" paddingTop="0" iconType="ZOOM_OUT_MAP" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT"/>
+                        <m:MaterialIcon ui:field="btnDelete" visible="false" tooltip="Delete" paddingTop="0" iconType="DELETE" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT"/>
+                        <m:MaterialIcon ui:field="btnAdd" visible="false" tooltip="Add" paddingTop="0" iconType="ADD" iconColor="WHITE" circle="true" waves="DEFAULT" float="RIGHT" />
                     </m:MaterialPanel>
                     <ma:tree.MaterialTree ui:field="docTree">
                         <ma:tree.MaterialTreeItem iconType="FOLDER" text="Documents">
@@ -63,13 +63,15 @@
                 </m:MaterialColumn>
             </m:MaterialRow>
 
-            <ma:overlay.MaterialOverlay ui:field="addOverlay" width="400px" padding="20" height="150px" visibility="HIDDEN" opacity="0" shadow="2" backgroundColor="WHITE">
-                <m:MaterialTextBox ui:field="txtName" placeholder="Folder Name"/>
-                <m:MaterialRow>
+            <m:MaterialDialog ui:field="addDialog">
+                <m:MaterialDialogContent>
+                    <m:MaterialTextBox ui:field="txtName" placeholder="Folder Name"/>
+                </m:MaterialDialogContent>
+                <m:MaterialDialogFooter>
                     <m:MaterialButton ui:field="btnFinish" text="Add" type="FLAT" float="RIGHT"/>
                     <m:MaterialButton ui:field="btnCancel" text="Cancel" type="FLAT" float="RIGHT"/>
-                </m:MaterialRow>
-            </ma:overlay.MaterialOverlay>
+                </m:MaterialDialogFooter>
+            </m:MaterialDialog>
         </widget:CodeSection>
 
         <widget:CodeSection sectionTitle="Collapse / Expand Handlers" description="Work on progress">

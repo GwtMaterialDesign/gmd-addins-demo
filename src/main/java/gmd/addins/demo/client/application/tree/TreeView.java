@@ -20,17 +20,14 @@
 package gmd.addins.demo.client.application.tree;
 
 import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.logical.shared.*;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
-import gwt.material.design.addins.client.overlay.MaterialOverlay;
 import gwt.material.design.addins.client.pathanimator.MaterialPathAnimator;
 import gwt.material.design.addins.client.tree.MaterialTree;
 import gwt.material.design.addins.client.tree.MaterialTreeItem;
-import gwt.material.design.addins.client.window.MaterialWindow;
 import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.theme.dark.ColorScheme;
@@ -48,7 +45,7 @@ public class TreeView extends ViewImpl implements TreePresenter.MyView {
     MaterialTree docTree;
 
     @UiField
-    MaterialOverlay addOverlay;
+    MaterialDialog addDialog;
 
     @UiField
     MaterialTextBox txtName;
@@ -64,27 +61,12 @@ public class TreeView extends ViewImpl implements TreePresenter.MyView {
     TreeView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
 
-        docTree.addCloseHandler(new CloseHandler<MaterialTreeItem>() {
-            @Override
-            public void onClose(CloseEvent<MaterialTreeItem> event) {
-                MaterialToast.fireToast("Closed : " + event.getTarget().getText());
-            }
-        });
-
-        docTree.addOpenHandler(new OpenHandler<MaterialTreeItem>() {
-            @Override
-            public void onOpen(OpenEvent<MaterialTreeItem> event) {
-                MaterialToast.fireToast("Opened : " + event.getTarget().getText());
-            }
-        });
-
-        docTree.addSelectionHandler(new SelectionHandler<MaterialTreeItem>() {
-            @Override
-            public void onSelection(SelectionEvent<MaterialTreeItem> event) {
-                btnAdd.setVisible(true);
-                btnDelete.setVisible(true);
-                MaterialToast.fireToast("Selected : " + event.getSelectedItem().getText());
-            }
+        docTree.addCloseHandler(event -> MaterialToast.fireToast("Closed : " + event.getTarget().getText()));
+        docTree.addOpenHandler(event -> MaterialToast.fireToast("Opened : " + event.getTarget().getText()));
+        docTree.addSelectionHandler(event -> {
+            btnAdd.setVisible(true);
+            btnDelete.setVisible(true);
+            MaterialToast.fireToast("Selected : " + event.getSelectedItem().getText());
         });
 
         DarkThemeManager manager = DarkThemeManager.get();
@@ -108,13 +90,12 @@ public class TreeView extends ViewImpl implements TreePresenter.MyView {
 
     @UiHandler("btnAdd")
     void onAddDialog(ClickEvent e) {
-        MaterialPathAnimator.animate(btnAdd.getElement(), addOverlay.getElement());
+        addDialog.open();
     }
 
     @UiHandler("btnDelete")
     void onDeleteDialog(ClickEvent e) {
         docTree.getSelectedItem().removeFromTree();
-        MaterialPathAnimator.reverseAnimate(btnAdd.getElement(), addOverlay.getElement());
     }
 
     @UiHandler("btnDeselectItem")
@@ -134,11 +115,11 @@ public class TreeView extends ViewImpl implements TreePresenter.MyView {
         item.setIconType(IconType.FOLDER);
         item.setIconColor(Color.BLUE);
         docTree.getSelectedItem().addItem(item);
-        MaterialPathAnimator.reverseAnimate(btnAdd.getElement(), addOverlay.getElement());
+        addDialog.close();
     }
 
     @UiHandler("btnCancel")
     void onCancelDialog(ClickEvent e) {
-        MaterialPathAnimator.reverseAnimate(btnAdd.getElement(), addOverlay.getElement());
+        MaterialPathAnimator.reverseAnimate(btnAdd.getElement(), addDialog.getElement());
     }
 }

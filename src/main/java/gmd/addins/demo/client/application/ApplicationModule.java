@@ -22,6 +22,7 @@ package gmd.addins.demo.client.application;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import gmd.addins.demo.client.application.autocomplete.AutocompleteModule;
 import gmd.addins.demo.client.application.avatar.AvatarModule;
+import gmd.addins.demo.client.application.beta.progress.ProgressLineBarModule;
 import gmd.addins.demo.client.application.bubble.BubbleModule;
 import gmd.addins.demo.client.application.camera.CameraModule;
 import gmd.addins.demo.client.application.carousel.CarouselModule;
@@ -91,6 +92,9 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new TreeModule());
         install(new WebpModule());
         install(new WindowModule());
+
+        /** Beta **/
+        install(new ProgressLineBarModule());
 
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
             ApplicationPresenter.MyProxy.class);
