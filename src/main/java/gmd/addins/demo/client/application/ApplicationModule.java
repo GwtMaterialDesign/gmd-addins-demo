@@ -24,6 +24,7 @@ import gmd.addins.demo.client.application.autocomplete.AutocompleteModule;
 import gmd.addins.demo.client.application.avatar.AvatarModule;
 import gmd.addins.demo.client.application.beta.placeholder.PlaceholderModule;
 import gmd.addins.demo.client.application.beta.progress.ProgressLineBarModule;
+import gmd.addins.demo.client.application.beta.tag.TagModule;
 import gmd.addins.demo.client.application.beta.toggle.GroupToggleModule;
 import gmd.addins.demo.client.application.bubble.BubbleModule;
 import gmd.addins.demo.client.application.camera.CameraModule;
@@ -99,6 +100,7 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new GroupToggleModule());
         install(new PlaceholderModule());
         install(new ProgressLineBarModule());
+        install(new TagModule());
 
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
             ApplicationPresenter.MyProxy.class);
