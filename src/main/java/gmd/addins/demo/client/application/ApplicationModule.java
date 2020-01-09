@@ -22,6 +22,7 @@ package gmd.addins.demo.client.application;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import gmd.addins.demo.client.application.autocomplete.AutocompleteModule;
 import gmd.addins.demo.client.application.avatar.AvatarModule;
+import gmd.addins.demo.client.application.beta.placeholder.PlaceholderModule;
 import gmd.addins.demo.client.application.beta.progress.ProgressLineBarModule;
 import gmd.addins.demo.client.application.beta.toggle.GroupToggleModule;
 import gmd.addins.demo.client.application.bubble.BubbleModule;
@@ -96,6 +97,7 @@ public class ApplicationModule extends AbstractPresenterModule {
 
         /** Beta **/
         install(new GroupToggleModule());
+        install(new PlaceholderModule());
         install(new ProgressLineBarModule());
 
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
