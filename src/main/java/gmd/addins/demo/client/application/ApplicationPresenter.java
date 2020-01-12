@@ -77,8 +77,9 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
 
         // Enable PWA
         if (PwaManager.isPwaSupported()) {
+
             PwaManager.getInstance()
-                .setServiceWorker("service-worker.js")
+                .setServiceWorker(new AppServiceWorkerManager())
                 .setThemeColor(ColorHelper.setupComputedBackgroundColor(Color.BLUE_DARKEN_3))
                 .setWebManifest("manifest.url")
                 .load();
