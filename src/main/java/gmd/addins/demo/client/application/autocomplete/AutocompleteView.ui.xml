@@ -26,7 +26,7 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-    &lt;ma:autocomplete.MaterialAutoComplete />
+&lt;ma:autocomplete.MaterialAutoComplete />
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Introduction" description="Use GWT Autocomplete to search for matches from local or remote data sources. We used MultiWordSuggestOracle to populate the list to be added on the autocomplete values">

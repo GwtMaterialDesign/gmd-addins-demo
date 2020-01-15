@@ -26,7 +26,7 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-    &lt;ma:overlay.MaterialOverlay />
+&lt;ma:overlay.MaterialOverlay />
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Basic" description="Requires a source component when opening the overlay to transform it to overlay panel.">

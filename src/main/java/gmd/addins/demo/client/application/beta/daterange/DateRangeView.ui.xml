@@ -26,11 +26,29 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-    &lt;in:progress.ProgressLineBar ui:field="progressLineBar" />
+&lt;in:daterange.DateRangePicker />
             </pre>
         </g:HTMLPanel>
-        <widget:CodeSection sectionTitle="Beta" >
-            <in:daterange.DateRangePicker />
+        <widget:CodeSection sectionTitle="Introduction">
+            <in:daterange.DateRangePicker ui:field="dateRange" fieldType="OUTLINED"/>
+			<m:MaterialCheckBox ui:field="singleDatePicker" text="Single Date Picker" />
+			<m:MaterialCheckBox ui:field="autoApply" text="Auto Apply" />
         </widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Events">
+			<m:MaterialPanel ui:field="eventsPanel" padding="20" height="300px" overflow="AUTO"/>
+			<g:HTMLPanel>
+				<pre class="java">
+dateRange.addValueChangeHandler(event -> log("ValueChangeEvent", "[StartDate: " + event.getValue()[0] + "], [" + event.getValue()[1] + "]"));
+dateRange.addApplyHandler(event -> log("ApplyEvent", "fired"));
+dateRange.addOpenHandler(event -> log("OpenEvent", "fired"));
+dateRange.addCloseHandler(event -> log("CloseEvent", "fired"));
+dateRange.addCancelHandler(event -> log("CancelEvent", "fired"));
+dateRange.addNextCalendarHandler(event -> log("NextCalendarEvent", "fired"));
+dateRange.addPreviousCalendarHandler(event -> log("PreviousCalendarEvent", "fired"));
+dateRange.addSelectionHandler(event -> log("SelectionEvent", "fired"));
+				</pre>
+			</g:HTMLPanel>
+		</widget:CodeSection>
     </m:MaterialPanel>
 </ui:UiBinder>

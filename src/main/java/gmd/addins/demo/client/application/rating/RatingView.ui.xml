@@ -26,7 +26,7 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-    &lt;ma:rating.MaterialRating />
+&lt;ma:rating.MaterialRating />
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Usage" description="By default, it uses the IconType#STAR to represent the selected rating, but other icons can be set using the #setSelectedRatingIcon(IconType) method.">

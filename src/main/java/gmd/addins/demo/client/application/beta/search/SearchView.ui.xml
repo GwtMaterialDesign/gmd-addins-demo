@@ -36,6 +36,16 @@
 					<in:search.InlineSearch ui:field="search" theme="LIGHT" width="50%" placeholder="Search" display="INLINE"/>
 				</m:MaterialNavSection>
 			</m:MaterialNavBar>
+			<g:HTMLPanel>
+				<pre class="xml">
+&lt;m:MaterialNavBar backgroundColor="WHITE">
+	&lt;m:MaterialNavBrand text="App Title" hideOn="HIDE_ON_SMALL_DOWN" paddingLeft="16" />
+	&lt;m:MaterialNavSection hideOn="NONE">
+		&lt;in:search.InlineSearch ui:field="search" theme="LIGHT" width="50%" placeholder="Search" display="INLINE"/>
+	&lt;/m:MaterialNavSection>
+&lt;/m:MaterialNavBar>
+				</pre>
+			</g:HTMLPanel>
         </widget:CodeSection>
 
 		<widget:CodeSection sectionTitle="Expandable Behaviour" >
@@ -46,6 +56,30 @@
 					<in:search.ExpandableInlineSearch ui:field="expandableInline" theme="LIGHT" width="50%" placeholder="Search" display="INLINE"/>
 				</m:MaterialNavSection>
 			</m:MaterialNavBar>
+			<g:HTMLPanel>
+				<pre class="xml">
+&lt;m:MaterialNavBar backgroundColor="WHITE">
+	&lt;m:MaterialNavBrand text="App Title" hideOn="HIDE_ON_SMALL_DOWN" paddingLeft="16" />
+	&lt;m:MaterialNavSection float="RIGHT" hideOn="NONE">
+		&lt;m:MaterialLink iconType="SEARCH" ui:field="openSearch"/>
+		&lt;in:search.ExpandableInlineSearch ui:field="expandableInline" theme="LIGHT" width="50%" placeholder="Search" display="INLINE"/>
+	&lt;/m:MaterialNavSection>
+&lt;/m:MaterialNavBar>
+				</pre>
+
+				<pre class="java">
+@UiField
+MaterialLink openSearch;
+
+@UiField
+ExpandableInlineSearch expandableInline;
+
+@UiHandler("openSearch")
+void openSearch(ClickEvent e) {
+	expandableInline.open();
+}
+				</pre>
+			</g:HTMLPanel>
 		</widget:CodeSection>
     </m:MaterialPanel>
 </ui:UiBinder>

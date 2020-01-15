@@ -29,15 +29,47 @@
     &lt;in:progress.ProgressLineBar ui:field="progressLineBar" />
             </pre>
         </g:HTMLPanel>
-        <widget:CodeSection sectionTitle="Beta" >
-            <in:tag.TagLabel text="Tag Label"/>
-			<in:tag.TagLabel text="Tag Label" position="RIGHT" marginLeft="20"/>
-
-			<in:tag.TagLabel text="Tag Label" size="MEDIUM"/>
-			<in:tag.TagLabel text="Tag Label" position="RIGHT" marginLeft="20" size="MEDIUM"/>
-
-			<in:tag.TagLabel text="Tag Label" size="LARGE"/>
-			<in:tag.TagLabel text="Tag Label" position="RIGHT" marginLeft="20" size="LARGE"/>
+        <widget:CodeSection sectionTitle="Usage" description="This is similar to chip but different look.">
+            <m:MaterialRow>
+				<in:tag.TagLabel text="Tag Label"/>
+			</m:MaterialRow>
         </widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Position" description="By default it's in LEFT Position but you can also change it to RIGHT">
+			<m:MaterialRow>
+				<in:tag.TagLabel text="Tag Label" position="RIGHT" marginLeft="20"/>
+			</m:MaterialRow>
+			<g:HTMLPanel>
+				<pre class="xml">
+&lt;in:tag.TagLabel text="Tag Label" position="RIGHT" marginLeft="20"/>
+				</pre>
+			</g:HTMLPanel>
+		</widget:CodeSection>
+		
+		<widget:CodeSection sectionTitle="Medium Size">
+			<m:MaterialRow>
+				<in:tag.TagLabel text="Tag Label" size="MEDIUM"/>
+				<in:tag.TagLabel text="Tag Label" position="RIGHT" marginLeft="20" size="MEDIUM"/>
+			</m:MaterialRow>
+			<g:HTMLPanel>
+				<pre class="xml">
+&lt;in:tag.TagLabel text="Tag Label" size="MEDIUM"/>
+&lt;in:tag.TagLabel text="Tag Label" position="RIGHT" marginLeft="20" size="MEDIUM"/>
+				</pre>
+			</g:HTMLPanel>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Large Size">
+			<m:MaterialRow>
+				<in:tag.TagLabel text="Tag Label" size="LARGE"/>
+				<in:tag.TagLabel text="Tag Label" position="RIGHT" marginLeft="20" size="LARGE"/>
+			</m:MaterialRow>
+			<g:HTMLPanel>
+				<pre class="xml">
+&lt;in:tag.TagLabel text="Tag Label" size="LARGE"/>
+&lt;in:tag.TagLabel text="Tag Label" position="RIGHT" marginLeft="20" size="LARGE"/>
+				</pre>
+			</g:HTMLPanel>
+		</widget:CodeSection>
     </m:MaterialPanel>
 </ui:UiBinder>

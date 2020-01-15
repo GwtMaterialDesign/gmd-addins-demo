@@ -26,7 +26,7 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-    &lt;ma:circularprogress.MaterialCircularProgress />
+&lt;ma:circularprogress.MaterialCircularProgress />
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Usage" description="You can easily set the value and design the fille color of the circular progress">

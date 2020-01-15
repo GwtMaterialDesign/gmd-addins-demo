@@ -26,7 +26,7 @@
 	<m:MaterialPanel>
 		<g:HTMLPanel>
 			<pre class="xml" style="height: 40px;overflow: hidden">
-	&lt;ma:swipeable.MaterialSwipeablePanel />
+&lt;ma:swipeable.MaterialSwipeablePanel />
 			</pre>
 		</g:HTMLPanel>
 		<widget:CodeSection grid="s12" sectionTitle="Note"

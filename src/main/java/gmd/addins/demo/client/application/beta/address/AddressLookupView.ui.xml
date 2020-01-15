@@ -23,14 +23,15 @@
 			 xmlns:widget="urn:import:gmd.addins.demo.client.widget"
 			 xmlns:in="urn:import:gwt.material.design.incubator.client">
 
-    <m:MaterialPanel>
-        <g:HTMLPanel>
-            <pre class="xml" style="height: 40px;overflow: hidden">
-    &lt;in:progress.ProgressLineBar ui:field="progressLineBar" />
-            </pre>
-        </g:HTMLPanel>
-        <widget:CodeSection sectionTitle="Beta" >
-			<in:google.addresslookup.AddressLookup grid="s12"  ui:field="addressLookup" fieldType="OUTLINED" label="Address" placeholder="Enter any location..."/>
+	<m:MaterialPanel>
+		<g:HTMLPanel>
+			<pre class="xml" style="height: 40px;overflow: hidden">
+&lt;in:google.addresslookup.AddressLookup ui:field="addressLookup"/>
+			</pre>
+		</g:HTMLPanel>
+		<widget:CodeSection sectionTitle="Example">
+			<in:google.addresslookup.AddressLookup grid="s12" ui:field="addressLookup" fieldType="OUTLINED"
+												   label="Address" placeholder="Enter any location..."/>
 			<m:MaterialRow padding="20">
 				<m:MaterialTextBox ui:field="streetAddress" label="Street Address" readOnly="true" grid="s6" text="-"/>
 				<m:MaterialTextBox ui:field="city" label="City" readOnly="true" grid="s6" text="-"/>
@@ -38,6 +39,49 @@
 				<m:MaterialTextBox ui:field="zipCode" label="Zip Code" readOnly="true" grid="s6" text="-"/>
 				<m:MaterialTextBox ui:field="country" label="Country" readOnly="true" grid="s6" text="-"/>
 			</m:MaterialRow>
-        </widget:CodeSection>
-    </m:MaterialPanel>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="API Registry"
+							description="We currently register all Google API's into a registry for ease of loading the Google libraries.">
+			<g:HTMLPanel>
+				<pre class="java">
+@UiField
+AddressLookup addressLookup;
+
+// Loading API
+ApiRegistry.register(new AddressLookupApi("AIzaSyCcFsjlqr-DR6acrZ8xZKhXNGxeS3nDmIE"), new Callback&lt;Void, Exception>() {
+	@Override
+	public void onFailure(Exception exception) {
+		MaterialToast.fireToast(exception.getMessage());
+	}
+
+	@Override
+	public void onSuccess(Void aVoid) {
+		addressLookup.load();
+	}
+});
+				</pre>
+			</g:HTMLPanel>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Setting Options">
+			<g:HTMLPanel>
+				<pre class="java">
+AddressLookupOptions option = AddressLookupOptions.create();
+option.setTypes(AddressType.ADDRESS);
+				</pre>
+			</g:HTMLPanel>
+		</widget:CodeSection>
+		<widget:CodeSection sectionTitle="Address Types">
+			<g:HTMLPanel>
+				<blockquote>
+					<p><b>GEOCODE</b></p>
+					<p><b>ADDRESS</b></p>
+					<p><b>ESTABLISHMENT</b></p>
+					<p><b>REGIONS</b></p>
+					<p><b>CITIES</b></p>
+				</blockquote>
+			</g:HTMLPanel>
+		</widget:CodeSection>
+	</m:MaterialPanel>
 </ui:UiBinder>

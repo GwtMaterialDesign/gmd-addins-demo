@@ -52,6 +52,6 @@ public class DateRangePresenter extends BasePresenter<DateRangePresenter.MyView,
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Date Range", "Work in progress", "");
+        setHeaderTitle("Date Range Picker", "Provided a start and end date selection.", "");
     }
 }

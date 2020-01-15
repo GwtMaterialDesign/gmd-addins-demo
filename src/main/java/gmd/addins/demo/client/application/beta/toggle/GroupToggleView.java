@@ -21,17 +21,16 @@ package gmd.addins.demo.client.application.beta.toggle;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.logical.shared.SelectionEvent;
+import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gwt.material.design.client.ui.MaterialToast;
-import gwt.material.design.incubator.client.progress.ProgressLineBar;
 import gwt.material.design.incubator.client.toggle.GroupToggleButton;
 
 import javax.inject.Inject;
-import java.util.ArrayList;
 import java.util.List;
 
 public class GroupToggleView extends ViewImpl implements GroupTogglePresenter.MyView {
@@ -46,9 +45,25 @@ public class GroupToggleView extends ViewImpl implements GroupTogglePresenter.My
     GroupToggleView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
 
-        groupToggle.addItem(1);
-        groupToggle.addItem(2);
-        groupToggle.addItem(3);
+        updateItems(true);
+    }
+
+    public void updateItems(boolean value) {
+        groupToggle.getWrapper().clear();
+
+        if (value) {
+            groupToggle.addItem(1);
+            groupToggle.addItem(2);
+            groupToggle.addItem(3);
+            groupToggle.addItem(4);
+            groupToggle.addItem(5);
+        } else {
+            groupToggle.addItem("a", 1);
+            groupToggle.addItem("b", 2);
+            groupToggle.addItem("c", 3);
+            groupToggle.addItem("d", 4);
+            groupToggle.addItem("e", 5);
+        }
     }
 
     @UiHandler("groupToggle")
@@ -56,8 +71,28 @@ public class GroupToggleView extends ViewImpl implements GroupTogglePresenter.My
         MaterialToast.fireToast("Selected Index : " + e.getSelectedItem());
     }
 
+    @UiHandler("groupToggle")
+    void valueChange(ValueChangeEvent<List<Integer>> event) {
+        MaterialToast.fireToast(event.getValue().toString());
+    }
+
     @UiHandler("getIndex")
     void getIndex(ClickEvent e) {
         MaterialToast.fireToast("Selected Index : " + groupToggle.getValue().get(0));
+    }
+
+    @UiHandler("multiple")
+    void multiple(ValueChangeEvent<Boolean> event) {
+        groupToggle.setMultiple(event.getValue());
+    }
+
+    @UiHandler("changeText")
+    void changeText(ValueChangeEvent<Boolean> event) {
+        updateItems(!event.getValue());
+    }
+
+    @UiHandler("reset")
+    void reset(ClickEvent e) {
+        groupToggle.reset();
     }
 }

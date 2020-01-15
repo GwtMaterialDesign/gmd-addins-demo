@@ -27,7 +27,7 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-    &lt;ma:countup.MaterialCountUp />
+&lt;ma:countup.MaterialCountUp />
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Configurations" description="Below are the available configs for your count up widget.">

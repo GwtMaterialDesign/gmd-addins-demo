@@ -27,7 +27,7 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="java" style="height: 40px;">
-    MaterialDnd.draggable(panel);
+MaterialDnd.draggable(panel);
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Configurations" description="Below are the available configs for your dnd component.">

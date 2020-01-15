@@ -26,7 +26,7 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-    &lt;ma:cutout.MaterialCutOut />
+&lt;ma:cutout.MaterialCutOut />
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Material Cut Out" description="Click the icon below to show a material cutout.">
