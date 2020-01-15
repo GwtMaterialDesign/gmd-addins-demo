@@ -26,7 +26,7 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-    &lt;ma:docviewer.MaterialDocViewer />
+&lt;ma:docviewer.MaterialDocViewer />
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Introduction" description="This component is an iframe that wraps your document using Google Doc Viewer. It's good for public document.">

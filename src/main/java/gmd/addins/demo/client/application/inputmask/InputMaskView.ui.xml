@@ -26,7 +26,7 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-    &lt;ma:inputmask.MaterialInputMask />
+&lt;ma:inputmask.MaterialInputMask />
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Basic Examples" >

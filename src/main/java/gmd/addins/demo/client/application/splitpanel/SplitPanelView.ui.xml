@@ -26,7 +26,7 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-    &lt;ma:splitpanel.MaterialSplitPanel />
+&lt;ma:splitpanel.MaterialSplitPanel />
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Introduction" description="Using MaterialSplitPanel you must require to wrap two columns inside for the splitting feature.">

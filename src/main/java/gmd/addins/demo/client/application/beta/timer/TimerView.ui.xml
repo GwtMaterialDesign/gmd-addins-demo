@@ -29,12 +29,24 @@
     &lt;in:progress.ProgressLineBar ui:field="progressLineBar" />
             </pre>
         </g:HTMLPanel>
-        <widget:CodeSection sectionTitle="Beta" >
+        <widget:CodeSection sectionTitle="Usage" description="This is another version of MaterialProgressBar Indeterminate type. This widget is good for timer usage.">
 			<in:timer.TimerProgress />
-
-			<in:timer.TimerProgress duration="5000"/>
-
-			<in:timer.TimerProgress backgroundColor="PINK_LIGHTEN_5" fillColor="PINK" />
         </widget:CodeSection>
+		<widget:CodeSection sectionTitle="Duration">
+			<in:timer.TimerProgress duration="5000"/>
+			<g:HTMLPanel>
+				<pre class="xml">
+&lt;in:timer.TimerProgress duration="5000"/>
+				</pre>
+			</g:HTMLPanel>
+		</widget:CodeSection>
+		<widget:CodeSection sectionTitle="Background and Fill Color">
+			<in:timer.TimerProgress backgroundColor="PINK_LIGHTEN_5" fillColor="PINK" />
+			<g:HTMLPanel>
+				<pre class="xml">
+&lt;in:timer.TimerProgress backgroundColor="PINK_LIGHTEN_5" fillColor="PINK" />
+				</pre>
+			</g:HTMLPanel>
+		</widget:CodeSection>
     </m:MaterialPanel>
 </ui:UiBinder>

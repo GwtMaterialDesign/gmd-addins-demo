@@ -19,10 +19,13 @@
  */
 package gmd.addins.demo.client.application.beta.progress;
 
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
+import gwt.material.design.client.ui.MaterialToast;
 import gwt.material.design.incubator.client.progress.ProgressLineBar;
 
 import javax.inject.Inject;
@@ -51,5 +54,10 @@ public class ProgressLineBarView extends ViewImpl implements ProgressLineBarPres
         }
 
         progressLineBar.setValues(values);
+    }
+
+    @UiHandler("getValue")
+    void getValue(ClickEvent event) {
+        MaterialToast.fireToast(progressLineBar.getValues() + "");
     }
 }

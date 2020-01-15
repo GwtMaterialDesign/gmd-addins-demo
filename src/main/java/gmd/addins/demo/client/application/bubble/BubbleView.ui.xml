@@ -25,7 +25,7 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-    &lt;ma:bubble.MaterialBubble />
+&lt;ma:bubble.MaterialBubble />
             </pre>
         </g:HTMLPanel>
         <m:MaterialRow>

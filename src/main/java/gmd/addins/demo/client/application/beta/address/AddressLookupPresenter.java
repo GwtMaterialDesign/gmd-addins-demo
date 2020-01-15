@@ -52,6 +52,6 @@ public class AddressLookupPresenter extends BasePresenter<AddressLookupPresenter
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Address Lookup", "Work in progress", "");
+        setHeaderTitle("Address Lookup", "Address Lookup / AddressLookup is a feature of the Google Places library in the Maps JavaScript API. You can use autocomplete to give your applications the type-ahead-search behavior of the Google Maps search field. When a user starts typing an address, autocomplete will fill in the rest.", "");
     }
 }

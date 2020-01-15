@@ -29,9 +29,52 @@
     &lt;in:toggle.GroupToggleButton ui:field="groupToggle" />
             </pre>
         </g:HTMLPanel>
-        <widget:CodeSection sectionTitle="Beta" >
-			<in:toggle.GroupToggleButton ui:field="groupToggle" fontSize="1.4em"/>
-			<m:MaterialButton ui:field="getIndex" text="Get Index" />
+        <widget:CodeSection sectionTitle="Usage" description="Our toggle button letes you select one or multiple items.">
+			<in:toggle.GroupToggleButton ui:field="groupToggle"  fontSize="1.4em"/>
+			<m:MaterialCheckBox ui:field="multiple" text="Multiple" />
+			<m:MaterialCheckBox ui:field="changeText" text="Change Text" />
+			<m:MaterialRow marginTop="20">
+				<m:MaterialButton ui:field="reset" text="Reset"  type="FLAT" />
+				<m:MaterialButton ui:field="getIndex" text="Get Index" />
+			</m:MaterialRow>
         </widget:CodeSection>
+		<widget:CodeSection sectionTitle="Adding Items" description="You change the text of the item you want to add.">
+			<g:HTMLPanel>
+				<pre class="java">
+@UiField
+GroupToggleButton&lt;Integer> groupToggle;
+
+groupToggle.addItem(1);
+groupToggle.addItem(2);
+groupToggle.addItem("C", 3);
+groupToggle.addItem("D", 4);
+groupToggle.addItem("E", 5);
+				</pre>
+			</g:HTMLPanel>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Reset" description="This will reset all active toggle buttons.">
+			<g:HTMLPanel>
+				<pre class="java">
+groupToggle.reset();
+				</pre>
+			</g:HTMLPanel>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Events" description="We provided two events that is useful for the group toggle">
+			<g:HTMLPanel>
+				<pre class="java">
+@UiHandler("groupToggle")
+void selection(SelectionEvent&lt;Integer> e) {
+	MaterialToast.fireToast("Selected Index : " + e.getSelectedItem());
+}
+
+@UiHandler("groupToggle")
+void valueChange(ValueChangeEvent&lt;List&lt;Integer>> event) {
+	MaterialToast.fireToast(event.getValue().toString());
+}
+				</pre>
+			</g:HTMLPanel>
+		</widget:CodeSection>
     </m:MaterialPanel>
 </ui:UiBinder>

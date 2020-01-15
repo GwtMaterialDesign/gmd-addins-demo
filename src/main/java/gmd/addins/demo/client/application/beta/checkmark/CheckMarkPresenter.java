@@ -52,6 +52,7 @@ public class CheckMarkPresenter extends BasePresenter<CheckMarkPresenter.MyView,
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Check Mark", "Work in progress", "");
+        setHeaderTitle("Check Mark", "This is a custom animated check mark to indicate successful message which can be used" +
+            " on Dialogs.", "");
     }
 }

@@ -29,12 +29,23 @@
     &lt;in:progress.ProgressLineBar ui:field="progressLineBar" />
             </pre>
         </g:HTMLPanel>
-        <widget:CodeSection sectionTitle="Beta" >
-            <m:MaterialColumn grid="s4" padding="0">
-				<in:placeholder.PlaceholderItem grid="s12" height="10em" marginBottom="6"/>
-				<in:placeholder.PlaceholderItem grid="s12" height="1em" marginBottom="6"/>
-				<in:placeholder.PlaceholderItem grid="s6" height="1em" marginBottom="6"/>
-			</m:MaterialColumn>
+        <widget:CodeSection sectionTitle="Usage" description="Display this placeholder will manipulate the users' brain and make you are app more responsive.">
+            <m:MaterialRow padding="20">
+				<m:MaterialColumn grid="s4" padding="0">
+					<in:placeholder.PlaceholderItem circle="true" width="60px" height="60px" marginBottom="6"/>
+					<in:placeholder.PlaceholderItem grid="s12" height="10em" marginBottom="6"/>
+					<in:placeholder.PlaceholderItem grid="s12" height="1em" marginBottom="6"/>
+					<in:placeholder.PlaceholderItem grid="s6" height="1em" marginBottom="6"/>
+				</m:MaterialColumn>
+			</m:MaterialRow>
+			<g:HTMLPanel>
+				<pre class="xml">
+&lt;in:placeholder.PlaceholderItem circle="true" width="60px" height="60px" marginBottom="6"/>
+&lt;in:placeholder.PlaceholderItem grid="s12" height="10em" marginBottom="6"/>
+&lt;in:placeholder.PlaceholderItem grid="s12" height="1em" marginBottom="6"/>
+&lt;in:placeholder.PlaceholderItem grid="s6" height="1em" marginBottom="6"/>
+				</pre>
+			</g:HTMLPanel>
         </widget:CodeSection>
     </m:MaterialPanel>
 </ui:UiBinder>

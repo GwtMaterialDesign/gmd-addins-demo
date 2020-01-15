@@ -52,6 +52,6 @@ public class PlaceholderPresenter extends BasePresenter<PlaceholderPresenter.MyV
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Placeholder", "Work in progress", "");
+        setHeaderTitle("Placeholder", "Display a placeholder preview of your content before the data gets loaded to reduce load-time frustration.", "");
     }
 }

@@ -26,14 +26,22 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-    &lt;in:progress.ProgressLineBar ui:field="progressLineBar" />
+&lt;in:animation.checkmark.CheckMark />
             </pre>
         </g:HTMLPanel>
-        <widget:CodeSection sectionTitle="Beta" >
+        <widget:CodeSection sectionTitle="Usage" description="Check below the full code implementation with custom message.">
             <in:animation.checkmark.CheckMark />
 			<m:MaterialRow textAlign="CENTER">
 				<m:MaterialTitle title="Success" description="Lorem Ipsum dolor emet" />
 			</m:MaterialRow>
+			<g:HTMLPanel>
+				<pre class="xml">
+&lt;in:animation.checkmark.CheckMark />
+&lt;m:MaterialRow textAlign="CENTER">
+	&lt;m:MaterialTitle title="Success" description="Lorem Ipsum dolor emet" />
+&lt;/m:MaterialRow>
+				</pre>
+			</g:HTMLPanel>
         </widget:CodeSection>
     </m:MaterialPanel>
 </ui:UiBinder>

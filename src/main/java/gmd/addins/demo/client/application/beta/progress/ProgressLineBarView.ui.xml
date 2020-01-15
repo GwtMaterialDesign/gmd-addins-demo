@@ -30,8 +30,43 @@
     &lt;in:progress.ProgressLineBar ui:field="progressLineBar" />
             </pre>
         </g:HTMLPanel>
-        <widget:CodeSection sectionTitle="Beta" >
+        <widget:CodeSection sectionTitle="Basic" description="The progress line bar is alternative for Progress widget which creates more visibility on each progress item. ">
             <in:progress.ProgressLineBar ui:field="progressLineBar" />
+            <m:MaterialButton ui:field="getValue" text="Get Value" marginTop="20"/>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Adding Option">
+            <g:HTMLPanel>
+                <pre class="java">
+@UiField
+ProgressLineBar&lt;Integer> progressLineBar;
+
+for (int i = 0; i &lt;= 10; i++) {
+    progressLineBar.addOption(i);
+}
+                </pre>
+            </g:HTMLPanel>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Setting Values">
+            <g:HTMLPanel>
+                <pre class="java">
+List&lt;Integer> values = new ArrayList&lt;>();
+for (int i = 0; i &lt;= 5; i++) {
+    values.add(i);
+}
+
+progressLineBar.setValues(values);
+                </pre>
+            </g:HTMLPanel>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Get Value">
+            <g:HTMLPanel>
+                <pre class="java">
+MaterialToast.fireToast(progressLineBar.getValues() + "");
+                </pre>
+            </g:HTMLPanel>
         </widget:CodeSection>
     </m:MaterialPanel>
 </ui:UiBinder>

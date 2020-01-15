@@ -26,7 +26,7 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-    &lt;ma:stepper.MaterialStepper />
+&lt;ma:stepper.MaterialStepper />
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Usage" description="You can play with the configuration on the right side for the best requirements you want.">
