@@ -27,6 +27,7 @@ import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import gmd.addins.demo.client.application.ApplicationPresenter;
 import gmd.addins.demo.client.application.BasePresenter;
+import gmd.addins.demo.client.place.ExternalLink;
 import gmd.addins.demo.client.place.NameTokens;
 
 public class DateRangePresenter extends BasePresenter<DateRangePresenter.MyView, DateRangePresenter.MyProxy> {
@@ -53,5 +54,6 @@ public class DateRangePresenter extends BasePresenter<DateRangePresenter.MyView,
         super.onBind();
 
         setHeaderTitle("Date Range Picker", "Provided a start and end date selection.", "");
+        setExternalLibrary(ExternalLink.DATE_RANGE_PICKER);
     }
 }

@@ -46,7 +46,7 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
     }
 
     @UiField
-    MaterialComboBox<Product> products, labelAndPlaceholder, allowClear, withOptGroup, multipleSelect, disabled, limit,
+    MaterialComboBox<Product> products, labelAndPlaceholder, singleAllowClear, allowClear, withOptGroup, multipleSelect, disabled, limit,
         tags, comboTags, comboCloseOnSelect, valueChange, valueChangeMultiple, selection, selectionMultiple;
 
     @UiField
@@ -55,6 +55,9 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
     @Inject
     ComboBoxView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+
+        labelAndPlaceholder.setCloseOnSelect(true);
+        labelAndPlaceholder.setScrollAfterSelect(false);
 
         valueChange.addValueChangeHandler(event -> MaterialToast.fireToast(event.getValue().get(0).getProductName()));
         valueChangeMultiple.addValueChangeHandler(event -> {
@@ -69,6 +72,11 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
                 MaterialToast.fireToast(product.getProductName());
             }
         });
+
+        allowClear.addClearHandler(event -> MaterialToast.fireToast("Clear Event Fired"));
+        allowClear.addClearingHandler(event -> MaterialToast.fireToast("Clearing Event Fired"));
+        singleAllowClear.addClearHandler(event -> MaterialToast.fireToast("Clear Event Fired"));
+        singleAllowClear.addClearingHandler(event -> MaterialToast.fireToast("Clearing Event Fired"));
     }
 
     @Override

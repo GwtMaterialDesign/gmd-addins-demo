@@ -20,6 +20,7 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
 			 xmlns:g="urn:import:com.google.gwt.user.client.ui"
 			 xmlns:m="urn:import:gwt.material.design.client.ui"
+			 xmlns:ma="urn:import:gwt.material.design.addins.client"
 			 xmlns:widget="urn:import:gmd.addins.demo.client.widget"
 			 xmlns:in="urn:import:gwt.material.design.incubator.client">
 
@@ -30,9 +31,52 @@
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Introduction">
-            <in:daterange.DateRangePicker ui:field="dateRange" fieldType="OUTLINED"/>
-			<m:MaterialCheckBox ui:field="singleDatePicker" text="Single Date Picker" />
-			<m:MaterialCheckBox ui:field="autoApply" text="Auto Apply" />
+            <m:MaterialRow>
+				<m:MaterialRow padding="12">
+					<in:daterange.DateRangePicker ui:field="dateRangePicker"  grid="s12 m6 l4" fieldType="OUTLINED"/>
+					<m:MaterialRow>
+						<m:MaterialButton ui:field="getValue" text="Get Value" marginTop="20"/>
+					</m:MaterialRow>
+				</m:MaterialRow>
+
+				<m:MaterialColumn grid="s12 m6 l4">
+					<m:MaterialTextBox ui:field="parentEl" placeholder="body" label="parentEl" fieldType="OUTLINED"/>
+					<in:daterange.DateRangePicker ui:field="startDate" placeholder="startDate" singleDatePicker="true" fieldType="OUTLINED"/>
+					<in:daterange.DateRangePicker ui:field="endDate" placeholder="endDate" singleDatePicker="true" fieldType="OUTLINED"/>
+					<ma:inputmask.MaterialDateInputMask ui:field="minDate" placeholder="MM/DD/YYYY" maxWidth="200px" mask="MM/DD/YYYY" fieldType="OUTLINED"/>
+					<ma:inputmask.MaterialDateInputMask ui:field="maxDate" placeholder="MM/DD/YYYY" maxWidth="200px" mask="MM/DD/YYYY" fieldType="OUTLINED"/>
+					<m:MaterialListValueBox ui:field="alignment" placeholder="alignment" fieldType="OUTLINED"/>
+					<m:MaterialListValueBox ui:field="position" placeholder="position" fieldType="OUTLINED"/>
+				</m:MaterialColumn>
+
+				<m:MaterialColumn grid="s12 m6 l4">
+					<m:MaterialIntegerBox ui:field="minYear" label="minYear" fieldType="OUTLINED"/>
+					<m:MaterialIntegerBox ui:field="maxYear" label="maxYear" fieldType="OUTLINED"/>
+					<m:MaterialCheckBox type="FILLED" ui:field="showDropdowns" text="showDropdowns" />
+					<m:MaterialCheckBox type="FILLED" ui:field="showWeekNumbers" text="showWeekNumbers"/>
+					<m:MaterialCheckBox type="FILLED" ui:field="showISOWeekNumbers" text="showISOWeekNumbers"/>
+					<m:MaterialCheckBox type="FILLED" ui:field="singleDatePicker" text="singleDatePicker"/>
+					<m:MaterialCheckBox type="FILLED" ui:field="timePicker" text="timePicker"/>
+					<m:MaterialCheckBox type="FILLED" ui:field="timePicker24Hour" text="timePicker24Hour"/>
+					<m:MaterialIntegerBox ui:field="timePickerIncrement" marginTop="40" placeholder="1" label="timePickerIncrement (in minutes)" />
+					<m:MaterialCheckBox type="FILLED" ui:field="timePickerSeconds" text="timePickerSeconds"/>
+					<m:MaterialCheckBox type="FILLED" ui:field="maxSpan" text="maxSpan (example value)"/>
+					<m:MaterialCheckBox type="FILLED" ui:field="locale" text="locale (example settings)"/>
+					<m:MaterialCheckBox type="FILLED" ui:field="autoApply" text="autoApply"/>
+				</m:MaterialColumn>
+
+				<m:MaterialColumn grid="s12 m6 l4">
+					<m:MaterialTextBox ui:field="buttonClasses" label="buttonClasses" placeholder="btn btn-sm" fieldType="OUTLINED"/>
+					<m:MaterialTextBox ui:field="applyButtonClasses" label="applyButtonClasses" placeholder="btn-primary" fieldType="OUTLINED"/>
+					<m:MaterialTextBox ui:field="cancelButtonClasses" label="cancelButtonClasses" placeholder="btn-default" fieldType="OUTLINED"/>
+					<m:MaterialCheckBox type="FILLED" ui:field="ranges" text="ranges (with example predefined ranges)"/>
+					<m:MaterialCheckBox type="FILLED" ui:field="alwaysShowCalendars" text="alwaysShowCalendars"/>
+					<m:MaterialCheckBox type="FILLED" ui:field="showCustomRangeLabel" text="showCustomRangeLabel" value="true"/>
+					<m:MaterialCheckBox type="FILLED" ui:field="linkedCalendars" text="linkedCalendars" value="true"/>
+					<m:MaterialCheckBox type="FILLED" ui:field="autoUpdateInput" text="autoUpdateInput" value="true"/>
+				</m:MaterialColumn>
+
+			</m:MaterialRow>
         </widget:CodeSection>
 
 		<widget:CodeSection sectionTitle="Events">

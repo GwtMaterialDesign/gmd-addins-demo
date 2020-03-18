@@ -17,7 +17,9 @@ public enum ExternalLink {
     RICH_EDITOR("MaterialNote", "1.2.1", "https://github.com/Cerealkillerway/materialNote"),
     SIGNATURE_PAD("SignaturePad", "2.3.0", "https://github.com/szimek/signature_pad"),
     SPLIT_PANEL("TouchSplitterJQuery", "0.5.1", "https://github.com/colelawrence/Touch-Splitter-jQuery"),
-    TIME_PICKER("Lolliclock", "0.1.0", "https://github.com/mattkrick/lolliclock");
+    TIME_PICKER("Lolliclock", "0.1.0", "https://github.com/mattkrick/lolliclock"),
+
+    DATE_RANGE_PICKER("DateRangePicker", "3.3.0", "http://www.daterangepicker.com/"),;
 
     String name;
     String longName;

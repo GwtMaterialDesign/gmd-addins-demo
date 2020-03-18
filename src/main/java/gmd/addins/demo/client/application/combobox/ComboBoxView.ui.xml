@@ -79,7 +79,7 @@
         <widget:CodeSection sectionTitle="Allow Clear" description="We added a built in clear icon to easily clear all items on Multiple Combobox">
             <m:MaterialRow>
                 <m:MaterialColumn grid="l6 m6 s12">
-                    <ma:combobox.MaterialComboBox placeholder="This is a placeholder" allowClear="true">
+                    <ma:combobox.MaterialComboBox ui:field="singleAllowClear" placeholder="This is a placeholder" allowClear="true">
                         <m:html.Option text="" />
                         <m:html.Option text="Item 1" />
                         <m:html.Option text="Item 2" />
