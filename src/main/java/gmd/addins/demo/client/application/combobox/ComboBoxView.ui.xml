@@ -29,6 +29,16 @@
 &lt;ma:combobox.MaterialComboBox />
             </pre>
         </g:HTMLPanel>
+
+        <!--TODO Templating -->
+        <widget:CodeSection sectionTitle="Templating" description="Customize your dropdown items look and feel.">
+            <m:MaterialRow>
+                <m:MaterialColumn grid="l6 m6 s12">
+                    <ma:combobox.MaterialComboBox width="100%" ui:field="templateComboBox" multiple="true" placeholder="Products" />
+                </m:MaterialColumn>
+            </m:MaterialRow>
+        </widget:CodeSection>
+
         <!-- Standard -->
         <widget:CodeSection sectionTitle="Basic">
             <m:MaterialRow>

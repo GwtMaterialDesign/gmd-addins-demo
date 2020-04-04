@@ -40,6 +40,8 @@ public class DropzoneView extends ViewImpl implements DropzonePresenter.MyView {
     @Inject
     DropzoneView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+
+        uploader.setUploadMultiple(true);
     }
 
     @UiHandler("enable")

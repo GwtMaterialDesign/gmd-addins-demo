@@ -3,8 +3,14 @@ package gmd.addins.demo.client.generator.product;
 public class ProductGenerator {
 
     public static Product generate() {
-        return new Product(date(), productName(), productAdjective(), price(), color(), productMaterial(), department());
+        Product product = new Product(date(), productName(), productAdjective(), price(), color(), productMaterial(), department());
+        product.setImage(image());
+        return product;
     }
+
+    protected static native String image() /*-{
+        return $wnd.faker.image.avatar();
+    }-*/;
 
     protected static native String date() /*-{
         return $wnd.faker.company.companyName();

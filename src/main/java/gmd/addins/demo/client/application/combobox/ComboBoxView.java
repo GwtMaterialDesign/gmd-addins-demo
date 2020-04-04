@@ -30,6 +30,8 @@ import gmd.addins.demo.client.generator.DataGenerator;
 import gmd.addins.demo.client.generator.product.Product;
 import gmd.addins.demo.client.generator.user.User;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
+import gwt.material.design.addins.client.combobox.template.ImageTextResultTemplate;
+import gwt.material.design.addins.client.combobox.template.ImageTextSelectionTempate;
 import gwt.material.design.client.ui.MaterialCheckBox;
 import gwt.material.design.client.ui.MaterialToast;
 import gwt.material.design.client.ui.html.OptGroup;
@@ -47,7 +49,7 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
 
     @UiField
     MaterialComboBox<Product> products, labelAndPlaceholder, singleAllowClear, allowClear, withOptGroup, multipleSelect, disabled, limit,
-        tags, comboTags, comboCloseOnSelect, valueChange, valueChangeMultiple, selection, selectionMultiple;
+        tags, comboTags, comboCloseOnSelect, valueChange, valueChangeMultiple, selection, selectionMultiple, templateComboBox;
 
     @UiField
     MaterialCheckBox disable;
@@ -55,6 +57,7 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
     @Inject
     ComboBoxView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+
 
         labelAndPlaceholder.setCloseOnSelect(true);
         labelAndPlaceholder.setScrollAfterSelect(false);
@@ -77,12 +80,34 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
         allowClear.addClearingHandler(event -> MaterialToast.fireToast("Clearing Event Fired"));
         singleAllowClear.addClearHandler(event -> MaterialToast.fireToast("Clear Event Fired"));
         singleAllowClear.addClearingHandler(event -> MaterialToast.fireToast("Clearing Event Fired"));
+
+        //TODO: Prepare a template samples for the combobox.
+        //TODO: Might need to create a class to be defined.
+        templateComboBox.setTemplateResult((template) -> {
+            if (template.id != null) {
+                Product product = this.products.getValueByString(template.id);
+                if (product != null) {
+                    return new ImageTextSelectionTempate(product.getImage(), product.getProductName()).getElement();
+                }
+            }
+            return template.text;
+        });
+
+        templateComboBox.setTemplateSelection(template -> {
+            if (template.id != null) {
+                Product product = this.products.getValueByString(template.id);
+                if (product != null) {
+                    return new ImageTextResultTemplate(product.getImage(), product.getProductName()).getElement();
+                }
+            }
+            return template.text;
+        });
     }
 
     @Override
     public void setProducts(List<Product> products) {
         addProducts(products, this.products, multipleSelect, disabled, tags, comboTags, comboCloseOnSelect, valueChange, valueChangeMultiple,
-            selection, selectionMultiple);
+            selection, selectionMultiple, templateComboBox);
         addProductMaterials(products, labelAndPlaceholder, allowClear);
         addProductsGroup(products, withOptGroup, limit);
     }
