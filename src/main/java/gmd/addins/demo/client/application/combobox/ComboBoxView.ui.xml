@@ -30,20 +30,11 @@
             </pre>
         </g:HTMLPanel>
 
-        <!--TODO Templating -->
-        <widget:CodeSection sectionTitle="Templating" description="Customize your dropdown items look and feel.">
-            <m:MaterialRow>
-                <m:MaterialColumn grid="l6 m6 s12">
-                    <ma:combobox.MaterialComboBox width="100%" ui:field="templateComboBox" multiple="true" placeholder="Products" />
-                </m:MaterialColumn>
-            </m:MaterialRow>
-        </widget:CodeSection>
-
         <!-- Standard -->
         <widget:CodeSection sectionTitle="Basic">
             <m:MaterialRow>
                 <m:MaterialColumn grid="l6 m6 s12">
-                    <ma:combobox.MaterialComboBox width="100%"  ui:field="products" placeholder="TimeZone" />
+                    <ma:combobox.MaterialComboBox width="100%"  ui:field="products" placeholder="Product" />
                 </m:MaterialColumn>
             </m:MaterialRow>
         </widget:CodeSection>
@@ -100,7 +91,7 @@
         </widget:CodeSection>
         <m:MaterialRow>
             <m:MaterialColumn grid="l6 m6 s12">
-                <ma:combobox.MaterialComboBox ui:field="allowClear" placeholder="TimeZone" closeOnSelect="false" multiple="true" allowClear="true" />
+                <ma:combobox.MaterialComboBox ui:field="allowClear" placeholder="Product" closeOnSelect="false" multiple="true" allowClear="true" />
             </m:MaterialColumn>
         </m:MaterialRow>
 
@@ -108,7 +99,7 @@
         <widget:CodeSection sectionTitle="With OptGroup" description="Just like on java way of adding optgroup, we have also added it on UiBinder way.">
             <m:MaterialRow>
                 <m:MaterialColumn grid="l6 m6 s12">
-                    <ma:combobox.MaterialComboBox ui:field="withOptGroup" placeholder="TimeZone"/>
+                    <ma:combobox.MaterialComboBox ui:field="withOptGroup" placeholder="Product"/>
                 </m:MaterialColumn>
             </m:MaterialRow>
         </widget:CodeSection>
@@ -117,7 +108,7 @@
         <widget:CodeSection sectionTitle="Multiple Select" description="Just like Autocomplete you can have a capability to select ComboBox options multiple.">
             <m:MaterialRow>
                 <m:MaterialColumn grid="l6 m6 s12">
-                    <ma:combobox.MaterialComboBox closeOnSelect="false" multiple="true" ui:field="multipleSelect" placeholder="TimeZone"/>
+                    <ma:combobox.MaterialComboBox closeOnSelect="false" multiple="true" ui:field="multipleSelect" placeholder="Product"/>
                 </m:MaterialColumn>
             </m:MaterialRow>
         </widget:CodeSection>
@@ -193,6 +184,37 @@
                     <ma:combobox.MaterialComboBox placeholder="Time Zone" closeOnSelect="false" multiple="true" ui:field="selectionMultiple" />
                 </m:MaterialColumn>
             </m:MaterialRow>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Templating" description="Customize your selection and result items look and feel.">
+            <m:MaterialRow>
+                <m:MaterialColumn grid="l12 m12 s12">
+                    <ma:combobox.MaterialComboBox width="100%" ui:field="templateComboBox" closeOnSelect="false" multiple="true" placeholder="Products" />
+                </m:MaterialColumn>
+            </m:MaterialRow>
+            <g:HTMLPanel>
+                <pre class="java">
+    templateComboBox.setTemplateResult((template) -> {
+        if (template.id != null) {
+            Product product = this.products.getValueByString(template.id);
+            if (product != null) {
+                return new DefaultResultTemplate(product.getImage(), product.getProductName(), product.getProductMaterial()).getElement();
+            }
+        }
+        return template.text;
+    });
+
+    templateComboBox.setTemplateSelection(template -> {
+        if (template.id != null) {
+            Product product = this.products.getValueByString(template.id);
+            if (product != null) {
+                return new DefaultSelectionTemplate(product.getImage(), product.getProductName()).getElement();
+            }
+        }
+        return template.text;
+    });
+                </pre>
+            </g:HTMLPanel>
         </widget:CodeSection>
 
         <!-- Remove Item Event -->

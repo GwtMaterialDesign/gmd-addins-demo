@@ -30,8 +30,8 @@ import gmd.addins.demo.client.generator.DataGenerator;
 import gmd.addins.demo.client.generator.product.Product;
 import gmd.addins.demo.client.generator.user.User;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
-import gwt.material.design.addins.client.combobox.template.ImageTextResultTemplate;
-import gwt.material.design.addins.client.combobox.template.ImageTextSelectionTempate;
+import gwt.material.design.addins.client.combobox.template.DefaultResultTemplate;
+import gwt.material.design.addins.client.combobox.template.DefaultSelectionTemplate;
 import gwt.material.design.client.ui.MaterialCheckBox;
 import gwt.material.design.client.ui.MaterialToast;
 import gwt.material.design.client.ui.html.OptGroup;
@@ -81,13 +81,11 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
         singleAllowClear.addClearHandler(event -> MaterialToast.fireToast("Clear Event Fired"));
         singleAllowClear.addClearingHandler(event -> MaterialToast.fireToast("Clearing Event Fired"));
 
-        //TODO: Prepare a template samples for the combobox.
-        //TODO: Might need to create a class to be defined.
         templateComboBox.setTemplateResult((template) -> {
             if (template.id != null) {
                 Product product = this.products.getValueByString(template.id);
                 if (product != null) {
-                    return new ImageTextSelectionTempate(product.getImage(), product.getProductName()).getElement();
+                    return new DefaultResultTemplate(product.getImage(), product.getProductName(), product.getProductMaterial()).getElement();
                 }
             }
             return template.text;
@@ -97,7 +95,7 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
             if (template.id != null) {
                 Product product = this.products.getValueByString(template.id);
                 if (product != null) {
-                    return new ImageTextResultTemplate(product.getImage(), product.getProductName()).getElement();
+                    return new DefaultSelectionTemplate(product.getImage(), product.getProductName()).getElement();
                 }
             }
             return template.text;
