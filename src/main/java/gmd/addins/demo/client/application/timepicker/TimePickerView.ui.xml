@@ -38,7 +38,13 @@
                     <m:MaterialCheckBox ui:field="autoClose" text="Auto Close" value="false"/>
                     <m:MaterialCheckBox ui:field="localized" text="Localized" value="false"/>
 
-                    <ma:timepicker.MaterialTimePicker ui:field="timePicker" placeholder="TimePicker" marginTop="40"/>
+                    <m:MaterialButton ui:field="openPicker" text="OPen Picker" />
+
+                    <m:MaterialDialog ui:field="dialog" width="400px" height="400px" padding="32">
+                        <ma:timepicker.MaterialTimePicker ui:field="timePicker" placeholder="TimePicker" marginTop="40"/>
+                    </m:MaterialDialog>
+
+
                 </m:MaterialColumn>
             </m:MaterialRow>
         </widget:CodeSection>

@@ -19,6 +19,7 @@
  */
 package gmd.addins.demo.client.application.combobox;
 
+import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -28,6 +29,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gmd.addins.demo.client.generator.DataGenerator;
 import gmd.addins.demo.client.generator.product.Product;
+import gmd.addins.demo.client.generator.product.ProductGenerator;
 import gmd.addins.demo.client.generator.user.User;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
 import gwt.material.design.addins.client.combobox.template.DefaultResultTemplate;
@@ -35,6 +37,7 @@ import gwt.material.design.addins.client.combobox.template.DefaultSelectionTempl
 import gwt.material.design.client.ui.MaterialCheckBox;
 import gwt.material.design.client.ui.MaterialToast;
 import gwt.material.design.client.ui.html.OptGroup;
+import gwt.material.design.jquery.client.api.JQueryElement;
 
 import javax.inject.Inject;
 import java.util.Collection;
@@ -42,13 +45,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static gwt.material.design.addins.client.combobox.js.JsComboBox.$;
+
 public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
 
     interface Binder extends UiBinder<Widget, ComboBoxView> {
     }
 
     @UiField
-    MaterialComboBox<Product> products, labelAndPlaceholder, singleAllowClear, allowClear, withOptGroup, multipleSelect, disabled, limit,
+    MaterialComboBox<Product> remote, products, labelAndPlaceholder, singleAllowClear, allowClear, withOptGroup, multipleSelect, disabled, limit,
         tags, comboTags, comboCloseOnSelect, valueChange, valueChangeMultiple, selection, selectionMultiple, templateComboBox;
 
     @UiField
@@ -57,7 +62,6 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
     @Inject
     ComboBoxView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
-
 
         labelAndPlaceholder.setCloseOnSelect(true);
         labelAndPlaceholder.setScrollAfterSelect(false);
@@ -99,6 +103,24 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
                 }
             }
             return template.text;
+        });
+
+        remote.addOpenHandler(event -> {
+            JQueryElement dropdownContainerElement = $(".select2-search__field");
+            dropdownContainerElement.off("keydown").on("keydown", e -> {
+                remote.getAsyncDisplayLoader().loading();
+
+                // Pretend to have an rpc service
+                Scheduler.get().scheduleFixedDelay(() -> {
+                    remote.setItems(new DataGenerator().generateProducts(10));
+                    remote.reload();
+                    remote.getAsyncDisplayLoader().finalize();
+                    remote.open();
+                    return false;
+                }, 3000);
+
+                return true;
+            });
         });
     }
 

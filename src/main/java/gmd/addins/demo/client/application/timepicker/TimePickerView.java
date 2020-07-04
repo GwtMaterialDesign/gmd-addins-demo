@@ -19,6 +19,7 @@
  */
 package gmd.addins.demo.client.application.timepicker;
 
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -27,6 +28,8 @@ import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gwt.material.design.addins.client.timepicker.MaterialTimePicker;
 import gwt.material.design.client.constants.Orientation;
+import gwt.material.design.client.ui.MaterialButton;
+import gwt.material.design.client.ui.MaterialDialog;
 
 import javax.inject.Inject;
 
@@ -37,6 +40,10 @@ public class TimePickerView extends ViewImpl implements TimePickerPresenter.MyVi
 
     @UiField
     MaterialTimePicker timePicker;
+
+    @UiField
+    MaterialDialog dialog;
+
 
     @Inject
     TimePickerView(Binder uiBinder) {
@@ -69,6 +76,11 @@ public class TimePickerView extends ViewImpl implements TimePickerPresenter.MyVi
             timePicker.setCancelText("Cancel");
             timePicker.setOkText("Ok");
         }
+    }
+
+    @UiHandler("openPicker")
+    void openPicker(ClickEvent event) {
+        dialog.open();
     }
 
     @UiHandler("portrait")

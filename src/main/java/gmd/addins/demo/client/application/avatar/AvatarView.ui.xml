@@ -31,7 +31,7 @@
         <m:MaterialColumn grid="s12 m4">
             <ma:avatar.MaterialAvatar ui:field="avatar" name="gmd"/>
             <m:MaterialTextBox ui:field="name" text="gmd" fieldType="OUTLINED" label="Name"/>
-            <m:MaterialListValueBox ui:field="dimensions" fieldType="OUTLINED" placeholder="Dimension"/>
+            <m:MaterialListValueBox ui:field="dimensions" fieldType="OUTLINED" label="Dimension"/>
             <m:MaterialCheckBox ui:field="autoReload" text="Auto Reload" marginBottom="32" value="true"/>
             <m:MaterialCheckBox ui:field="enabledOptions" text="Update Options" marginBottom="32"/>
             <m:MaterialButton ui:field="reload" text="Reload" />

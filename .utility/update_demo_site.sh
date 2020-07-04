@@ -1,6 +1,6 @@
 #!/bin/bash
 set -ev
-if [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
+if [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
 
 if [[ -z "$GH_TOKEN" ]]; then
 echo -e "GH_TOKEN is not set"
@@ -23,13 +23,13 @@ rm -rf gh-pages
 git clone --quiet --branch=gh-pages https://$GH_TOKEN@github.com/GwtMaterialDesign/gmd-addins-demo gh-pages > /dev/null
 cd gh-pages
 
-# remove the GmdCoreDemo directories from git.
-if [[ -d ./ ]]; then
-git rm -rf ./
+# remove the GmdCoreDemo Snapshot directories from git.
+if [[ -d ./snapshot/ ]]; then
+git rm -rf ./snapshot/
 fi
 
-# copy the new GWTMaterialPattern the snapshot dir.
-unzip -u $TRAVIS_BUILD_DIR/target/GmdAddinsDemo*.war -d ./
+# copy the new GmdCoreDemo the snapshot dir.
+unzip -u $TRAVIS_BUILD_DIR/target/GmdAddinsDemo*.war -d ./snapshot/
 
 git add -f .
 git commit -m "Auto-push pattern to gh-pages successful. (Travis build: $TRAVIS_BUILD_NUMBER)"

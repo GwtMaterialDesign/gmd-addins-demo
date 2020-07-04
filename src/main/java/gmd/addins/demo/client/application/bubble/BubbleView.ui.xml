@@ -37,7 +37,7 @@
         <m:MaterialRow>
             <m:MaterialColumn grid="s12 m4">
                 <m:MaterialTextArea ui:field="content" label="Text Label"/>
-                <m:MaterialListValueBox ui:field="arrowPosition" placeholder="Arrow Position"/>
+                <m:MaterialListValueBox ui:field="arrowPosition" label="Arrow Position"/>
             </m:MaterialColumn>
         </m:MaterialRow>
     </m:MaterialPanel>

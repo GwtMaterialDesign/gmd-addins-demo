@@ -31,7 +31,7 @@
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Introduction">
-            <m:MaterialRow>
+            <m:MaterialRow marginTop="400">
 				<m:MaterialRow padding="12">
 					<in:daterange.DateRangePicker ui:field="dateRangePicker"  grid="s12 m6 l4" fieldType="OUTLINED"/>
 					<m:MaterialRow>
@@ -41,12 +41,12 @@
 
 				<m:MaterialColumn grid="s12 m6 l4">
 					<m:MaterialTextBox ui:field="parentEl" placeholder="body" label="parentEl" fieldType="OUTLINED"/>
-					<in:daterange.DateRangePicker ui:field="startDate" placeholder="startDate" singleDatePicker="true" fieldType="OUTLINED"/>
-					<in:daterange.DateRangePicker ui:field="endDate" placeholder="endDate" singleDatePicker="true" fieldType="OUTLINED"/>
+					<in:daterange.DateRangePicker ui:field="startDate" label="startDate" singleDatePicker="true" fieldType="OUTLINED"/>
+					<in:daterange.DateRangePicker ui:field="endDate" label="endDate" singleDatePicker="true" fieldType="OUTLINED"/>
 					<ma:inputmask.MaterialDateInputMask ui:field="minDate" placeholder="MM/DD/YYYY" maxWidth="200px" mask="MM/DD/YYYY" fieldType="OUTLINED"/>
 					<ma:inputmask.MaterialDateInputMask ui:field="maxDate" placeholder="MM/DD/YYYY" maxWidth="200px" mask="MM/DD/YYYY" fieldType="OUTLINED"/>
-					<m:MaterialListValueBox ui:field="alignment" placeholder="alignment" fieldType="OUTLINED"/>
-					<m:MaterialListValueBox ui:field="position" placeholder="position" fieldType="OUTLINED"/>
+					<m:MaterialListValueBox ui:field="alignment" label="alignment" fieldType="OUTLINED"/>
+					<m:MaterialListValueBox ui:field="position" label="position" fieldType="OUTLINED"/>
 				</m:MaterialColumn>
 
 				<m:MaterialColumn grid="s12 m6 l4">
