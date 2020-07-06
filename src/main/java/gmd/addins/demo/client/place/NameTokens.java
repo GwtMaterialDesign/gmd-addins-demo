@@ -45,6 +45,7 @@ public class NameTokens {
     public static final String PATH_ANIMATOR = "pathanimator";
     public static final String RATING = "rating";
     public static final String RICH_EDITOR = "richeditor";
+    public static final String SCREEN_KEYBOARD = "screenkeyboard";
     public static final String SIGNATURE_PAD = "signaturepad";
     public static final String SPLIT_PANEL = "splitpanel";
     public static final String SUBHEADER = "subheader";
@@ -61,6 +62,7 @@ public class NameTokens {
     public static final String CHECK_MARK = "checkmark";
     public static final String DATE_RANGE = "daterangepicker";
     public static final String GROUP_TOGGLE = "grouptoggle";
+    public static final String KANBAN = "kanban";
     public static final String PLACEHOLDER = "placeholder";
     public static final String PROGRESS_LINE_BAR = "progresslinebar";
     public static final String SEARCH = "search";

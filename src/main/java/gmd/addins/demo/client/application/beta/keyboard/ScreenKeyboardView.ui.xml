@@ -21,24 +21,18 @@
              xmlns:g="urn:import:com.google.gwt.user.client.ui"
              xmlns:m="urn:import:gwt.material.design.client.ui"
              xmlns:widget="urn:import:gmd.addins.demo.client.widget"
-             xmlns:ma="urn:import:gwt.material.design.addins.client">
+             xmlns:ma="urn:import:gwt.material.design.addins.client"
+             xmlns:in="urn:import:gwt.material.design.incubator.client">
 
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-&lt;ma:timepicker.MaterialTimePicker />
+&lt;ma:livestamp.MaterialLiveStamp />
             </pre>
         </g:HTMLPanel>
-        <widget:CodeSection sectionTitle="Configuration" description="Here are the basic properties to configure your time picker.">
+        <widget:CodeSection sectionTitle="Default" description="Wait half a minute - the livestamp will update automatically">
             <m:MaterialRow>
-                <m:MaterialColumn grid="l6 m6 s12">
-                    <m:MaterialCheckBox ui:field="enabled" text="Enabled" value="true"/>
-                    <m:MaterialCheckBox ui:field="portrait" text="Portrait" value="true" />
-                    <m:MaterialCheckBox ui:field="hour24" text="24 Hour Format" value="false"/>
-                    <m:MaterialCheckBox ui:field="autoClose" text="Auto Close" value="false"/>
-                    <m:MaterialCheckBox ui:field="localized" text="Localized" value="false"/>
-                    <ma:timepicker.MaterialTimePicker ui:field="timePicker" placeholder="TimePicker" marginTop="40"/>
-                </m:MaterialColumn>
+                <in:keyboard.ScreenKeyboard ui:field="screenKeyboard"/>
             </m:MaterialRow>
         </widget:CodeSection>
     </m:MaterialPanel>

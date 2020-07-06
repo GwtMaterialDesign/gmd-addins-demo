@@ -19,7 +19,9 @@ public enum ExternalLink {
     SPLIT_PANEL("TouchSplitterJQuery", "0.5.1", "https://github.com/colelawrence/Touch-Splitter-jQuery"),
     TIME_PICKER("Lolliclock", "0.1.0", "https://github.com/mattkrick/lolliclock"),
 
-    DATE_RANGE_PICKER("DateRangePicker", "3.0.5", "http://www.daterangepicker.com/"),;
+    DATE_RANGE_PICKER("DateRangePicker", "3.0.5", "http://www.daterangepicker.com/"),
+    SCREEN_KEYBOARD("Simple Keyboard", "2.28.32", "https://github.com/hodgef/simple-keyboard"),
+    KANBAN("JKanban", "1.2.0", "https://github.com/riktar/jkanban");
 
     String name;
     String longName;
