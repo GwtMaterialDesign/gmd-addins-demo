@@ -227,6 +227,11 @@
         </widget:CodeSection>
 
         <!-- Remove Item Event -->
+        <widget:CodeSection sectionTitle="Matcher" description="Customizing how results are matched">
+            <ma:combobox.MaterialComboBox width="100%" ui:field="matcherComboBox" closeOnSelect="false" multiple="true" placeholder="Products" />
+        </widget:CodeSection>
+
+        <!-- Remove Item Event -->
         <widget:CodeSection sectionTitle="Remove Item Event" description="This event will be fired when removing item/value on multiple combobox">
 
         </widget:CodeSection>

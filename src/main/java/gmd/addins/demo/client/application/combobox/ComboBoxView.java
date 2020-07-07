@@ -29,7 +29,6 @@ import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gmd.addins.demo.client.generator.DataGenerator;
 import gmd.addins.demo.client.generator.product.Product;
-import gmd.addins.demo.client.generator.product.ProductGenerator;
 import gmd.addins.demo.client.generator.user.User;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
 import gwt.material.design.addins.client.combobox.template.DefaultResultTemplate;
@@ -54,7 +53,7 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
 
     @UiField
     MaterialComboBox<Product> remote, products, labelAndPlaceholder, singleAllowClear, allowClear, withOptGroup, multipleSelect, disabled, limit,
-        tags, comboTags, comboCloseOnSelect, valueChange, valueChangeMultiple, selection, selectionMultiple, templateComboBox;
+        tags, comboTags, comboCloseOnSelect, valueChange, valueChangeMultiple, selection, selectionMultiple, templateComboBox, matcherComboBox;
 
     @UiField
     MaterialCheckBox disable;
@@ -105,6 +104,35 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
             return template.text;
         });
 
+        // Matcher Demo
+        matcherComboBox.setMatcher((params, data) -> {
+            if (params.term != null) {
+
+                // If there are no search terms, return all of the data
+                if ( params.term.equals("")) {
+                    return data;
+                }
+
+                // Do not display the item if there is no 'text' property
+                if (data.text == null) {
+                    return null;
+                }
+
+                // `params.term` should be the term that is used for searching
+                // `data.text` is the text that is displayed for the data object
+                if (data.text.indexOf(params.term) > -1) {
+                    data.text = "matched:" + data.text;
+
+                    // You can return modified objects from here
+                    // This includes matching the `children` how you want in nested data sets
+                    return data;
+                }
+
+                // Return `null` if the term should not be displayed
+            }
+            return null;
+        });
+
         remote.addOpenHandler(event -> {
             JQueryElement dropdownContainerElement = $(".select2-search__field");
             dropdownContainerElement.off("keydown").on("keydown", e -> {
@@ -127,7 +155,7 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
     @Override
     public void setProducts(List<Product> products) {
         addProducts(products, this.products, multipleSelect, disabled, tags, comboTags, comboCloseOnSelect, valueChange, valueChangeMultiple,
-            selection, selectionMultiple, templateComboBox);
+            selection, selectionMultiple, templateComboBox, matcherComboBox);
         addProductMaterials(products, labelAndPlaceholder, allowClear);
         addProductsGroup(products, withOptGroup, limit);
     }
