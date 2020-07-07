@@ -66,5 +66,6 @@ public class NameTokens {
     public static final String PLACEHOLDER = "placeholder";
     public static final String PROGRESS_LINE_BAR = "progresslinebar";
     public static final String SEARCH = "search";
+    public static final String LOCAL_STORAGE = "storage";
     public static final String TIMER = "timer";
 }

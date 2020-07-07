@@ -21,6 +21,7 @@ public enum ExternalLink {
 
     DATE_RANGE_PICKER("DateRangePicker", "3.0.5", "http://www.daterangepicker.com/"),
     SCREEN_KEYBOARD("Simple Keyboard", "2.28.32", "https://github.com/hodgef/simple-keyboard"),
+    LOCAL_STORAGE("Localforage", "1.7.3", "https://github.com/localForage/localForage"),
     KANBAN("JKanban", "1.2.0", "https://github.com/riktar/jkanban");
 
     String name;
