@@ -30,15 +30,6 @@
             </pre>
         </g:HTMLPanel>
 
-        <!-- Remote Data -->
-        <widget:CodeSection sectionTitle="Basic">
-            <m:MaterialRow>
-                <m:MaterialColumn grid="l6 m6 s12">
-                    <ma:combobox.MaterialComboBox width="100%"  ui:field="remote" placeholder="Product" />
-                </m:MaterialColumn>
-            </m:MaterialRow>
-        </widget:CodeSection>
-
         <!-- Standard -->
         <widget:CodeSection sectionTitle="Basic">
             <m:MaterialRow>

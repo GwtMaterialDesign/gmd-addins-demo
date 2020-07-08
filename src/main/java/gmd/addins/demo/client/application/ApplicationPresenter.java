@@ -30,6 +30,7 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.Proxy;
 import gmd.addins.demo.client.resources.AppResources;
 import gwt.material.design.addins.client.dark.AddinsDarkThemeLoader;
+import gwt.material.design.client.JQueryMigrate;
 import gwt.material.design.client.MaterialDesignBase;
 import gwt.material.design.client.base.helper.ColorHelper;
 import gwt.material.design.client.constants.Color;
@@ -93,6 +94,10 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
 
         // Remove Splashscreen once js files are loaded
         Document.get().getElementById("splashscreen").removeFromParent();
+
+        // TODO: Turn off later before merging to master.
+        // Load JQuery Migrate Plugin
+        JQueryMigrate.load(true);
     }
 
     @Override
