@@ -66,7 +66,7 @@
                    <m:MaterialColumn grid="s12 m4 l4">
                        <m:MaterialLabel text="Actions" fontSize="0.8em" textColor="GREY"/>
                        <m:MaterialButton ui:field="clear" text="Clear" waves="DEFAULT" />
-                       <m:MaterialButton ui:field="png" text="Get Image Data" waves="DEFAULT" marginLeft="12" />
+                       <m:MaterialButton ui:field="png" text="Get Image" waves="DEFAULT" marginLeft="12" />
                    </m:MaterialColumn>
                </m:MaterialRow>
             </m:MaterialRow>

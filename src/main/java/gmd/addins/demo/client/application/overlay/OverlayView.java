@@ -20,23 +20,16 @@
 package gmd.addins.demo.client.application.overlay;
 
 import com.google.gwt.dom.client.Style;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.logical.shared.*;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gwt.material.design.addins.client.overlay.MaterialOverlay;
 import gwt.material.design.addins.client.overlay.MaterialOverlayTab;
-import gwt.material.design.addins.client.pathanimator.MaterialPathAnimator;
-import gwt.material.design.addins.client.tree.MaterialTree;
-import gwt.material.design.addins.client.tree.MaterialTreeItem;
-import gwt.material.design.client.constants.Color;
-import gwt.material.design.client.constants.IconType;
-import gwt.material.design.client.theme.dark.ColorScheme;
-import gwt.material.design.client.theme.dark.DarkThemeManager;
-import gwt.material.design.client.ui.*;
+import gwt.material.design.client.ui.MaterialButton;
+import gwt.material.design.client.ui.MaterialLabel;
+import gwt.material.design.client.ui.MaterialPanel;
+import gwt.material.design.client.ui.MaterialToast;
 
 import javax.inject.Inject;
 
@@ -106,6 +99,11 @@ public class OverlayView extends ViewImpl implements OverlayPresenter.MyView {
             btnOpen.addClickHandler(e -> {
                 overlay.open(btnOpen);
             });
+
+            if (i == 1) {
+                btnOpen.setMarginLeft(0);
+            }
+
             panel.add(btnOpen);
             overlayContainer.setActivator(btnOverlayTab);
         }

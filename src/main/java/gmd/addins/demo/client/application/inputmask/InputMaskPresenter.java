@@ -54,6 +54,6 @@ public class InputMaskPresenter extends BasePresenter<InputMaskPresenter.MyView,
         super.onBind();
 
         setHeaderTitle("Input Mask", "An inputmask helps the user with the input by ensuring a predefined format. This can be useful for dates, numerics, phone numbers etc..", "");
-        setExternalLibrary(ExternalLink.DROPZONE);
+        setExternalLibrary(ExternalLink.INPUTMASK);
     }
 }

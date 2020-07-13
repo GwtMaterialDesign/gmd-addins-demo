@@ -43,6 +43,9 @@ public class CarouselView extends ViewImpl implements CarouselPresenter.MyView {
     @UiField
     MaterialCheckBox toastEvents;
 
+    @UiField
+    MaterialCheckBox infinite;
+
     @Inject
     CarouselView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
@@ -99,7 +102,7 @@ public class CarouselView extends ViewImpl implements CarouselPresenter.MyView {
     @UiHandler("autoplay")
     void autoplay(ValueChangeEvent<Boolean> event) {
         carousel.setAutoplay(event.getValue());
-        carousel.setAutoplaySpeed(2000);
+        carousel.setAutoplaySpeed(800);
         carousel.reload();
     }
 

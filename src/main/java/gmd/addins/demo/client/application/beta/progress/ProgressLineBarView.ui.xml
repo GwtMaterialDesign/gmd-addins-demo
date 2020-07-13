@@ -32,7 +32,7 @@
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Basic" description="The progress line bar is alternative for Progress widget which creates more visibility on each progress item. ">
             <in:progress.ProgressLineBar ui:field="progressLineBar" />
-            <m:MaterialButton ui:field="getValue" text="Get Value" marginTop="20"/>
+            <m:MaterialButton ui:field="getValue" marginLeft="0" text="Get Value" marginTop="20"/>
         </widget:CodeSection>
 
         <widget:CodeSection sectionTitle="Adding Option">

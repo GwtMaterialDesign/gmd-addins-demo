@@ -37,7 +37,6 @@
                     <m:MaterialCheckBox ui:field="thickness" text="Thickness" />
                     <m:MaterialCheckBox ui:field="reverse" text="Reverse" />
                     <m:MaterialCheckBox ui:field="updateValue" text="Update Value" />
-                    <m:MaterialCheckBox ui:field="toastEvent" text="Toast Events" />
                 </m:MaterialColumn>
                 <ma:circularprogress.MaterialCircularProgress ui:field="progress" value="0.3" grid="s12 m4"/>
             </m:MaterialRow>

@@ -29,7 +29,7 @@
             </pre>
         </g:HTMLPanel>
         <m:MaterialRow>
-            <ma:bubble.MaterialBubble ui:field="bubble" position="LEFT" float="LEFT">
+            <ma:bubble.MaterialBubble ui:field="bubble" position="LEFT" float="LEFT" marginLeft="12" marginTop="32" maxWidth="300px">
                 <m:MaterialLabel ui:field="bubbleLabel" text="Hello there, How are you doing?"/>
                 <m:MaterialLabel text="1/2/2016" fontSize="0.6em" float="RIGHT"/>
             </ma:bubble.MaterialBubble>

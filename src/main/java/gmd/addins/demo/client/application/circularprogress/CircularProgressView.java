@@ -27,7 +27,6 @@ import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gwt.material.design.addins.client.circularprogress.MaterialCircularProgress;
 import gwt.material.design.client.constants.Color;
-import gwt.material.design.client.ui.MaterialCheckBox;
 import gwt.material.design.client.ui.MaterialToast;
 
 import javax.inject.Inject;
@@ -38,24 +37,14 @@ public class CircularProgressView extends ViewImpl implements CircularProgressPr
     }
 
     @UiField
-    MaterialCheckBox toastEvent;
-
-    @UiField
     MaterialCircularProgress progress;
 
     @Inject
     CircularProgressView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
-    }
-
-    @Override
-    protected void onAttach() {
-        super.onAttach();
 
         progress.addStartHandler(event -> {
-            if (toastEvent.getValue()) {
-                MaterialToast.fireToast("Start Event Fired");
-            }
+            MaterialToast.fireToast("Start Event Fired");
         });
 
         progress.addProgressHandler(event -> {
@@ -63,9 +52,7 @@ public class CircularProgressView extends ViewImpl implements CircularProgressPr
         });
 
         progress.addCompleteHandler(event -> {
-            if (toastEvent.getValue()) {
-                MaterialToast.fireToast("Complete Event Fired");
-            }
+            MaterialToast.fireToast("Complete Event Fired");
         });
     }
 

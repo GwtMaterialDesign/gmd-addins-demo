@@ -20,6 +20,7 @@
 package gmd.addins.demo.client.application.timepicker;
 
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
+import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -27,6 +28,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gwt.material.design.addins.client.timepicker.MaterialTimePicker;
 import gwt.material.design.client.constants.Orientation;
+import gwt.material.design.client.ui.MaterialToast;
 
 import javax.inject.Inject;
 
@@ -41,6 +43,19 @@ public class TimePickerView extends ViewImpl implements TimePickerPresenter.MyVi
     @Inject
     TimePickerView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+    }
+
+    @Override
+    protected void onAttach() {
+        super.onAttach();
+
+        timePicker.addOpenHandler(openEvent -> MaterialToast.fireToast("Open Event fired"));
+
+        timePicker.addCloseHandler(closeEvent -> MaterialToast.fireToast("Close Event fired"));
+
+        timePicker.addValueChangeHandler(valueChangeEvent -> {
+            MaterialToast.fireToast("Value Change Event fired : " + DateTimeFormat.getFormat("hh:mm aa").format(valueChangeEvent.getValue()));
+        });
     }
 
     @UiHandler("enabled")

@@ -31,7 +31,7 @@
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Introduction">
-            <m:MaterialRow marginTop="400">
+            <m:MaterialRow>
 				<m:MaterialRow padding="12">
 					<in:daterange.DateRangePicker ui:field="dateRangePicker"  grid="s12 m6 l4" fieldType="OUTLINED"/>
 					<m:MaterialRow>
