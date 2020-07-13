@@ -176,6 +176,7 @@ nav ul li.active {
 
 .custom-search.input-field input[type=search] + label {
     top: 8px !important;
+    transform: translateY(0);
 }
 
 .custom-search.input-field input[type='search'] label.active {

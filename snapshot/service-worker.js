@@ -1,9 +1,9 @@
-var cacheName = 'cache_1594170677557';
+var cacheName = 'cache_1594603349309';
 
 var filesToCache = [  
 '/gmd-addins-demo/snapshot/',
 
-'GmdAddinsDemo/5E817D95D085CFFFBBF42B121245EC32.cache.js',
+'GmdAddinsDemo/0F38FB32675A0D48EA8B5C8DE08721D4.cache.js',
 
 'GmdAddinsDemo/GmdAddinsDemo.devmode.js',
 
