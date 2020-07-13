@@ -23,6 +23,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
+import gwt.material.design.client.ui.MaterialCheckBox;
 import gwt.material.design.client.ui.MaterialToast;
 import gwt.material.design.incubator.client.keyboard.ScreenKeyboard;
 
@@ -36,17 +37,29 @@ public class ScreenKeyboardView extends ViewImpl implements ScreenKeyboardPresen
     @UiField
     ScreenKeyboard screenKeyboard;
 
+    @UiField
+    MaterialCheckBox toastEvents;
+
     @Inject
     ScreenKeyboardView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+
+        screenKeyboard.addRenderHandler(event -> toastEvent("Render"));
+        screenKeyboard.addInitHandler(event -> toastEvent("Init"));
+        screenKeyboard.addChangeAllHandler(event -> toastEvent("Change All"));
+        screenKeyboard.addKeyboardPressHandler(event -> toastEvent("Keyboard Press"));
+        screenKeyboard.addBeforeFirstRenderHandler(event -> toastEvent("Before First Render"));
+        screenKeyboard.addBeforeRenderHandler(event -> toastEvent("Before Render"));
+        screenKeyboard.addChangeHandler(event -> toastEvent("Change", event.getInput()));
     }
 
-    @Override
-    protected void onAttach() {
-        super.onAttach();
-
-        screenKeyboard.addChangeHandler(event -> {
-            MaterialToast.fireToast(event.getInput());
-        });
+    protected void toastEvent(String event, String... params) {
+        if (toastEvents.getValue()) {
+            StringBuilder cleanedParams = new StringBuilder();
+            for (String param : params) {
+                cleanedParams.append(" ").append(param);
+            }
+            MaterialToast.fireToast(event + " event fired." + cleanedParams);
+        }
     }
 }

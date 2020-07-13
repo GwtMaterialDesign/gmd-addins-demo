@@ -33,6 +33,7 @@
         <widget:CodeSection sectionTitle="Default" description="Wait half a minute - the livestamp will update automatically">
             <m:MaterialRow>
                 <in:keyboard.ScreenKeyboard ui:field="screenKeyboard"/>
+                <m:MaterialCheckBox ui:field="toastEvents"  value="true" text="Toast Events" marginTop="32"/>
             </m:MaterialRow>
         </widget:CodeSection>
     </m:MaterialPanel>
