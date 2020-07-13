@@ -21,11 +21,11 @@ package gmd.addins.demo.client.application.beta.storage;
 
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
-public class StorageModule extends AbstractPresenterModule {
+public class LocalStorageModule extends AbstractPresenterModule {
 
     @Override
     protected void configure() {
-        bindPresenter(StoragePresenter.class, StoragePresenter.MyView.class, StorageView.class,
-                StoragePresenter.MyProxy.class);
+        bindPresenter(LocalStoragePresenter.class, LocalStoragePresenter.MyView.class, LocalStorageView.class,
+                LocalStoragePresenter.MyProxy.class);
     }
 }

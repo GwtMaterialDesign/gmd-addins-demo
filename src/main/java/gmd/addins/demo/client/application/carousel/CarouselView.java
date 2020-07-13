@@ -79,9 +79,39 @@ public class CarouselView extends ViewImpl implements CarouselPresenter.MyView {
             }
         });
 
+        carousel.addEdgeHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("Edge Fired");
+            }
+        });
+
+        carousel.addLazyLoadedErrorHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("Lazy Loaded Error Fired");
+            }
+        });
+
+        carousel.addLazyLoadedHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("Lazy Load Fired");
+            }
+        });
+
         carousel.addSwipeHandler(event -> {
             if (toastEvents.getValue()) {
                 MaterialToast.fireToast("SwipeEvent Fired : " + event.getDirection());
+            }
+        });
+
+        carousel.addReInitHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("Reinit Fired ");
+            }
+        });
+
+        carousel.addSetPositionHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("Set Position Fired");
             }
         });
     }

@@ -83,7 +83,6 @@ public class InputMaskView extends ViewImpl implements InputMaskPresenter.MyView
                     MaterialToast.fireToast("Digit: " + error.value + " is invalid for the position: " + error.position + ". We expect something like: " + error.error);
                 }
             }
-
         });
     }
 

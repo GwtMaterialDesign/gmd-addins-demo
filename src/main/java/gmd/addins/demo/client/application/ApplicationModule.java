@@ -29,7 +29,7 @@ import gmd.addins.demo.client.application.beta.kanban.KanbanModule;
 import gmd.addins.demo.client.application.beta.placeholder.PlaceholderModule;
 import gmd.addins.demo.client.application.beta.progress.ProgressLineBarModule;
 import gmd.addins.demo.client.application.beta.search.SearchModule;
-import gmd.addins.demo.client.application.beta.storage.StorageModule;
+import gmd.addins.demo.client.application.beta.storage.LocalStorageModule;
 import gmd.addins.demo.client.application.beta.tag.TagModule;
 import gmd.addins.demo.client.application.beta.timer.TimerModule;
 import gmd.addins.demo.client.application.beta.toggle.GroupToggleModule;
@@ -110,7 +110,7 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new DateRangeModule());
         install(new GroupToggleModule());
         install(new KanbanModule());
-        install(new StorageModule());
+        install(new LocalStorageModule());
         install(new PlaceholderModule());
         install(new ProgressLineBarModule());
         install(new ScreenKeyboardModule());

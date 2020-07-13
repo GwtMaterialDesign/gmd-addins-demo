@@ -30,7 +30,7 @@ import gmd.addins.demo.client.application.BasePresenter;
 import gmd.addins.demo.client.place.ExternalLink;
 import gmd.addins.demo.client.place.NameTokens;
 
-public class StoragePresenter extends BasePresenter<StoragePresenter.MyView, StoragePresenter.MyProxy> {
+public class LocalStoragePresenter extends BasePresenter<LocalStoragePresenter.MyView, LocalStoragePresenter.MyProxy> {
 
     interface MyView extends View {
 
@@ -38,11 +38,11 @@ public class StoragePresenter extends BasePresenter<StoragePresenter.MyView, Sto
 
     @ProxyStandard
     @NameToken(NameTokens.LOCAL_STORAGE)
-    interface MyProxy extends ProxyPlace<StoragePresenter> {
+    interface MyProxy extends ProxyPlace<LocalStoragePresenter> {
     }
 
     @Inject
-    StoragePresenter(
+    LocalStoragePresenter(
         EventBus eventBus,
         MyView view,
         MyProxy proxy) {

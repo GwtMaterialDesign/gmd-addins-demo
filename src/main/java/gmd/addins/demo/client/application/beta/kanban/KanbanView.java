@@ -24,9 +24,11 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
+import gwt.material.design.client.ui.MaterialToast;
 import gwt.material.design.incubator.client.kanban.Kanban;
 import gwt.material.design.incubator.client.kanban.js.KanbanBoard;
 import gwt.material.design.incubator.client.kanban.js.KanbanItem;
+import gwt.material.design.incubator.client.kanban.js.KanbanOptions;
 
 import javax.inject.Inject;
 import java.util.Arrays;
@@ -42,6 +44,34 @@ public class KanbanView extends ViewImpl implements KanbanPresenter.MyView {
     @Inject
     KanbanView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+
+        KanbanOptions options = KanbanOptions.create();
+        options.setDragEl((param1, param2) -> {
+            MaterialToast.fireToast("Drag El: " + param1 + " " + param2);
+        });
+        options.setDragendEl(param1 -> {
+            MaterialToast.fireToast("DragendEl: " + param1);
+        });
+        options.setClick(param1 -> {
+            MaterialToast.fireToast("Click: " + param1);
+        });
+
+        options.setDropEl((param1, param2, param3, param4) -> {
+            MaterialToast.fireToast("DropEl" + param1 + " " + param2 + " " + param3 + " " + param4);
+        });
+
+        options.setDragBoard((param1, param2) -> {
+            MaterialToast.fireToast("DragBoard" + param1 + " " + param2);
+        });
+
+        options.setDragendBoard(param1 -> {
+            MaterialToast.fireToast("DragendBoard: " + param1);
+        });
+
+        options.setButtonClick((param1, param2) -> {
+            MaterialToast.fireToast("ButtonClick: " + param1 + " " + param2);
+        });
+        kanban.setOptions(options);
     }
 
     @Override

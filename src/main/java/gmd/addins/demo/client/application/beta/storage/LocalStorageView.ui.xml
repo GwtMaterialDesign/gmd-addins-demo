@@ -1,0 +1,79 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+			 xmlns:g="urn:import:com.google.gwt.user.client.ui"
+			 xmlns:m="urn:import:gwt.material.design.client.ui"
+			 xmlns:widget="urn:import:gmd.addins.demo.client.widget"
+			 xmlns:ma="urn:import:gwt.material.design.addins.client"
+>
+
+	<m:MaterialPanel>
+		<g:HTMLPanel>
+			<pre class="xml" style="height: 40px;overflow: hidden">
+				&lt;ma:livestamp.MaterialLiveStamp />
+			</pre>
+		</g:HTMLPanel>
+		<widget:CodeSection sectionTitle="Saved Data"
+							description="Here are the data you saved. Please check it to the next demo on how you get it.">
+			<m:MaterialRow>
+				<m:MaterialPanel ui:field="valuePanel" grid="s12"/>
+			</m:MaterialRow>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Set Item"
+							description="Saves data to an offline store. You can store the following types of JavaScript objects:">
+			<m:MaterialRow>
+				<m:MaterialTextBox ui:field="setKey" label="Key" grid="s12 m4 l3" required="true"/>
+				<m:MaterialTextBox ui:field="value" label="Value" grid="s12 m4 l3" required="true"/>
+			</m:MaterialRow>
+			<m:MaterialButton ui:field="save" text="Save"/>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Get Item" description="Gets an item from the storage library and supplies the result to a callback. If the key does not exist, getItem() will return null.">
+			<m:MaterialRow>
+				<m:MaterialTextBox ui:field="getKey" label="Key" grid="s12 m4 l3"/>
+			</m:MaterialRow>
+			<m:MaterialButton ui:field="get" text="Get Value"/>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Remove Item" description="Removes the value of a key from the offline store.">
+			<m:MaterialRow>
+				<m:MaterialTextBox ui:field="removeKey" label="Key" grid="s12 m4 l3" required="true"/>
+			</m:MaterialRow>
+			<m:MaterialButton ui:field="removeItem" text="Remove Item"/>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Clear" description="Removes every key from the database, returning it to a blank slate.">
+			<m:MaterialButton ui:field="clear" text="Clear all data"/>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Length" description="Gets the number of keys in the offline store (i.e. its “length”).">
+			<m:MaterialButton ui:field="length" text="Length"/>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Key with index 0" description="Get the name of a key based on its index i.e 0">
+			<m:MaterialButton ui:field="key" text="Get Key"/>
+		</widget:CodeSection>
+
+		<widget:CodeSection sectionTitle="Iterate" description="Iterate over all value/key pairs in datastore.">
+			<m:MaterialButton ui:field="iterate" text="Iterate"/>
+		</widget:CodeSection>
+	</m:MaterialPanel>
+</ui:UiBinder>

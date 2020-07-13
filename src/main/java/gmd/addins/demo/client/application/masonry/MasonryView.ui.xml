@@ -30,7 +30,7 @@
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Basic" description="You can use masonry by wrapping column components.">
-            <ma:masonry.MaterialMasonry>
+            <ma:masonry.MaterialMasonry ui:field="masonry">
                 <m:MaterialColumn grid="l4 s12 m6" backgroundColor="BLUE_LIGHTEN_1" height="400px" waves="DEFAULT" padding="0" textAlign="CENTER">
                     <m:MaterialIcon iconType="WIFI_TETHERING" iconColor="WHITE" iconSize="LARGE" marginTop="125" />
                     <m:MaterialLabel text="4 columns" bottom="0" backgroundColor="BLUE_DARKEN_1" layoutPosition="ABSOLUTE" padding="12" fontSize="1.2em" textColor="WHITE" width="100%"/>
