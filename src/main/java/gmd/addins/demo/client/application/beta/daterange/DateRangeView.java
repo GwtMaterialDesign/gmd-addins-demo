@@ -69,7 +69,6 @@ public class DateRangeView extends ViewImpl implements DateRangePresenter.MyView
         Arrays.asList(DropdownAlignment.values()).forEach(a -> alignment.add(a));
         Arrays.asList(DropdownPosition.values()).forEach(p -> position.add(p));
 
-
         dateRangePicker.addValueChangeHandler(event -> log("ValueChangeEvent", "[StartDate: " + event.getValue()[0] + "], [" + event.getValue()[1] + "]"));
         dateRangePicker.addApplyHandler(event -> log("ApplyEvent", "fired"));
         dateRangePicker.addOpenHandler(event -> log("OpenEvent", "fired"));
@@ -103,7 +102,11 @@ public class DateRangeView extends ViewImpl implements DateRangePresenter.MyView
 
     @UiHandler("getValue")
     void getValue(ClickEvent e) {
-        MaterialToast.fireToast("[StartDate: " + dateRangePicker.getValue()[0] + "], [" + dateRangePicker.getValue()[1] + "]");
+        if (dateRangePicker.getValue() != null) {
+            MaterialToast.fireToast("[StartDate: " + dateRangePicker.getValue()[0] + "], [" + dateRangePicker.getValue()[1] + "]");
+        } else {
+            MaterialToast.fireToast("Invalid Range");
+        }
     }
 
 
