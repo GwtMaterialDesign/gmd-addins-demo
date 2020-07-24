@@ -12,7 +12,6 @@ import gmd.addins.demo.client.widget.HeaderTitle;
 import gwt.material.design.client.MaterialDesignBase;
 import gwt.material.design.client.base.MaterialWidget;
 import gwt.material.design.client.base.helper.ScrollHelper;
-import gwt.material.design.client.ui.MaterialToast;
 
 public class BasePresenter<V extends View, Proxy_ extends Proxy<?>> extends Presenter<V, Proxy_> {
 
@@ -34,6 +33,7 @@ public class BasePresenter<V extends View, Proxy_ extends Proxy<?>> extends Pres
         if (asWidget() instanceof MaterialWidget) {
             headerTitle = new HeaderTitle();
             ((MaterialWidget) asWidget()).insert(headerTitle, 0);
+            headerTitle.hideYoutubeVideo();
         }
     }
 
@@ -54,6 +54,10 @@ public class BasePresenter<V extends View, Proxy_ extends Proxy<?>> extends Pres
 
     public void setExternalLibrary(ExternalLink link) {
         headerTitle.setExternalLibrary(link.getLongName(), link.getLink());
+    }
+
+    public void setYoutubeVideoKey(String key) {
+        headerTitle.setYoutubeVideoKey(key);
     }
 
     public static native void initPre() /*-{

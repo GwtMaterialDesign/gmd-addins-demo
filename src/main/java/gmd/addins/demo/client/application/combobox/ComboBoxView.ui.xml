@@ -29,11 +29,12 @@
 &lt;ma:combobox.MaterialComboBox />
             </pre>
         </g:HTMLPanel>
+
         <!-- Standard -->
         <widget:CodeSection sectionTitle="Basic">
             <m:MaterialRow>
                 <m:MaterialColumn grid="l6 m6 s12">
-                    <ma:combobox.MaterialComboBox width="100%"  ui:field="products" placeholder="TimeZone" />
+                    <ma:combobox.MaterialComboBox width="100%"  ui:field="products" placeholder="Product" />
                 </m:MaterialColumn>
             </m:MaterialRow>
         </widget:CodeSection>
@@ -79,7 +80,7 @@
         <widget:CodeSection sectionTitle="Allow Clear" description="We added a built in clear icon to easily clear all items on Multiple Combobox">
             <m:MaterialRow>
                 <m:MaterialColumn grid="l6 m6 s12">
-                    <ma:combobox.MaterialComboBox placeholder="This is a placeholder" allowClear="true">
+                    <ma:combobox.MaterialComboBox ui:field="singleAllowClear" placeholder="This is a placeholder" allowClear="true">
                         <m:html.Option text="" />
                         <m:html.Option text="Item 1" />
                         <m:html.Option text="Item 2" />
@@ -90,7 +91,7 @@
         </widget:CodeSection>
         <m:MaterialRow>
             <m:MaterialColumn grid="l6 m6 s12">
-                <ma:combobox.MaterialComboBox ui:field="allowClear" placeholder="TimeZone" closeOnSelect="false" multiple="true" allowClear="true" />
+                <ma:combobox.MaterialComboBox ui:field="allowClear" placeholder="Product" closeOnSelect="false" multiple="true" allowClear="true" />
             </m:MaterialColumn>
         </m:MaterialRow>
 
@@ -98,7 +99,7 @@
         <widget:CodeSection sectionTitle="With OptGroup" description="Just like on java way of adding optgroup, we have also added it on UiBinder way.">
             <m:MaterialRow>
                 <m:MaterialColumn grid="l6 m6 s12">
-                    <ma:combobox.MaterialComboBox ui:field="withOptGroup" placeholder="TimeZone"/>
+                    <ma:combobox.MaterialComboBox ui:field="withOptGroup" placeholder="Product"/>
                 </m:MaterialColumn>
             </m:MaterialRow>
         </widget:CodeSection>
@@ -107,7 +108,7 @@
         <widget:CodeSection sectionTitle="Multiple Select" description="Just like Autocomplete you can have a capability to select ComboBox options multiple.">
             <m:MaterialRow>
                 <m:MaterialColumn grid="l6 m6 s12">
-                    <ma:combobox.MaterialComboBox closeOnSelect="false" multiple="true" ui:field="multipleSelect" placeholder="TimeZone"/>
+                    <ma:combobox.MaterialComboBox closeOnSelect="false" multiple="true" ui:field="multipleSelect" placeholder="Product"/>
                 </m:MaterialColumn>
             </m:MaterialRow>
         </widget:CodeSection>
@@ -165,69 +166,50 @@
             </m:MaterialRow>
         </widget:CodeSection>
 
-        <!-- ValueChange Event -->
-        <widget:CodeSection sectionTitle="Value Change Event" description="This event will be fired when changing values on combobox">
+        <!-- Events -->
+        <widget:CodeSection sectionTitle="Events" description="This event will be fired when Selecting values on combobox">
             <m:MaterialRow>
                 <m:MaterialColumn grid="l6 m6 s12">
-                    <ma:combobox.MaterialComboBox placeholder="Time Zone" ui:field="valueChange" />
-                    <ma:combobox.MaterialComboBox placeholder="Time Zone" closeOnSelect="false" multiple="true" ui:field="valueChangeMultiple" />
+                    <ma:combobox.MaterialComboBox placeholder="Time Zone" ui:field="events" />
+                    <ma:combobox.MaterialComboBox placeholder="Time Zone" closeOnSelect="false" multiple="true" ui:field="eventsMultiple" />
                 </m:MaterialColumn>
             </m:MaterialRow>
         </widget:CodeSection>
 
-        <!-- Selection Event -->
-        <widget:CodeSection sectionTitle="Selection Event" description="This event will be fired when Selecting values on combobox">
+        <widget:CodeSection sectionTitle="Templating" description="Customize your selection and result items look and feel.">
             <m:MaterialRow>
-                <m:MaterialColumn grid="l6 m6 s12">
-                    <ma:combobox.MaterialComboBox placeholder="Time Zone" ui:field="selection" />
-                    <ma:combobox.MaterialComboBox placeholder="Time Zone" closeOnSelect="false" multiple="true" ui:field="selectionMultiple" />
+                <m:MaterialColumn grid="l12 m12 s12">
+                    <ma:combobox.MaterialComboBox width="100%" ui:field="templateComboBox" closeOnSelect="false" multiple="true" placeholder="Products" />
                 </m:MaterialColumn>
             </m:MaterialRow>
+            <g:HTMLPanel>
+                <pre class="java">
+    templateComboBox.setTemplateResult((template) -> {
+        if (template.id != null) {
+            Product product = this.products.getValueByString(template.id);
+            if (product != null) {
+                return new DefaultResultTemplate(product.getImage(), product.getProductName(), product.getProductMaterial()).getElement();
+            }
+        }
+        return template.text;
+    });
+
+    templateComboBox.setTemplateSelection(template -> {
+        if (template.id != null) {
+            Product product = this.products.getValueByString(template.id);
+            if (product != null) {
+                return new DefaultSelectionTemplate(product.getImage(), product.getProductName()).getElement();
+            }
+        }
+        return template.text;
+    });
+                </pre>
+            </g:HTMLPanel>
         </widget:CodeSection>
 
         <!-- Remove Item Event -->
-        <widget:CodeSection sectionTitle="Remove Item Event" description="This event will be fired when removing item/value on multiple combobox">
-
-        </widget:CodeSection>
-
-        <!-- Open / Close Event for Simple Event -->
-        <widget:CodeSection sectionTitle="Open / Close Event for Simple Event" description="This event will be fired when opening / closing the combobox">
-
-        </widget:CodeSection>
-
-        <!-- Get Selected Value / Values -->
-        <widget:CodeSection sectionTitle="Get Selected Value / Values" description="We provided a way to get values from simple and multiple combobox.">
-
-        </widget:CodeSection>
-
-        <!-- Set Value / Values -->
-        <widget:CodeSection sectionTitle="Set Value / Values" description="setValue() will be applied on Simple while setValues() can be applied on Multiple combobox">
-
-        </widget:CodeSection>
-
-        <!-- Programmatic Access -->
-        <widget:CodeSection sectionTitle="Programmatic Access" description="MaterialCombobox supports methods that allow programmatic control of the component.">
-
-        </widget:CodeSection>
-
-        <!-- Initialization update -->
-        <widget:CodeSection sectionTitle="Initialization update" description="You might need to reinitialize your combobox if you want to update the combobox list items">
-
-        </widget:CodeSection>
-
-        <!-- Dialog Update -->
-        <widget:CodeSection sectionTitle="Dialog Integration" description="You can easily put your combobox inside dialog easily">
-
-        </widget:CodeSection>
-
-        <!-- Scroll To Top -->
-        <widget:CodeSection sectionTitle="Scroll To Top" description="You can set easily the position of ComboBox dropdown results scroll position to top.">
-
-        </widget:CodeSection>
-
-        <!-- Provide your Custom Message Text -->
-        <widget:CodeSection sectionTitle="Provide your Custom Message Text" description="This is good for Language support so that you can easily control the text object in your combobox.">
-
+        <widget:CodeSection sectionTitle="Matcher" description="Customizing how results are matched">
+            <ma:combobox.MaterialComboBox width="100%" ui:field="matcherComboBox" closeOnSelect="false" multiple="true" placeholder="Products" />
         </widget:CodeSection>
     </m:MaterialPanel>
 </ui:UiBinder>

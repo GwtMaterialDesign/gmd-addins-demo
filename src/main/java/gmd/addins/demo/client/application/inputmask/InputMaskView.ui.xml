@@ -109,5 +109,11 @@
                 </m:MaterialColumn>
             </m:MaterialRow>
         </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Events">
+            <m:MaterialRow>
+                <ma:inputmask.MaterialInputMask ui:field="eventMask" label="Phone Number" placeholder="eg: 000-00-0000000" mask="000-00-0000000" grid="s12 m4 l4"/>
+            </m:MaterialRow>
+        </widget:CodeSection>
     </m:MaterialPanel>
 </ui:UiBinder>

@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package gmd.addins.demo.client.application.beta.daterange;
+package gmd.addins.demo.client.application.beta.keyboard;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
@@ -30,19 +30,19 @@ import gmd.addins.demo.client.application.BasePresenter;
 import gmd.addins.demo.client.place.ExternalLink;
 import gmd.addins.demo.client.place.NameTokens;
 
-public class DateRangePresenter extends BasePresenter<DateRangePresenter.MyView, DateRangePresenter.MyProxy> {
+public class ScreenKeyboardPresenter extends BasePresenter<ScreenKeyboardPresenter.MyView, ScreenKeyboardPresenter.MyProxy> {
 
     interface MyView extends View {
 
     }
 
     @ProxyStandard
-    @NameToken(NameTokens.DATE_RANGE)
-    interface MyProxy extends ProxyPlace<DateRangePresenter> {
+    @NameToken(NameTokens.SCREEN_KEYBOARD)
+    interface MyProxy extends ProxyPlace<ScreenKeyboardPresenter> {
     }
 
     @Inject
-    DateRangePresenter(
+    ScreenKeyboardPresenter(
         EventBus eventBus,
         MyView view,
         MyProxy proxy) {
@@ -53,7 +53,7 @@ public class DateRangePresenter extends BasePresenter<DateRangePresenter.MyView,
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Date Range Picker", "Provided a start and end date selection.", "");
-        setExternalLibrary(ExternalLink.DATE_RANGE_PICKER);
+        setHeaderTitle("Screen Keyboard", "On Screen Keyboard for Kiosk applications.", "");
+        setExternalLibrary(ExternalLink.SCREEN_KEYBOARD);
     }
 }

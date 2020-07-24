@@ -30,6 +30,8 @@ import gmd.addins.demo.client.generator.DataGenerator;
 import gmd.addins.demo.client.generator.product.Product;
 import gmd.addins.demo.client.generator.user.User;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
+import gwt.material.design.addins.client.combobox.template.DefaultResultTemplate;
+import gwt.material.design.addins.client.combobox.template.DefaultSelectionTemplate;
 import gwt.material.design.client.ui.MaterialCheckBox;
 import gwt.material.design.client.ui.MaterialToast;
 import gwt.material.design.client.ui.html.OptGroup;
@@ -46,8 +48,11 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
     }
 
     @UiField
-    MaterialComboBox<Product> products, labelAndPlaceholder, allowClear, withOptGroup, multipleSelect, disabled, limit,
-        tags, comboTags, comboCloseOnSelect, valueChange, valueChangeMultiple, selection, selectionMultiple;
+    MaterialComboBox<Product> products, labelAndPlaceholder, singleAllowClear, allowClear, withOptGroup, multipleSelect, disabled, limit,
+        comboCloseOnSelect, events, eventsMultiple, templateComboBox, matcherComboBox;
+
+    @UiField
+    MaterialComboBox<String> tags, comboTags;
 
     @UiField
     MaterialCheckBox disable;
@@ -56,25 +61,111 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
     ComboBoxView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
 
-        valueChange.addValueChangeHandler(event -> MaterialToast.fireToast(event.getValue().get(0).getProductName()));
-        valueChangeMultiple.addValueChangeHandler(event -> {
+        labelAndPlaceholder.setCloseOnSelect(true);
+        labelAndPlaceholder.setScrollAfterSelect(false);
+
+        events.addValueChangeHandler(event -> MaterialToast.fireToast("Value Change Event: " + event.getValue().get(0).getProductName()));
+        eventsMultiple.addValueChangeHandler(event -> {
             for (Product product : event.getValue()) {
-                MaterialToast.fireToast(product.getProductName());
+                MaterialToast.fireToast("Value Change Event: " + product.getProductName());
             }
         });
 
-        selection.addSelectionHandler(event -> MaterialToast.fireToast(event.getSelectedValues().get(0).getProductName()));
-        selectionMultiple.addSelectionHandler(event -> {
+        events.addSelectionHandler(event -> MaterialToast.fireToast("Selection Event: " + event.getSelectedValues().get(0).getProductName()));
+        eventsMultiple.addSelectionHandler(event -> {
             for (Product product : event.getSelectedValues()) {
-                MaterialToast.fireToast(product.getProductName());
+                MaterialToast.fireToast("Selection Event: " + product.getProductName());
             }
+        });
+
+        events.addOpenHandler(event -> MaterialToast.fireToast("Open Event Fired"));
+        eventsMultiple.addOpenHandler(event -> MaterialToast.fireToast("Open Event Fired"));
+
+        events.addOpeningHandler(event -> MaterialToast.fireToast("Opening Event Fired"));
+        eventsMultiple.addOpeningHandler(event -> MaterialToast.fireToast("Opening Event Fired"));
+
+        events.addCloseHandler(event -> MaterialToast.fireToast("Close Event Fired"));
+        eventsMultiple.addCloseHandler(event -> MaterialToast.fireToast("Close Event Fired"));
+
+        events.addClosingHandler(event -> MaterialToast.fireToast("Closing Event Fired"));
+        eventsMultiple.addClosingHandler(event -> MaterialToast.fireToast("Closing Event Fired"));
+
+        events.addClearHandler(event -> MaterialToast.fireToast("Clear Event Fired"));
+        eventsMultiple.addClearHandler(event -> MaterialToast.fireToast("Clear Event Fired"));
+
+        events.addClearingHandler(event -> MaterialToast.fireToast("Clearing Event Fired"));
+        eventsMultiple.addClearingHandler(event -> MaterialToast.fireToast("Clearing Event Fired"));
+
+        events.addRemoveItemHandler(event -> MaterialToast.fireToast("Remove Item Event Fired"));
+        eventsMultiple.addRemoveItemHandler(event -> MaterialToast.fireToast("Remove Item Event Fired"));
+
+
+        allowClear.addClearHandler(event -> MaterialToast.fireToast("Clear Event Fired"));
+        allowClear.addClearingHandler(event -> MaterialToast.fireToast("Clearing Event Fired"));
+        singleAllowClear.addClearHandler(event -> MaterialToast.fireToast("Clear Event Fired"));
+        singleAllowClear.addClearingHandler(event -> MaterialToast.fireToast("Clearing Event Fired"));
+
+        templateComboBox.setTemplateResult((template) -> {
+            if (template.id != null) {
+                Product product = this.products.getValueByString(template.id);
+                if (product != null) {
+                    return new DefaultResultTemplate(product.getImage(), product.getProductName(), product.getProductMaterial()).getElement();
+                }
+            }
+            return template.text;
+        });
+
+        templateComboBox.setTemplateSelection(template -> {
+            if (template.id != null) {
+                Product product = this.products.getValueByString(template.id);
+                if (product != null) {
+                    return new DefaultSelectionTemplate(product.getImage(), product.getProductName()).getElement();
+                }
+            }
+            return template.text;
+        });
+
+        // Matcher Demo
+        matcherComboBox.setMatcher((params, data) -> {
+            if (params.term != null) {
+
+                // If there are no search terms, return all of the data
+                if (params.term.equals("")) {
+                    return data;
+                }
+
+                // Do not display the item if there is no 'text' property
+                if (data.text == null) {
+                    return null;
+                }
+
+                // `params.term` should be the term that is used for searching
+                // `data.text` is the text that is displayed for the data object
+                if (data.text.indexOf(params.term) > -1) {
+                    data.text = "matched:" + data.text;
+
+                    // You can return modified objects from here
+                    // This includes matching the `children` how you want in nested data sets
+                    return data;
+                }
+
+                // Return `null` if the term should not be displayed
+            }
+            return null;
+        });
+
+        // Tags will support only String generic Comboboxes
+        List<Product> products = new DataGenerator().generateProducts(10);
+        products.forEach(product -> {
+            tags.addItem(product.getProductName());
+            comboTags.addItem(product.getProductName());
         });
     }
 
     @Override
     public void setProducts(List<Product> products) {
-        addProducts(products, this.products, multipleSelect, disabled, tags, comboTags, comboCloseOnSelect, valueChange, valueChangeMultiple,
-            selection, selectionMultiple);
+        addProducts(products, this.products, multipleSelect, disabled, comboCloseOnSelect,
+            events, eventsMultiple, templateComboBox, matcherComboBox);
         addProductMaterials(products, labelAndPlaceholder, allowClear);
         addProductsGroup(products, withOptGroup, limit);
     }
@@ -119,17 +210,26 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
 
     @UiHandler("tagsGetValue")
     void tagsGetValue(ClickEvent e) {
-        for (Product product : tags.getValue()) {
-            if (product != null && product.getProductName() != null) {
-                MaterialToast.fireToast(product.getProductName());
+        List<String> value = tags.getValue();
+        if (value != null) {
+            for (String productName : value) {
+                MaterialToast.fireToast(productName);
             }
+        } else {
+            MaterialToast.fireToast("Nothing is selected");
         }
+
     }
 
     @UiHandler("comboTagsGetValue")
     void comboTagsGetValue(ClickEvent e) {
-        for (Product product : comboTags.getValue()) {
-            MaterialToast.fireToast(product.getProductName());
+        List<String> value = comboTags.getValue();
+        if (value != null) {
+            for (String productName : value) {
+                MaterialToast.fireToast(productName);
+            }
+        } else {
+            MaterialToast.fireToast("Nothing is selected");
         }
     }
 }

@@ -30,7 +30,7 @@
             </pre>
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Basic" description="Requires a source component when opening the overlay to transform it to overlay panel.">
-            <ma:overlay.MaterialOverlay ui:field="overlay" textAlign="CENTER" textColor="WHITE">
+            <ma:overlay.MaterialOverlay ui:field="overlay" textAlign="CENTER">
                 <m:MaterialLabel textAlign="CENTER" text="This is an overlay" marginTop="120" fontWeight="LIGHTER" fontSize="2em" />
                 <m:MaterialLabel textAlign="CENTER" text="Some content goes here" marginBottom="40" />
                 <m:MaterialButton ui:field="btnCloseOverlay" text="Close Overlay" />
@@ -39,7 +39,7 @@
         </widget:CodeSection>
 
         <widget:CodeSection sectionTitle="Events" description="We have provided open and close events">
-            <ma:overlay.MaterialOverlay ui:field="overlayEvents" backgroundColor="BLUE" textAlign="CENTER" textColor="WHITE">
+            <ma:overlay.MaterialOverlay ui:field="overlayEvents" backgroundColor="BLUE" textAlign="CENTER">
                 <m:MaterialLabel textAlign="CENTER" text="This is an overlay" marginTop="120" fontWeight="LIGHTER" fontSize="2em" />
                 <m:MaterialLabel textAlign="CENTER" text="Some content goes here" marginBottom="40" />
                 <m:MaterialButton ui:field="btnCloseOverlayEvents" text="Close Overlay" />
@@ -49,7 +49,7 @@
 
         <widget:CodeSection sectionTitle="Nested Overlays" description="You can provide multiple child overlay in order to create a dialog-like structure.">
             <!-- Parent 1 -->
-            <ma:overlay.MaterialOverlay ui:field="overlayParent" overflow="AUTO" backgroundColor="BLUE" textAlign="CENTER" textColor="WHITE" depth="999">
+            <ma:overlay.MaterialOverlay ui:field="overlayParent" overflow="AUTO" backgroundColor="BLUE" textAlign="CENTER" depth="999">
                 <m:MaterialLabel textAlign="CENTER" text="This is an overlay" marginTop="120" fontWeight="LIGHTER" fontSize="2em" />
                 <m:MaterialLabel textAlign="CENTER" text="Some content goes here" marginBottom="40" />
                 <m:MaterialButton ui:field="btnOpenChild" text="Open Overlay" />
@@ -58,14 +58,14 @@
             <m:MaterialButton ui:field="btnOpenParent" text="Open Overlay" />
 
             <!-- Child 1 -->
-            <ma:overlay.MaterialOverlay ui:field="overlayChild" overflow="AUTO" backgroundColor="INDIGO" relativeToWindow="true" textAlign="CENTER" depth="999" textColor="WHITE">
+            <ma:overlay.MaterialOverlay ui:field="overlayChild" overflow="AUTO" backgroundColor="INDIGO" relativeToWindow="true" textAlign="CENTER" depth="999">
                 <m:MaterialLabel textAlign="CENTER" text="This is a child overlay" marginTop="120" fontWeight="LIGHTER" fontSize="2em" />
                 <m:MaterialLabel textAlign="CENTER" text="Some content goes here" marginBottom="40" />
                 <m:MaterialButton ui:field="btnOpenChild2" backgroundColor="INDIGO_ACCENT_1" text="Open Child" />
                 <m:MaterialButton ui:field="btnCloseChild" backgroundColor="INDIGO_ACCENT_1" text="Close Overlay" />
 
                 <!-- Child 2 -->
-                <ma:overlay.MaterialOverlay ui:field="overlayChild2" overflow="AUTO" relativeToWindow="true" backgroundColor="PINK" textAlign="CENTER" depth="999" textColor="WHITE">
+                <ma:overlay.MaterialOverlay ui:field="overlayChild2" overflow="AUTO" relativeToWindow="true" backgroundColor="PINK" textAlign="CENTER" depth="999">
                     <m:MaterialLabel textAlign="CENTER" text="This is a Second child overlay" marginTop="120" fontWeight="LIGHTER" fontSize="2em" />
                     <m:MaterialLabel textAlign="CENTER" text="Some content goes here" marginBottom="40" />
                     <m:MaterialButton ui:field="btnCloseChild2" backgroundColor="PINK_ACCENT_1" text="Close Overlay" />

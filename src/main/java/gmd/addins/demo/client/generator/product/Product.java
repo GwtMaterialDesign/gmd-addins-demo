@@ -9,6 +9,7 @@ public class Product {
     private String color;
     private String productMaterial;
     private String department;
+    private String image;
 
     public Product(String date, String productName, String productAdjective, String price, String color, String productMaterial, String department) {
         this.date = date;
@@ -74,5 +75,13 @@ public class Product {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

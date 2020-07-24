@@ -1,6 +1,5 @@
 package gmd.addins.demo.client.application;
 
-import com.google.gwt.user.client.Window;
 import gwt.material.design.client.pwa.serviceworker.ServiceEvent;
 import gwt.material.design.client.pwa.serviceworker.ServiceWorkerManager;
 import gwt.material.design.client.pwa.serviceworker.js.ServiceWorker;
@@ -9,11 +8,13 @@ import gwt.material.design.client.ui.MaterialToast;
 
 public class AppServiceWorkerManager extends ServiceWorkerManager {
 
+    public static final String SCOPE = "/gmd-addins-demo/snapshot/";
+
     public AppServiceWorkerManager() {
-        super("/gmd-addins-demo/service-worker.js");
+        super(SCOPE + "service-worker.js");
 
         ServiceWorkerOption option = ServiceWorkerOption.create();
-        option.setScope("/gmd-addins-demo/");
+        option.setScope(SCOPE);
         setOption(option);
     }
 

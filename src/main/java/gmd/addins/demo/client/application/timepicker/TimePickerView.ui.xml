@@ -37,7 +37,6 @@
                     <m:MaterialCheckBox ui:field="hour24" text="24 Hour Format" value="false"/>
                     <m:MaterialCheckBox ui:field="autoClose" text="Auto Close" value="false"/>
                     <m:MaterialCheckBox ui:field="localized" text="Localized" value="false"/>
-
                     <ma:timepicker.MaterialTimePicker ui:field="timePicker" placeholder="TimePicker" marginTop="40"/>
                 </m:MaterialColumn>
             </m:MaterialRow>

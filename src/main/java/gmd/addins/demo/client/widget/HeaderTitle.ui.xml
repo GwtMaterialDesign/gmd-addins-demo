@@ -27,7 +27,8 @@
 			<m:MaterialLabel ui:field="description" grid="s12 m8"/>
 			<m:MaterialPanel paddingTop="20" paddingBottom="20" grid="s12">
 				<m:MaterialLink ui:field="sourceCode" text="Source Code" iconType="CODE" display="INLINE_BLOCK" marginRight="32"/>
-				<m:MaterialLink ui:field="library" iconType="ATTACHMENT" display="INLINE_BLOCK"/>
+				<m:MaterialLink ui:field="library" iconType="ATTACHMENT" display="INLINE_BLOCK" marginRight="32"/>
+				<m:MaterialLink ui:field="youtube" target="_blank" text="Tutorial" iconType="VIDEOCAM" display="INLINE_BLOCK"/>
 			</m:MaterialPanel>
 		</m:MaterialRow>
 	</m:MaterialPanel>

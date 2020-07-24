@@ -43,6 +43,9 @@ public class CarouselView extends ViewImpl implements CarouselPresenter.MyView {
     @UiField
     MaterialCheckBox toastEvents;
 
+    @UiField
+    MaterialCheckBox infinite;
+
     @Inject
     CarouselView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
@@ -76,9 +79,39 @@ public class CarouselView extends ViewImpl implements CarouselPresenter.MyView {
             }
         });
 
+        carousel.addEdgeHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("Edge Fired");
+            }
+        });
+
+        carousel.addLazyLoadedErrorHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("Lazy Loaded Error Fired");
+            }
+        });
+
+        carousel.addLazyLoadedHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("Lazy Load Fired");
+            }
+        });
+
         carousel.addSwipeHandler(event -> {
             if (toastEvents.getValue()) {
                 MaterialToast.fireToast("SwipeEvent Fired : " + event.getDirection());
+            }
+        });
+
+        carousel.addReInitHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("Reinit Fired ");
+            }
+        });
+
+        carousel.addSetPositionHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("Set Position Fired");
             }
         });
     }
@@ -99,7 +132,7 @@ public class CarouselView extends ViewImpl implements CarouselPresenter.MyView {
     @UiHandler("autoplay")
     void autoplay(ValueChangeEvent<Boolean> event) {
         carousel.setAutoplay(event.getValue());
-        carousel.setAutoplaySpeed(2000);
+        carousel.setAutoplaySpeed(800);
         carousel.reload();
     }
 

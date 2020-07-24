@@ -20,8 +20,6 @@
 package gmd.addins.demo.client.application.autocomplete;
 
 import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.logical.shared.SelectionEvent;
-import com.google.gwt.event.logical.shared.SelectionHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -94,8 +92,13 @@ public class AutocompleteView extends ViewImpl implements AutocompletePresenter.
 
     @UiHandler("btnGetAll")
     void onGetAll(ClickEvent e) {
-        for (User user : getSelectedUsers()) {
-            MaterialToast.fireToast(user.getName());
+        List<User> selectedUsers = getSelectedUsers();
+        if (selectedUsers != null && selectedUsers.size() > 0) {
+            for (User user : getSelectedUsers()) {
+                MaterialToast.fireToast(user.getName());
+            }
+        } else {
+            MaterialToast.fireToast("No selected values");
         }
     }
 

@@ -25,6 +25,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
+import gwt.material.design.client.constants.Display;
 import gwt.material.design.client.ui.MaterialColumn;
 import gwt.material.design.client.ui.MaterialLabel;
 import gwt.material.design.client.ui.MaterialLink;
@@ -38,7 +39,7 @@ public class HeaderTitle extends Composite {
     MaterialLabel title, description;
 
     @UiField
-    MaterialLink sourceCode, library;
+    MaterialLink sourceCode, library, youtube;
 
     interface DashboardCardUiBinder extends UiBinder<MaterialPanel, HeaderTitle> {
     }
@@ -71,6 +72,15 @@ public class HeaderTitle extends Composite {
         this.library.setText(library);
         this.library.setTarget("_blank");
         this.library.setHref(link);
+    }
+
+    public void hideYoutubeVideo() {
+        youtube.setVisible(false);
+    }
+
+    public void setYoutubeVideoKey(String key) {
+        this.youtube.setDisplay(Display.INLINE_BLOCK);
+        this.youtube.setHref("https://www.youtube.com/watch?v=" + key);
     }
 
     @Override

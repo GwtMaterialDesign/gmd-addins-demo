@@ -27,6 +27,7 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gwt.material.design.addins.client.inputmask.*;
+import gwt.material.design.addins.client.inputmask.js.InputMaskError;
 import gwt.material.design.client.ui.MaterialToast;
 
 import javax.inject.Inject;
@@ -64,6 +65,26 @@ public class InputMaskView extends ViewImpl implements InputMaskPresenter.MyView
 
     @UiField
     MaterialDateInputMask maskDate;
+
+    @UiField
+    MaterialInputMask eventMask;
+
+    @Override
+    protected void onAttach() {
+        super.onAttach();
+
+        eventMask.addCompleteHandler(event -> MaterialToast.fireToast("Complete: " + event.getResult()));
+        eventMask.addMaskKeyPressHandler(event -> MaterialToast.fireToast("KeyPress: " + event.getResult()));
+        eventMask.addMaskChangeHandler(event -> MaterialToast.fireToast("Change: " + event.getResult()));
+        eventMask.addInvalidHandler(event -> {
+            InputMaskError[] inputMaskError = event.getError();
+            if (inputMaskError != null) {
+                for (InputMaskError error : inputMaskError) {
+                    MaterialToast.fireToast("Digit: " + error.value + " is invalid for the position: " + error.position + ". We expect something like: " + error.error);
+                }
+            }
+        });
+    }
 
     @UiHandler("maskInteger")
     void maskInteger(ValueChangeEvent<Integer> event) {

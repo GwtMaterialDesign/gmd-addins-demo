@@ -20,8 +20,11 @@
 package gmd.addins.demo.client.application.masonry;
 
 import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
+import gwt.material.design.addins.client.masonry.MaterialMasonry;
+import gwt.material.design.client.ui.MaterialToast;
 
 import javax.inject.Inject;
 
@@ -30,9 +33,15 @@ public class MasonryView extends ViewImpl implements MasonryPresenter.MyView {
     interface Binder extends UiBinder<Widget, MasonryView> {
     }
 
+    @UiField
+    MaterialMasonry masonry;
+
     @Inject
     MasonryView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+
+        masonry.addLayoutCompleteHandler(event -> MaterialToast.fireToast("Layout Complete event fired"));
+        masonry.addRemoveCompleteHandler(event -> MaterialToast.fireToast("Remove Complete event fired"));
     }
 
     @Override

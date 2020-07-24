@@ -53,5 +53,6 @@ public class BubblePresenter extends BasePresenter<BubblePresenter.MyView, Bubbl
         super.onBind();
 
         setHeaderTitle("Bubble", "Addin component for chat module, it display a good bubble view of messages within the chat module", "");
+        setYoutubeVideoKey("tMGlSIHMzYo");
     }
 }

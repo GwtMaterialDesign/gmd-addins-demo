@@ -136,35 +136,35 @@ public class RichEditorView extends ViewImpl implements RichEditorPresenter.MyVi
     @UiHandler("richEditor")
     void onFocus(FocusEvent e) {
         if (toastEvents.getValue()) {
-            MaterialToast.fireToast("Focus Event Fired : " + richEditor.getHTML());
+            MaterialToast.fireToast("Focus Event Fired");
         }
     }
 
     @UiHandler("richEditor")
     void onBlur(BlurEvent event) {
         if (toastEvents.getValue()) {
-            MaterialToast.fireToast("Blur Event Fired : " + richEditor.getHTML());
+            MaterialToast.fireToast("Blur Event Fired");
         }
     }
 
     @UiHandler("richEditor")
     void onKeyUp(KeyUpEvent e) {
         if (toastEvents.getValue()) {
-            MaterialToast.fireToast("Key Up Fired : " + richEditor.getHTML());
+            MaterialToast.fireToast("Key Up Fired");
         }
     }
 
     @UiHandler("richEditor")
     void onKeyDown(KeyDownEvent e) {
         if (toastEvents.getValue()) {
-            MaterialToast.fireToast("Key Down Fired : " + richEditor.getHTML());
+            MaterialToast.fireToast("Key Down Fired");
         }
     }
 
     @UiHandler("richEditor")
     void onPaste(PasteEvent e) {
         if (toastEvents.getValue()) {
-            MaterialToast.fireToast("Paste Fired : " + richEditor.getHTML());
+            MaterialToast.fireToast("Paste Fired");
         }
     }
 }

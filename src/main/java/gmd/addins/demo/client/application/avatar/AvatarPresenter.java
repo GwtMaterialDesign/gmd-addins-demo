@@ -56,5 +56,6 @@ public class AvatarPresenter extends BasePresenter<AvatarPresenter.MyView, Avata
 
         setHeaderTitle("Avatar", "Generated avatar based on JDenticon that provides a unique avatar based on unique name.", "");
         setExternalLibrary(ExternalLink.AVATAR);
+        setYoutubeVideoKey("UKHiUcWPw_8");
     }
 }

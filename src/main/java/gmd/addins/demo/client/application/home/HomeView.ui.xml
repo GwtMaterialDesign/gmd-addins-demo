@@ -26,7 +26,7 @@
 	<m:MaterialPanel>
 		<m:MaterialRow padding="40" textAlign="CENTER">
 			<m:MaterialImage url="https://gwtmaterialdesign.github.io/gmd-core-demo/images/addins-logo.png" alt="logo" width="120px"/>
-			<m:MaterialLabel text="GMD Addins 2.3.0" fontWeight="BOLD" fontSize="3em"/>
+			<m:MaterialLabel text="GMD Addins 2.4.0" fontWeight="BOLD" fontSize="3em"/>
 			<m:MaterialLabel text="Here are the list of addin widgets for your GMD Apps." secondary="true"/>
 			<m:MaterialRow marginTop="20">
 				<m:MaterialLink text="Github" iconType="CODE" display="INLINE_BLOCK" href="https://github.com/GwtMaterialDesign/gwt-material-addins" target="_blank" marginRight="32"/>
