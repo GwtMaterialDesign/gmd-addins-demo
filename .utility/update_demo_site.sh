@@ -23,13 +23,13 @@ rm -rf gh-pages
 git clone --quiet --branch=gh-pages https://$GH_TOKEN@github.com/GwtMaterialDesign/gmd-addins-demo gh-pages > /dev/null
 cd gh-pages
 
-# remove the GmdCoreDemo Snapshot directories from git.
-if [[ -d ./snapshot/ ]]; then
-git rm -rf ./snapshot/
+# remove the GmdCoreDemo directories from git.
+if [[ -d ./ ]]; then
+git rm -rf ./
 fi
 
-# copy the new GmdCoreDemo the snapshot dir.
-unzip -u $TRAVIS_BUILD_DIR/target/GmdAddinsDemo*.war -d ./snapshot/
+# copy the new GWTAddinsDemo the snapshot dir.
+unzip -u $TRAVIS_BUILD_DIR/target/GmdAddinsDemo*.war -d ./
 
 git add -f .
 git commit -m "Auto-push pattern to gh-pages successful. (Travis build: $TRAVIS_BUILD_NUMBER)"
