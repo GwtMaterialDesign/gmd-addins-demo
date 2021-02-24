@@ -34,6 +34,8 @@
                 <m:MaterialIcon iconType="MENU"/>
                 <m:MaterialIcon iconType="ARROW_BACK"/>
             </ma:iconmorph.MaterialIconMorph>
+
+            <ma:iconmorph.MaterialIconMorph ui:field="dynamic" />
         </widget:CodeSection>
 
         <widget:CodeSection sectionTitle="Sizes" description="Like Material Icons you can easily adjust the sizes of icons by adding iconSize='SIZE' into your MaterialIconMorph component">
@@ -59,6 +61,13 @@
             <ma:iconmorph.MaterialIconMorph iconSize="LARGE">
                 <m:MaterialIcon iconType="POLYMER"/>
                 <m:MaterialIcon iconType="DONE"/>
+            </ma:iconmorph.MaterialIconMorph>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="CustomSize">
+            <ma:iconmorph.MaterialIconMorph customSize="180px">
+                <m:MaterialIcon iconType="MENU"/>
+                <m:MaterialIcon iconType="ARROW_BACK"/>
             </ma:iconmorph.MaterialIconMorph>
         </widget:CodeSection>
     </m:MaterialPanel>

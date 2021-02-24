@@ -20,8 +20,12 @@
 package gmd.addins.demo.client.application.iconmorph;
 
 import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
+import gwt.material.design.addins.client.iconmorph.MaterialIconMorph;
+import gwt.material.design.client.constants.IconType;
+import gwt.material.design.client.ui.MaterialIcon;
 
 import javax.inject.Inject;
 
@@ -30,9 +34,14 @@ public class IconMorphView extends ViewImpl implements IconMorphPresenter.MyView
     interface Binder extends UiBinder<Widget, IconMorphView> {
     }
 
+    @UiField
+    MaterialIconMorph dynamic;
 
     @Inject
     IconMorphView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+
+        dynamic.setSource(new MaterialIcon(IconType.CHECK_CIRCLE));
+        dynamic.setTarget(new MaterialIcon(IconType.CHECK));
     }
 }

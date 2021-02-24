@@ -52,7 +52,7 @@ public class HeaderTitle extends Composite {
     protected void onAttach() {
         super.onAttach();
 
-        if (library.getText().equals("")) {
+        if (library != null && library.getText() != null && !library.getText().isEmpty()) {
             library.setVisible(false);
         }
     }
