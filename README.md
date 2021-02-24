@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/1q1K6BU.png" width="60%"/>
+
 Demo for Addins.
 
 
