@@ -37,7 +37,7 @@
     <inherits name="gwt.material.design.GwtMaterialBasicWithJQuery"/>
     <inherits name="gwt.material.design.themes.ThemeBlue"/>
     <inherits name="gwt.material.design.addins.GwtMaterialAddinsDebug"/>
-    <inherits name="gwt.material.design.incubator.AddinsIncubator"/>
+    <inherits name="gwt.material.design.incubator.AddinsIncubatorDebug"/>
     <inherits name="gwt.material.design.incubator.FontAwesomeResources"/>
 
     <inherits name="com.google.gwt.precompress.Precompress"/>
