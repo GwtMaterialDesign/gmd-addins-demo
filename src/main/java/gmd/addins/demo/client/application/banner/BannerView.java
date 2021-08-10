@@ -29,10 +29,7 @@ import com.gwtplatform.mvp.client.ViewImpl;
 import gwt.material.design.addins.client.banner.MaterialBanner;
 import gwt.material.design.addins.client.banner.MaterialBannerActions;
 import gwt.material.design.client.constants.IconType;
-import gwt.material.design.client.ui.MaterialButton;
-import gwt.material.design.client.ui.MaterialColumn;
-import gwt.material.design.client.ui.MaterialPanel;
-import gwt.material.design.client.ui.MaterialToast;
+import gwt.material.design.client.ui.*;
 
 import javax.inject.Inject;
 
@@ -50,6 +47,9 @@ public class BannerView extends ViewImpl implements BannerPresenter.MyView {
     @UiField
     MaterialColumn target;
 
+    @UiField
+    MaterialCheckBox toastEvents;
+
     private MaterialButton button = new MaterialButton("Another Action");
 
     @Inject
@@ -57,6 +57,16 @@ public class BannerView extends ViewImpl implements BannerPresenter.MyView {
         initWidget(uiBinder.createAndBindUi(this));
 
         banner.setTargetContainer(target);
+        banner.addOpenHandler(event -> {
+            if (toastEvents.getValue()) {
+                MaterialToast.fireToast("Banner Opened");
+            }
+        });
+        banner.addCloseHandler(event -> {
+            if (toastEvents.getValue()){
+                MaterialToast.fireToast("Banner Closed");
+            }
+        });
     }
 
     @UiHandler("open")

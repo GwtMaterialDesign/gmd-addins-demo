@@ -28,10 +28,10 @@
 &lt;ma:avatar.MaterialBanner />
             </pre>
         </g:HTMLPanel>
-        <m:MaterialColumn grid="s12" backgroundColor="GREY_LIGHTEN_5" padding="0" marginTop="64" overflow="AUTO">
+        <m:MaterialRow addStyleNames="banner-container" padding="0" overflow="AUTO">
             <ma:banner.MaterialBanner ui:field="banner" message="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam">
                 <ma:banner.MaterialBannerActions ui:field="actions">
-                    <m:MaterialButton ui:field="action1" text="ACTION 123" />
+                    <m:MaterialButton ui:field="action1" text="ACTION" />
                 </ma:banner.MaterialBannerActions>
             </ma:banner.MaterialBanner>
 
@@ -40,9 +40,22 @@
                     <m:MaterialCheckBox ui:field="withIcon" text="With Icon" />
                     <m:MaterialCheckBox ui:field="singleLine" text="Single Line" />
                     <m:MaterialCheckBox ui:field="multiActions" text="Multi Actions" />
+                    <m:MaterialCheckBox ui:field="toastEvents" text="Toast Events" />
                     <m:MaterialButton ui:field="open" text="Open Banner" waves="DEFAULT"/>
                 </m:MaterialColumn>
             </m:MaterialPanel>
-        </m:MaterialColumn>
+        </m:MaterialRow>
+
+        <m:MaterialRow>
+            <g:HTMLPanel>
+                <pre class="xml">
+                    &lt;ma:banner.MaterialBanner ui:field="banner" message="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam">
+                    &lt;ma:banner.MaterialBannerActions ui:field="actions">
+                    &lt;m:MaterialButton ui:field="action1" text="ACTION" />
+                    &lt;/ma:banner.MaterialBannerActions>
+                    &lt;/ma:banner.MaterialBanner>
+                </pre>
+            </g:HTMLPanel>
+        </m:MaterialRow>
     </m:MaterialPanel>
 </ui:UiBinder>
