@@ -24,6 +24,7 @@ public class NameTokens {
     public static final String HOME = "/";
     public static final String AUTOCOMPLETE = "autocomplete";
     public static final String AVATAR = "avatar";
+    public static final String BANNER = "banner";
     public static final String BUBBLE = "bubble";
     public static final String CAROUSEL = "carousel";
     public static final String CAMERA = "camera";
