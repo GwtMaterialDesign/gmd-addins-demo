@@ -78,6 +78,20 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
             }
         });
 
+        events.addFocusHandler(event -> {
+           MaterialToast.fireToast("Focus Event Fired");
+        });
+        eventsMultiple.addFocusHandler(event -> {
+            MaterialToast.fireToast("Focus Event Fired");
+        });
+
+        events.addBlurHandler(event -> {
+            MaterialToast.fireToast("Blur Event Fired");
+        });
+        eventsMultiple.addBlurHandler(event -> {
+            MaterialToast.fireToast("Blur Event Fired");
+        });
+
         events.addOpenHandler(event -> MaterialToast.fireToast("Open Event Fired"));
         eventsMultiple.addOpenHandler(event -> MaterialToast.fireToast("Open Event Fired"));
 

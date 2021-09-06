@@ -33,6 +33,8 @@ import gwt.material.design.client.ui.*;
 
 import javax.inject.Inject;
 
+import static gwt.material.design.jquery.client.api.JQuery.$;
+
 public class BannerView extends ViewImpl implements BannerPresenter.MyView {
 
     interface Binder extends UiBinder<Widget, BannerView> {
@@ -55,8 +57,12 @@ public class BannerView extends ViewImpl implements BannerPresenter.MyView {
     @Inject
     BannerView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+    }
 
-        banner.setTargetContainer(target);
+    @Override
+    protected void onAttach() {
+        super.onAttach();
+
         banner.addOpenHandler(event -> {
             if (toastEvents.getValue()) {
                 MaterialToast.fireToast("Banner Opened");

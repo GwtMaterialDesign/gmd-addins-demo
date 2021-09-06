@@ -31,7 +31,7 @@
                         <m:MaterialImage url="https://i.imgur.com/bO2kFKs.png" alt="logo" float="LEFT" width="60px"/>
                         <m:MaterialPanel>
                             <m:MaterialLabel text="gmd-addins" fontWeight="BOLD" lineHeight="24" marginTop="12"/>
-                            <m:MaterialLabel text="Version 2.5.0-rc2" lineHeight="12" fontSize="0.6em"/>
+                            <m:MaterialLabel text="Version 2.5.0" lineHeight="12" fontSize="0.6em"/>
                         </m:MaterialPanel>
                     </m:MaterialNavBrand>
                     <m:MaterialNavSection ui:field="navSection" float="RIGHT">
