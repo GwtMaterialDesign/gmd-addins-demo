@@ -26,6 +26,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
+import gwt.material.design.addins.client.camera.CameraResolution;
 import gwt.material.design.addins.client.camera.MaterialCameraCapture;
 import gwt.material.design.client.ui.MaterialImage;
 import gwt.material.design.client.ui.MaterialToast;
@@ -87,5 +88,40 @@ public class CameraView extends ViewImpl implements CameraPresenter.MyView {
     @UiHandler("pause")
     void pause(ClickEvent e) {
         camera.pause();
+    }
+
+    @UiHandler("qvga")
+    void qvga(ClickEvent event) {
+        camera.setResolution(CameraResolution.QVGA);
+    }
+
+    @UiHandler("sd")
+    void sd(ClickEvent event) {
+        camera.setResolution(CameraResolution.SD);
+    }
+
+    @UiHandler("hd")
+    void hd(ClickEvent event) {
+        camera.setResolution(CameraResolution.HD);
+    }
+
+    @UiHandler("fullHd")
+    void fullHd(ClickEvent event) {
+        camera.setResolution(CameraResolution.FULL_HD);
+    }
+
+    @UiHandler("television4k")
+    void television4k(ClickEvent event) {
+        camera.setResolution(CameraResolution.TELEVISION_4K);
+    }
+
+    @UiHandler("cinema4k")
+    void cinema4k(ClickEvent event) {
+        camera.setResolution(CameraResolution.CINEMA_4K);
+    }
+
+    @UiHandler("_8k")
+    void _8k(ClickEvent event) {
+        camera.setResolution(CameraResolution._8K);
     }
 }

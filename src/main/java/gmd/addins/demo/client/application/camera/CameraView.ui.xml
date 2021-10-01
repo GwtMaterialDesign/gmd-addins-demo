@@ -31,9 +31,19 @@
         </g:HTMLPanel>
         <widget:CodeSection sectionTitle="Note" description="This widget only works on pages served by a secure protocol (HTTPS). For the browser compatibility, access http://caniuse.com/#feat=stream.">
             <ma:camera.MaterialCameraCapture ui:field="camera"/>
-            <m:MaterialButton ui:field="capture" text="Capture" />
-            <m:MaterialButton ui:field="play" text="Play" />
-            <m:MaterialButton ui:field="pause" text="Pause" />
+            <m:MaterialButton ui:field="capture" text="Capture" marginRight="12"/>
+            <m:MaterialButton ui:field="play" text="Play" marginRight="12"/>
+            <m:MaterialButton ui:field="pause" text="Pause" marginRight="12"/>
+        </widget:CodeSection>
+
+        <widget:CodeSection sectionTitle="Resolution" description="Choose any resolution for your camera below.">
+            <m:MaterialButton ui:field="qvga" text="QVGA" marginRight="12"/>
+            <m:MaterialButton ui:field="sd" text="SD" marginRight="12"/>
+            <m:MaterialButton ui:field="hd" text="HD" marginRight="12"/>
+            <m:MaterialButton ui:field="fullHd" text="FULL HD" marginRight="12"/>
+            <m:MaterialButton ui:field="television4k" text="TELEVISION 4K" marginRight="12"/>
+            <m:MaterialButton ui:field="cinema4k" text="CINEMA 4K" marginRight="12"/>
+            <m:MaterialButton ui:field="_8k" text="8K" />
         </widget:CodeSection>
 
         <widget:CodeSection sectionTitle="Result" description="Here is the output of the camera.">
