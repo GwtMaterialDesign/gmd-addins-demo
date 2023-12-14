@@ -12,7 +12,7 @@ title.innerHTML = "gwt-material-addins";
 
 var description = document.createElement("span");
 description.className = "description";
-description.innerHTML = "version 2.6.0";
+description.innerHTML = "version 2.8.0";
 
 var progress = document.createElement("div");
 progress.className = "progress";

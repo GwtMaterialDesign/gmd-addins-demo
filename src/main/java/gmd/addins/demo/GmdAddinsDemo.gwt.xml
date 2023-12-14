@@ -42,6 +42,7 @@
     <inherits name="com.google.gwt.precompress.Precompress"/>
 
     <set-configuration-property name="CssResource.enableGss" value="true"/>
+    <set-property name="gwt.logging.logLevel" value="INFO"/>
 
     <!-- Comment it if you want permutations per property.
          It increases compilation time -->
