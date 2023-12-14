@@ -99,6 +99,7 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             new Dashboard(placeManager, "Tree View", "Native", NameTokens.TREE, Color.INDIGO),
             new Dashboard(placeManager, "WebP", "Native", NameTokens.WEBP, Color.LIGHT_BLUE),
             new Dashboard(placeManager, "Window", "Native", NameTokens.WINDOW, Color.RED),
+            new Dashboard(placeManager, "Note", "Native", NameTokens.NOTE, Color.GREEN),
 
             // Beta
             new Dashboard(placeManager, "Address Lookup", "Incubator", NameTokens.ADDRESS_LOOKUP, Color.RED, true),

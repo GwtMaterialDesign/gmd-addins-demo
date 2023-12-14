@@ -53,6 +53,7 @@ import gmd.addins.demo.client.application.beta.keyboard.ScreenKeyboardModule;
 import gmd.addins.demo.client.application.livestamp.LiveStampModule;
 import gmd.addins.demo.client.application.masonry.MasonryModule;
 import gmd.addins.demo.client.application.menubar.MenubarModule;
+import gmd.addins.demo.client.application.note.NoteModule;
 import gmd.addins.demo.client.application.overlay.OverlayModule;
 import gmd.addins.demo.client.application.pathanimator.PathAnimatorModule;
 import gmd.addins.demo.client.application.rating.RatingModule;
@@ -105,6 +106,7 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new TreeModule());
         install(new WebpModule());
         install(new WindowModule());
+        install(new NoteModule());
 
         /** Beta **/
         install(new AddressLookupModule());
