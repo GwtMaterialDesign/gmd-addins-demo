@@ -61,36 +61,63 @@ public class DndView extends ViewImpl implements DndPresenter.MyView {
     DndView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
 
-        MaterialDnd.draggable(panel);
-        MaterialDnd.draggable(woInertialPanel, JsDragOptions.create(false));
+        MaterialDnd dnd = new MaterialDnd(panel);
+        dnd.draggable();
+
+        MaterialDnd dnd2 = new MaterialDnd(woInertialPanel);
+        dnd2.draggable(JsDragOptions.create(false));
 
         Restriction restriction = new Restriction();
         restriction.setEndOnly(false);
-        MaterialDnd.draggable(endOnlyPanel, JsDragOptions.create(restriction));
+
+        MaterialDnd dnd3 = new MaterialDnd(woInertialPanel);
+        dnd3.draggable(JsDragOptions.create(false));
+
+        MaterialDnd dnd4 = new MaterialDnd(endOnlyPanel);
+        dnd4.draggable(JsDragOptions.create(restriction));
 
         Restriction restriction1 = new Restriction();
         restriction1.setRestriction(Restriction.Restrict.SELF);
-        MaterialDnd.draggable(selfRestrict, JsDragOptions.create(restriction1));
+
+        MaterialDnd dnd5 = new MaterialDnd(selfRestrict);
+        dnd5.draggable(JsDragOptions.create(restriction1));
 
         Restriction restriction2 = new Restriction();
         restriction2.setTop(0.25);
         restriction2.setLeft(0.25);
         restriction2.setRight(0.75);
         restriction2.setBottom(0.75);
-        MaterialDnd.draggable(restrictPanel, JsDragOptions.create(restriction2));
 
-        MaterialDnd dndIgnore = MaterialDnd.draggable(dndIgnoreFrom);
-        dndIgnore.ignoreFrom(ignoredPanel);
+        MaterialDnd dnd6 = new MaterialDnd(restrictPanel);
+        dnd6.draggable(JsDragOptions.create(restriction2));
 
-        MaterialDnd.draggable(xAxisPanel, JsDragOptions.create(Axis.HORIZONTAL));
-        MaterialDnd.draggable(yAxisPanel, JsDragOptions.create(Axis.VERTICAL));
+        MaterialDnd dndIgnore = new MaterialDnd(dndIgnoreFrom);
+        dndIgnore.draggable().then(p0 -> {
+            dndIgnore.ignoreFrom(ignoredPanel);
+            return null;
+        });
 
-        MaterialDnd.draggable(item1);
-        MaterialDnd.draggable(item2);
-        MaterialDnd.draggable(item3);
-        MaterialDnd.draggable(item4);
+        MaterialDnd dnd7 = new MaterialDnd(xAxisPanel);
+        dnd7.draggable(JsDragOptions.create(Axis.HORIZONTAL));
 
-        MaterialDnd.dropzone(dropzoneContainer, JsDropOptions.create(".test"));
+        MaterialDnd dnd8 = new MaterialDnd(yAxisPanel);
+        dnd8.draggable(JsDragOptions.create(Axis.VERTICAL));
+
+        MaterialDnd dnd9 = new MaterialDnd(item1);
+        dnd9.draggable();
+
+        MaterialDnd dnd10 = new MaterialDnd(item2);
+        dnd10.draggable();
+
+        MaterialDnd dnd11 = new MaterialDnd(item3);
+        dnd11.draggable();
+
+        MaterialDnd dnd12 = new MaterialDnd(item4);
+        dnd12.draggable();
+
+
+        MaterialDnd drop = new MaterialDnd(dropzoneContainer);
+        drop.dropzone(JsDropOptions.create(".test"));
 
         dropzoneContainer.addDropActivateHandler(event1 -> {
             MaterialToast.fireToast("Drop Activate");
@@ -116,7 +143,8 @@ public class DndView extends ViewImpl implements DndPresenter.MyView {
             MaterialToast.fireToast("Drop Deactivate");
         });
 
-        MaterialDnd.draggable(eventPanel);
+        MaterialDnd dnd13 = new MaterialDnd(eventPanel);
+        dnd13.draggable();
 
         // Add Drag Start Handler
         eventPanel.addDragStartHandler(event -> {
