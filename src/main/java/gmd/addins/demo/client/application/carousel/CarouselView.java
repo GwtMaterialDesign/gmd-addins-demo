@@ -156,7 +156,10 @@ public class CarouselView extends ViewImpl implements CarouselPresenter.MyView {
 
     @UiHandler("currentIndex")
     void currentIndex(ClickEvent event) {
-        MaterialToast.fireToast(imageCarousel.getCurrentSlideIndex() + "");
+        imageCarousel.getCurrentSlideIndex().then(index -> {
+            MaterialToast.fireToast(index + "");
+            return null;
+        });
     }
 
     @UiHandler("next")
