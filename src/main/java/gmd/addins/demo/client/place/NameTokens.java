@@ -34,6 +34,7 @@ public class NameTokens {
     public static final String CUT_OUT = "cutout";
     public static final String DOC_VIEWER = "docviewer";
     public static final String DRAG_AND_DROP = "dnd";
+    public static final String DRAGULA = "dragula";
     public static final String DROPZONE = "dropzone";
     public static final String EMPTY_STATE = "emptystate";
     public static final String ICON_MORPH = "iconmorph";
@@ -42,20 +43,28 @@ public class NameTokens {
     public static final String LIVE_STAMP = "livestamp";
     public static final String MASONRY = "masonry";
     public static final String MENU_BAR = "menubar";
+    public static final String MD5 = "md5";
     public static final String NOTE = "note";
     public static final String OVERLAY = "overlay";
     public static final String PATH_ANIMATOR = "pathanimator";
+    public static final String PINCH_ZOOM = "pinchzoom";
+    public static final String POPUP_MENU = "popupmenu";
+    public static final String RANGE_SLIDER = "range";
     public static final String RATING = "rating";
     public static final String RICH_EDITOR = "richeditor";
     public static final String SCREEN_KEYBOARD = "screenkeyboard";
     public static final String SIGNATURE_PAD = "signaturepad";
+    public static final String SCROLL_FIRE = "scrollfire";
+    public static final String SIDE_PROFILE = "sideprofile";
     public static final String SPLIT_PANEL = "splitpanel";
     public static final String SUBHEADER = "subheader";
     public static final String STEPPER = "stepper";
     public static final String SWIPEABLE = "swipeable";
     public static final String TAG = "tag";
     public static final String TIME_PICKER = "timepicker";
+    public static final String TIME_LINE = "timeline";
     public static final String TREE = "tree";
+    public static final String WATERFALL = "waterfall";
     public static final String WEBP = "webp";
     public static final String WINDOW = "window";
 
