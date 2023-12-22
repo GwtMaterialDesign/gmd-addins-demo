@@ -69,6 +69,7 @@ public class NameTokens {
     public static final String SCROLL_FIRE = "scrollfire";
     public static final String SIDE_PROFILE = "sideprofile";
     public static final String SPLIT_PANEL = "splitpanel";
+    public static final String SPROUT_VIDEO = "sproutvideo";
     public static final String SUBHEADER = "subheader";
     public static final String STEPPER = "stepper";
     public static final String SWIPEABLE = "swipeable";

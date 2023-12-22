@@ -77,6 +77,7 @@ import gmd.addins.demo.client.application.scrollfire.ScrollfireModule;
 import gmd.addins.demo.client.application.sideprofile.SideProfileModule;
 import gmd.addins.demo.client.application.signaturepad.SignaturePadModule;
 import gmd.addins.demo.client.application.splitpanel.SplitPanelModule;
+import gmd.addins.demo.client.application.sprout.SproutVideoModule;
 import gmd.addins.demo.client.application.stepper.StepperModule;
 import gmd.addins.demo.client.application.subheader.SubheaderModule;
 import gmd.addins.demo.client.application.swipeable.SwipeableModule;
@@ -139,6 +140,7 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new SideProfileModule());
         install(new SignaturePadModule());
         install(new SplitPanelModule());
+        install(new SproutVideoModule());
         install(new StepperModule());
         install(new SubheaderModule());
         install(new SwipeableModule());
