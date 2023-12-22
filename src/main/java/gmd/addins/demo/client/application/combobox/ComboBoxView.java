@@ -60,6 +60,11 @@ public class ComboBoxView extends ViewImpl implements ComboBoxPresenter.MyView {
     @Inject
     ComboBoxView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+    }
+
+    @Override
+    protected void onAttach() {
+        super.onAttach();
 
         labelAndPlaceholder.setCloseOnSelect(true);
         labelAndPlaceholder.setScrollAfterSelect(false);
