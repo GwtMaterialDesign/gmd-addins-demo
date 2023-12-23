@@ -52,6 +52,6 @@ public class LoadingStatePanelPresenter extends BasePresenter<LoadingStatePanelP
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Loading State", "TODO description", "");
+        setHeaderTitle("Loading State", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

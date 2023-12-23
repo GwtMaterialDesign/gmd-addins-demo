@@ -52,6 +52,6 @@ public class PopupMenuPresenter extends BasePresenter<PopupMenuPresenter.MyView,
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Popup Menu", "TODO description", "");
+        setHeaderTitle("Popup Menu", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

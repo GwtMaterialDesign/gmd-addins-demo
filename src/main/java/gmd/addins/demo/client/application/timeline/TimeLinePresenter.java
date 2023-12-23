@@ -52,6 +52,6 @@ public class TimeLinePresenter extends BasePresenter<TimeLinePresenter.MyView, T
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("TimeLine", "TODO description", "");
+        setHeaderTitle("TimeLine", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

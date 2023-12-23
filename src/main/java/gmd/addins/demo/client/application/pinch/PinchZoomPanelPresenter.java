@@ -52,6 +52,6 @@ public class PinchZoomPanelPresenter extends BasePresenter<PinchZoomPanelPresent
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Pinch Zoom", "TODO description", "");
+        setHeaderTitle("Pinch Zoom", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

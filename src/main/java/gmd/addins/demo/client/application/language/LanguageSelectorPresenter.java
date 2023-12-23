@@ -52,6 +52,6 @@ public class LanguageSelectorPresenter extends BasePresenter<LanguageSelectorPre
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Language Selector", "TODO description", "");
+        setHeaderTitle("Language Selector", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

@@ -53,6 +53,6 @@ public class DragulaPresenter extends BasePresenter<DragulaPresenter.MyView, Dra
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Dragula", "TODO description", "");
+        setHeaderTitle("Dragula", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

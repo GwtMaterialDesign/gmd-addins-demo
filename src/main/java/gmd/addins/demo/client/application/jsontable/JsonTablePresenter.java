@@ -52,6 +52,6 @@ public class JsonTablePresenter extends BasePresenter<JsonTablePresenter.MyView,
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Json Table", "TODO description", "");
+        setHeaderTitle("Json Table", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

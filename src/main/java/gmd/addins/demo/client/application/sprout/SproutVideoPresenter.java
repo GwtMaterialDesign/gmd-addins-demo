@@ -52,6 +52,6 @@ public class SproutVideoPresenter extends BasePresenter<SproutVideoPresenter.MyV
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Sprout Video", "TODO description", "");
+        setHeaderTitle("Sprout Video", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

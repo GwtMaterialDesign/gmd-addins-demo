@@ -52,6 +52,6 @@ public class LoadingDotsPresenter extends BasePresenter<LoadingDotsPresenter.MyV
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Loading Dots", "TODO description", "");
+        setHeaderTitle("Loading Dots", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

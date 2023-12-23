@@ -52,6 +52,6 @@ public class Md5Presenter extends BasePresenter<Md5Presenter.MyView, Md5Presente
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Md5", "TODO description", "");
+        setHeaderTitle("Md5", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

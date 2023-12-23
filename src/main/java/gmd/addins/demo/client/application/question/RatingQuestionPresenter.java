@@ -52,6 +52,6 @@ public class RatingQuestionPresenter extends BasePresenter<RatingQuestionPresent
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Rating Question Item", "TODO description", "");
+        setHeaderTitle("Rating Question Item", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

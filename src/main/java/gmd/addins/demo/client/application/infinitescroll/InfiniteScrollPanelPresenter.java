@@ -52,6 +52,6 @@ public class InfiniteScrollPanelPresenter extends BasePresenter<InfiniteScrollPa
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Infinite Scroll", "TODO description", "");
+        setHeaderTitle("Infinite Scroll", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

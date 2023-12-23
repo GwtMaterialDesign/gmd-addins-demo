@@ -52,6 +52,6 @@ public class PasswordStrengthTextBoxPresenter extends BasePresenter<PasswordStre
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Password Strength TextBox", "TODO description", "");
+        setHeaderTitle("Password Strength TextBox", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

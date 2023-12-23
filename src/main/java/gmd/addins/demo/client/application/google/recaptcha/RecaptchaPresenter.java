@@ -52,6 +52,6 @@ public class RecaptchaPresenter extends BasePresenter<RecaptchaPresenter.MyView,
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Recaptcha", "TODO description", "");
+        setHeaderTitle("Recaptcha", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

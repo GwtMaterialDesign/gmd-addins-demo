@@ -25,11 +25,9 @@
     <m:MaterialPanel>
         <g:HTMLPanel>
             <pre class="xml" style="height: 40px;overflow: hidden">
-&lt;ma:pinch.PinchZoomPanel />
             </pre>
         </g:HTMLPanel>
         <m:MaterialColumn grid="s12 m4">
-            <label>Under Construction</label>
         </m:MaterialColumn>
     </m:MaterialPanel>
 </ui:UiBinder>

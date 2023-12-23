@@ -52,6 +52,6 @@ public class CircularSVGTimerPresenter extends BasePresenter<CircularSVGTimerPre
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Circular SVG Timer", "TODO description", "");
+        setHeaderTitle("Circular SVG Timer", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

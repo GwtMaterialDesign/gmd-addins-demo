@@ -52,6 +52,6 @@ public class WaterfallPresenter extends BasePresenter<WaterfallPresenter.MyView,
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Waterfall", "TODO description", "");
+        setHeaderTitle("Waterfall", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

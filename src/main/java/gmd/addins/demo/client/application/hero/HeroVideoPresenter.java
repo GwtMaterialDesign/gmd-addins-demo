@@ -52,6 +52,6 @@ public class HeroVideoPresenter extends BasePresenter<HeroVideoPresenter.MyView,
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Hero Video", "TODO description", "");
+        setHeaderTitle("Hero Video", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

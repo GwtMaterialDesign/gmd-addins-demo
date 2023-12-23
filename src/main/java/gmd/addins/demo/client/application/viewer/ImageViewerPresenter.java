@@ -52,6 +52,6 @@ public class ImageViewerPresenter extends BasePresenter<ImageViewerPresenter.MyV
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Image Viewer", "TODO description", "");
+        setHeaderTitle("Image Viewer", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

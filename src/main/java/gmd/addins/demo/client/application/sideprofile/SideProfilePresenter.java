@@ -52,6 +52,6 @@ public class SideProfilePresenter extends BasePresenter<SideProfilePresenter.MyV
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Side Profile", "TODO description", "");
+        setHeaderTitle("Side Profile", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }

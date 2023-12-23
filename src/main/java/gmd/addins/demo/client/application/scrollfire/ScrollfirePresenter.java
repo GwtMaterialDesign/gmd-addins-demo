@@ -52,6 +52,6 @@ public class ScrollfirePresenter extends BasePresenter<ScrollfirePresenter.MyVie
     protected void onBind() {
         super.onBind();
 
-        setHeaderTitle("Scrollfire", "TODO description", "");
+        setHeaderTitle("Scrollfire", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "");
     }
 }
