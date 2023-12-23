@@ -32,7 +32,7 @@
         <widget:CodeSection sectionTitle="Default" description="Wait half a minute - the livestamp will update automatically">
             <m:MaterialRow>
                 <m:MaterialLink textColor="GREY" iconType="ACCESS_TIME" text="You discovered MaterialLiveStamp " float="LEFT"/>
-                <ma:livestamp.MaterialLiveStamp float="LEFT" fontWeight="BOLD" marginLeft="8"/>
+                <ma:livestamp.MaterialLiveStamp ui:field="liveStamp" float="LEFT" fontWeight="BOLD" marginLeft="8"/>
             </m:MaterialRow>
         </widget:CodeSection>
 

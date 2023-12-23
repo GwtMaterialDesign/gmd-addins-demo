@@ -34,7 +34,7 @@ public class LiveStampView extends ViewImpl implements LiveStampPresenter.MyView
     }
 
     @UiField
-    MaterialLiveStamp liveStampPast, liveStampFuture;
+    MaterialLiveStamp liveStamp, liveStampPast, liveStampFuture;
 
     @Inject
     LiveStampView(Binder uiBinder) {
@@ -45,6 +45,7 @@ public class LiveStampView extends ViewImpl implements LiveStampPresenter.MyView
     protected void onAttach() {
         super.onAttach();
 
+        liveStamp.setValue(new Date());
         liveStampPast.setValue(new Date(115, 2, 1));
         liveStampFuture.setValue(new Date(125, 2, 1));
     }
