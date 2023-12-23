@@ -66,6 +66,7 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
 
 
         getView().setDashboard(Arrays.asList(
+            new Dashboard(placeManager, "Alert", "Native", NameTokens.ALERT, Color.RED),
             new Dashboard(placeManager, "Autocomplete", "Native", NameTokens.AUTOCOMPLETE, Color.RED),
             new Dashboard(placeManager, "Avatar", ExternalLink.AVATAR.getLongName(), NameTokens.AVATAR, Color.AMBER),
             new Dashboard(placeManager, "Banner", "Native", NameTokens.BANNER, Color.BLUE_GREY),
